@@ -1,25 +1,23 @@
 /* PANTONE 11-4201 Cloud Dancer & Minimalism Theme */
 :root {
-    --cloud-dancer: #F0EEE9;
-    --text-main: #222;
-    --text-sub: #555;
-    --accent: #888;
-    --line: rgba(0, 0, 0, 0.08);
-    --transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    /* 기존보다 훨씬 밝고 맑은 톤으로 변경 */
+    --cloud-dancer: #F8F7F4; 
+    --text-main: #222222;
+    --text-sub: #777777;
+    --line: rgba(0, 0, 0, 0.05); /* 선도 더 흐리게 */
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+body {
+    background-color: var(--cloud-dancer);
+    /* 배경이 깨끗해 보이도록 폰트 렌더링 최적화 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body { 
-    background-color: var(--cloud-dancer); 
-    color: var(--text-main); 
-    font-family: 'Noto Sans KR', sans-serif; 
-    line-height: 1.7;
-    word-break: keep-all;
+/* 프로젝트 아이템 호버 시 배경을 완전한 흰색으로 변경해 대비를 줌 */
+.project-item:hover { 
+    background-color: #ffffff; 
+    padding-left: 20px;
 }
 
 .container { 
