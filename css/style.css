@@ -147,6 +147,12 @@ header { padding: 100px 0 120px 0; }
     color: #111; /* 글자색을 쨍하게 */
     border: 1px solid #d1cec8; /* 배경색보다 약간 진한 테두리 */
     box-shadow: 0 2px 4px rgba(0,0,0,0.03); /* 미세한 입체감 */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skill-tag:hover {
+    transform: scale(1.05); /* 미세하게 커지는 효과 */
+    background: #111;
+    color: #fff;
 }
 /* --- Detail Page Elements --- */
 .stats-grid { 
