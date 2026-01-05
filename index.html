@@ -3,116 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Portfolio | Seonghye Kim</title>
+    <title>Marketing Portfolio | Kim Seonghye</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --bg-color: #F9F8F6; /* PDF의 부드러운 배경색 */
+            --card-bg: #FFFFFF;
+            --text-main: #111111;
+            --text-sub: #555555;
+            --accent: #2D5BFF;
+            --radius: 24px; /* PDF의 둥근 모서리 느낌 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-color); 
+            font-family: 'Pretendard', sans-serif; 
+            color: var(--text-main);
+            padding: 40px 20px;
+            display: flex; justify-content: center;
+        }
+
+        .container { max-width: 1100px; width: 100%; }
+
+        /* PDF Summary 섹션 재현 */
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+        }
+
+        .summary-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+        .summary-header h1 { font-size: 42px; font-weight: 800; }
+        
+        .summary-text { font-size: 18px; line-height: 1.6; margin-bottom: 50px; color: var(--text-sub); }
+        .summary-text b { color: var(--text-main); }
+
+        /* 스킬 그리드 (PDF 하단부 느낌) */
+        .skills-grid { 
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; 
+            border-top: 1px solid #EEE; padding-top: 40px;
+        }
+        .skill-item h3 { font-size: 14px; text-transform: uppercase; color: #AAA; margin-bottom: 15px; letter-spacing: 1px; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { 
+            background: #F1F1F1; padding: 6px 12px; border-radius: 6px; 
+            font-size: 13px; font-weight: 500; color: #444; 
+        }
+
+        /* 프로젝트 리스트 (PDF 우측 01~05 리스트 재현) */
+        .project-list { display: flex; flex-direction: column; gap: 15px; }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 40px;
+            display: flex; align-items: center;
+            text-decoration: none; color: inherit;
+            transition: transform 0.2s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .project-card:hover { transform: translateX(10px); background: #FFF; border-color: var(--accent); }
+        .project-num { font-size: 24px; font-weight: 300; color: #CCC; margin-right: 40px; width: 30px; }
+        .project-info h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .project-info p { font-size: 14px; color: var(--text-sub); }
+
+        @media (max-width: 768px) {
+            .summary-card { padding: 30px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .summary-header h1 { font-size: 32px; }
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <nav>
-            <div class="logo">SEONGHYE KIM</div>
-            <div class="contact">SHYEKIM@EMAIL.COM</div>
-        </nav>
-
-        <header>
-            <p class="section-label" style="margin-bottom: 20px;">Marketing Portfolio 2026</p>
-            <h1 class="hero-title">
-                콘텐츠부터 웹 구축까지,<br>
-                전체 퍼널을 연결하는 실무형 마케터입니다.
-            </h1>
-            <p class="hero-subtitle">
-                브랜드 SNS 기획부터 퍼포먼스 캠페인 집행, GA4 데이터 분석과<br>
-                직접적인 웹 프로퍼티 구축까지 통합적인 마케팅 흐름을 만듭니다.
+        <section class="summary-card">
+            <div class="summary-header">
+                <h1>Summary</h1>
+                <div style="text-align: right; color: #AAA; font-size: 12px; letter-spacing: 2px;">
+                    CONTENT · PERFORMANCE · WEB · MEDIA
+                </div>
+            </div>
+            
+            <p class="summary-text">
+                브랜드 SNS 콘텐츠 기획과 운영을 기반으로 퍼포먼스 캠페인 집행, GA4 퍼널 분석,<br>
+                그리고 기업 웹사이트 구축까지 경험했습니다.<br><br>
+                <b>콘텐츠-광고-데이터-웹을 하나의 흐름으로 연결하는 실무형 마케터입니다.</b>
             </p>
-        </header>
 
-        <section class="skills-section">
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Content & Media</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Photoshop</span>
-                        <span class="skill-tag">Premiere Pro</span>
-                        <span class="skill-tag">CapCut</span>
+                <div class="skill-item">
+                    <h3>Content & Media Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Figma</span><span class="tag">Photoshop</span>
+                        <span class="tag">Premiere Pro</span><span class="tag">CapCut</span>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3>Analytics & Ads</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">GA4</span>
-                        <span class="skill-tag">GTM</span>
-                        <span class="skill-tag">Looker Studio</span>
-                        <span class="skill-tag">Meta Ads Manager</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Web & Intelligence</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">HTML / CSS</span>
-                        <span class="skill-tag">GitHub Pages</span>
-                        <span class="skill-tag">AI-assisted Workflow (Gemini)</span>
+                <div class="skill-item">
+                    <h3>Analytics & Ads Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">GA4</span><span class="tag">GTM</span>
+                        <span class="tag">Looker Studio</span><span class="tag">Meta Ads Manager</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <main class="project-section">
-            <p class="section-label">Selected Case Studies</p>
-
-            <a href="leedslab/" class="project-item">
-                <div class="project-meta">
-                    <span class="project-num">01</span>
-                    <h2 class="project-title">리즈랩</h2>
-                    <span class="project-category">헬스케어 브랜드 콘텐츠 · BTL 마케팅</span>
+        <div class="project-list">
+            <a href="leedslab/index.html" class="project-card">
+                <span class="project-num">01</span>
+                <div class="project-info">
+                    <h2>리즈랩</h2>
+                    <p>헬스케어 브랜드 콘텐츠 · BTL 마케팅</p>
                 </div>
-                <div class="arrow">↗</div>
             </a>
-
-            <a href="reset/" class="project-item">
-                <div class="project-meta">
-                    <span class="project-num">02</span>
-                    <h2 class="project-title">여고생과 리셋중</h2>
-                    <span class="project-category">방치형 RPG 사전예약 캠페인 (Boot Camp)</span>
+            <a href="reset/index.html" class="project-card">
+                <span class="project-num">02</span>
+                <div class="project-info">
+                    <h2>여고생과 리셋중</h2>
+                    <p>방치형 RPG 게임 사전예약 캠페인 (Boot Camp)</p>
                 </div>
-                <div class="arrow">↗</div>
             </a>
-
-            <a href="chemeet/" class="project-item">
-                <div class="project-meta">
-                    <span class="project-num">03</span>
-                    <h2 class="project-title">Chemeet</h2>
-                    <span class="project-category">데이팅 앱 인지도 제고 캠페인 (Boot Camp)</span>
+            <a href="chemeet/index.html" class="project-card">
+                <span class="project-num">03</span>
+                <div class="project-info">
+                    <h2>케밋</h2>
+                    <p>데이팅 앱 인지도 제고 캠페인 (Boot Camp)</p>
                 </div>
-                <div class="arrow">↗</div>
             </a>
-
-            <a href="yeongshin/" class="project-item">
-                <div class="project-meta">
-                    <span class="project-num">04</span>
-                    <h2 class="project-title">yeongshin</h2>
-                    <span class="project-category">가공식품 원료 소싱 기업 웹페이지 구축</span>
+            <a href="yeongshin/index.html" class="project-card">
+                <span class="project-num">04</span>
+                <div class="project-info">
+                    <h2>영신코리아</h2>
+                    <p>가공식품 원료 소싱 기업 웹페이지 구축</p>
                 </div>
-                <div class="arrow">↗</div>
             </a>
-
-            <a href="oner/" class="project-item">
-                <div class="project-meta">
-                    <span class="project-num">05</span>
-                    <h2 class="project-title">oner</h2>
-                    <span class="project-category">프로게이머 개인 유튜브 콘텐츠 제작</span>
+            <a href="oner/index.html" class="project-card">
+                <span class="project-num">05</span>
+                <div class="project-info">
+                    <h2>이리오너라</h2>
+                    <p>프로게이머 개인 유튜브 콘텐츠 제작</p>
                 </div>
-                <div class="arrow">↗</div>
             </a>
-        </main>
-
-        <footer>
-            <div>© 2026 SEONGHYE KIM</div>
-            <div>Integrated Marketing Excellence</div>
-        </footer>
+        </div>
     </div>
 
 </body>
