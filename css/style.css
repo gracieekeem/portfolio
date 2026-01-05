@@ -70,22 +70,41 @@ header { padding: 100px 0 120px 0; }
     letter-spacing: 2px; 
 }
 
-.project-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 0;
-    border-bottom: 1px solid var(--line);
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
+.project-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 45px 30px; /* 좌우 여백을 살짝 주어 안쪽으로 모이게 설정 */
+    margin: 0 -30px;    /* 여백 준 만큼 마진을 빼서 라인은 맞춤 */
+    border-bottom: 1px solid var(--line); 
+    text-decoration: none; 
+    color: inherit; 
+    
+    /* 핵심: 모든 변화에 0.5초의 부드러운 시간 부여 */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+    position: relative;
+    border-radius: 12px; /* 살짝 둥글게 해서 호버 시 카드 느낌 강조 */
 }
 
-.project-item:hover { 
-    background-color: rgba(255, 255, 255, 0.3); 
-    padding-left: 20px; 
+.project-item:hover {
+    background-color: #ffffff; /* 배경이 흰색으로 스르르 변함 */
+    transform: translateY(-5px); /* 위로 5px 살짝 떠오름 */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04); /* 은은한 그림자 생성 */
+    padding-left: 40px; /* 오른쪽으로 살짝 밀리는 느낌 추가 */
 }
 
+/* 화살표(VIEW) 부분도 같이 반응하게 */
+.arrow { 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: #ccc; 
+    transition: all 0.5s ease;
+}
+
+.project-item:hover .arrow {
+    color: var(--accent); /* 호버 시 파란색으로 포인트 */
+    transform: translateX(5px); /* 화살표만 오른쪽으로 한 번 더 밀기 */
+}
 .project-meta { display: flex; align-items: baseline; gap: 40px; }
 .project-num { font-size: 0.9rem; color: var(--accent); font-weight: 300; }
 .project-title { font-size: 1.8rem; font-weight: 400; }
