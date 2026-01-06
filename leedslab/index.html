@@ -10,33 +10,43 @@
     <style>
         .content-section { margin-bottom: 120px; }
         
-        /* 섹션 타이틀 크기 및 강조 수정 */
+        /* 상단 네비게이션: 보라색 → 브라운 계열로 변경 */
+        .back-btn { 
+            color: #634e42 !important; /* 브라운 컬러 적용 */
+            text-decoration: underline; 
+            font-weight: 700; 
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+        .back-btn:hover { color: #4a3a31 !important; }
+
+        /* 섹션 타이틀 강조 (크기 확대 및 구분선) */
         .section-tag { 
-            font-size: 1.1rem; /* 기존보다 크게 확대 */
+            font-size: 1.15rem; 
             font-weight: 800; 
-            color: #222; /* 더 진한 색상으로 변경 */
+            color: #111; 
             letter-spacing: 0.05em; 
             display: block; 
             margin-bottom: 30px; 
             text-transform: uppercase;
-            border-bottom: 2px solid #eee; /* 시각적 구분선 추가 */
-            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
         }
         
         /* 정보 스택 (1열 3행) */
         .info-stack-container { display: flex; flex-direction: column; gap: 15px; margin-top: 10px; }
         .info-stack-box { background: #f9f9fa; padding: 35px; border-radius: 12px; border: 1px solid #eee; }
         .info-stack-box.white { background: #fff; }
-        .info-stack-box h4 { font-size: 1.2rem; margin-bottom: 20px; color: #111; font-weight: 700; }
+        .info-stack-box h4 { font-size: 1.25rem; margin-bottom: 20px; color: #111; font-weight: 700; }
 
         .list-dot { list-style: none; padding: 0; }
         .list-dot li { position: relative; padding-left: 15px; margin-bottom: 10px; color: #555; font-size: 1rem; line-height: 1.6; }
         .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
 
-        /* SNS 콘텐츠: 여백 제거 최적화 */
+        /* SNS 콘텐츠: 이미지 2열 배치 및 여백 제거 */
         .insta-category-list { display: flex; flex-direction: column; gap: 80px; margin-top: 10px; }
         .insta-item { width: 100%; }
-        .insta-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .insta-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; } /* 여백 축소 */
         
         .insta-img-pair .img-box { 
             width: 100%; 
@@ -46,14 +56,12 @@
             scrollbar-width: none; 
             border: 1px solid #eee; 
             border-radius: 12px; 
-            background: #fff; 
-            display: flex; /* 이미지 중앙 정렬로 여백 최소화 */
-            align-items: flex-start;
+            background: #fff;
         }
         .insta-img-pair .img-box::-webkit-scrollbar { display: none; }
         .insta-img-pair .img-box img { width: 100%; display: block; }
 
-        .insta-info { padding-left: 5px; margin-top: 0; } /* 상단 여백 제거 */
+        .insta-info { padding-left: 5px; margin-top: 5px; } /* 상단 여백 제거 */
         .insta-info h3 { font-size: 1.7rem; color: #111; margin: 0 0 10px 0; font-weight: 700; }
         .insta-info p { font-size: 1.1rem; color: #666; line-height: 1.6; margin: 0; word-break: keep-all; }
 
@@ -67,16 +75,16 @@
 <body>
 
     <div class="container">
-        <nav>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
             <a href="../" class="back-btn">← PROJECT LIST</a>
-            <div>GRACIEEKEEM@GMAIL.COM</div>
+            <div style="font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em;">GRACIEEKEEM@GMAIL.COM</div>
         </nav>
 
-        <header style="padding: 80px 0 60px;">
-            <span class="section-tag" style="border:none; padding:0; margin-bottom:10px;">Project 01</span>
+        <header style="padding: 60px 0 60px;">
+            <span style="font-size: 1rem; font-weight: 800; color: #111; text-transform: uppercase;">Project 01</span>
             <h1 style="font-size: 4rem; margin: 10px 0; letter-spacing: -0.02em;">리즈랩 (Leeds Lab)</h1>
-            <p style="font-size: 1.5rem; color: #222; font-weight: 700;">헬스케어 브랜드 SNS · BTL 운영</p>
-            <p style="font-size: 1.15rem; color: #666; margin-top: 8px;">기존 브랜드 SNS 운영 체계 인계 및 안정화 운영</p>
+            <p style="font-size: 1.6rem; color: #111; font-weight: 700; margin-bottom: 5px;">헬스케어 브랜드 SNS · BTL 운영</p>
+            <p style="font-size: 1.15rem; color: #666;">기존 브랜드 SNS 운영 체계 인계 및 안정화 운영</p>
         </header>
 
         <main>
@@ -103,8 +111,8 @@
                         <h4>성과</h4>
                         <ul class="list-dot">
                             <li>월간 SNS 콘텐츠 운영 안정화 및 신규 카테고리 확장을 통한 도달 확대</li>
-                            <li>BTL 캠페인 이후 Instagram 팔로워 및 인게이지먼트 유의미한 수치 증가</li>
-                            <li>BTL 캠페인 이후 카카오 선물하기 ‘찜’ 수 증가 및 <strong>실시간 랭킹 1위</strong> 달성</li>
+                            <li>BTL 캠페인 연계 이후 Instagram 팔로워 및 인게이지먼트 유의미한 수치 증가</li>
+                            <li>카카오 선물하기 ‘찜’ 수 증가 및 <strong>실시간 랭킹 1위</strong> 달성</li>
                         </ul>
                     </div>
                 </div>
