@@ -8,17 +8,33 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* 리즈랩과 동일한 클래스 구조 유지 */
-        .reset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
-        .reset-box { background: #f9f9f9; padding: 30px; border-radius: 4px; }
-        .reset-box h4 { margin-bottom: 15px; font-size: 1.1rem; color: #333; }
-        .reset-list { list-style: none; padding: 0; margin: 0; }
-        .reset-list li { margin-bottom: 10px; color: #666; font-size: 0.95rem; line-height: 1.6; position: relative; padding-left: 15px; }
-        .reset-list li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
+        /* 프로젝트 공통 스타일 유지 */
+        .content-section { margin-bottom: 100px; }
+        .reset-box { background: #f9f9fa; padding: 30px; border-radius: 12px; border: 1px solid #eee; }
+        .section-tag { font-size: 0.75rem; font-weight: 700; color: #888; letter-spacing: 0.1em; display: block; margin-bottom: 20px; }
         
-        /* 이미지 질서 정렬용 */
-        .asset-img { width: 100%; height: auto; display: block; border: 1px solid #eee; margin-bottom: 15px; }
-        .flex-container { display: flex; gap: 15px; align-items: flex-start; margin-top: 20px; }
+        /* 07 페이지: 퍼포먼스 성과 지표 스타일 */
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 25px; }
+        .stat-item { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #f0f0f0; }
+        .stat-label { font-size: 0.7rem; color: #999; margin-bottom: 8px; font-weight: 600; }
+        .stat-value { font-size: 1.25rem; font-weight: 700; color: #333; }
+        .stat-unit { font-size: 0.85rem; font-weight: 500; margin-left: 2px; }
+
+        /* 08 페이지: 퍼널 설계 단계 스타일 */
+        .funnel-row { display: grid; grid-template-columns: 120px 1fr; gap: 20px; margin-bottom: 15px; align-items: stretch; }
+        .funnel-label { background: #eee; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 8px; font-weight: 700; text-align: center; }
+        .funnel-label span { font-size: 0.7rem; color: #666; margin-top: 4px; font-weight: 400; }
+        .funnel-content { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #f0f0f0; font-size: 0.9rem; line-height: 1.6; }
+
+        /* 09 페이지: 비주얼 아카이브 정렬 (높이 통일) */
+        .visual-display { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 40px; }
+        .visual-card { text-align: center; }
+        .visual-card img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 6px; border: 1px solid #eee; background: #fff; }
+        .visual-card p { font-size: 0.75rem; color: #888; margin-top: 10px; font-weight: 500; }
+        
+        .list-dot { list-style: none; padding: 0; }
+        .list-dot li { position: relative; padding-left: 15px; margin-bottom: 8px; color: #555; font-size: 0.9rem; }
+        .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
     </style>
 </head>
 <body>
@@ -29,91 +45,104 @@
             <div>GRACIEEKEEM@GMAIL.COM</div>
         </nav>
 
-        <header style="padding: 80px 0 40px;">
+        <header style="padding: 80px 0 60px;">
             <span class="section-tag">Project 02</span>
-            <h1 class="hero-title" style="font-size: 3.5rem; margin: 10px 0;">RESET</h1>
-            <p class="hero-subtitle" style="font-size: 1.2rem;">방치형 RPG '여고생과 리셋중' 런칭 캠페인</p>
+            <h1 style="font-size: 3rem; margin: 10px 0; letter-spacing: -0.02em;">여고생과 리셋중</h1>
+            <p style="font-size: 1.1rem; color: #666;">방치형 RPG 사전예약 캠페인 퍼널 설계 및 운영</p>
         </header>
 
         <main>
             <section class="content-section">
-                <div class="reset-grid">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                     <div class="reset-box">
-                        <h4>사전예약 캠페인 개요</h4>
-                        <ul class="reset-list">
-                            <li>방치형 RPG '여고생과 리셋중' 정식 런칭 전 모객 전략 수립</li>
-                            <li>UA 광고 소재 기획 및 매체별 배너/영상 에셋 최적화</li>
-                            <li>사전예약 랜딩페이지(LP) 및 완료 페이지(EP) UX 기획</li>
+                        <h4 style="margin-bottom: 20px;">Project Overview</h4>
+                        <ul class="list-dot">
+                            <li><strong>기간:</strong> 2025.11.18 - 2025.11.24 (7 days)</li>
+                            <li><strong>목표:</strong> 사전예약 전환 확보 및 페르소나별 소재 반응 검증</li>
+                            <li><strong>역할:</strong> UA 소재 기획, 퍼널 설계 참여, CRM(이메일) 퍼블리싱</li>
                         </ul>
                     </div>
-                    <div class="reset-box" style="border-top: 3px solid #333;">
-                        <h4>주요 성과 (Pre-registration)</h4>
-                        <ul class="reset-list">
-                            <li>사전예약 목표 수치 달성 및 전환율(CVR) 최적화</li>
-                            <li>카카오 공유하기를 통한 신규 유저 오가닉 유입 증대</li>
-                            <li>리텐션 이메일을 통한 런칭 시점 재방문 유도</li>
+                    <div>
+                        <h4 style="margin-bottom: 20px;">Role & Deliverables</h4>
+                        <ul class="list-dot">
+                            <li>Meta 광고 소재 비디오 1종 및 이미지 기획</li>
+                            <li>사전예약 완료 페이지 및 리텐션 이메일 HTML 제작</li>
+                            <li>GA4/GTM 이벤트 세팅 보조 및 결과 분석 보고서</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section class="content-section">
-                <span class="section-tag">UA & AD Strategy</span>
-                <div class="reset-grid">
-                    <div>
-                        <ul class="reset-list">
-                            <li>매체별 최적화된 광고 소재 이미지 기획</li>
-                            <li>실사 코스튬(Cos) 영상 소재를 통한 클릭률(CTR) 개선</li>
-                            <li>타겟 맞춤형 카피라이팅 및 비주얼 디렉션</li>
-                        </ul>
+                <span class="section-tag">Performance Results</span>
+                <div class="reset-box">
+                    <h4 style="margin-bottom: 20px;">캠페인 주요 지표</h4>
+                    <div class="stat-grid">
+                        <div class="stat-item"><div class="stat-label">Spend</div><div class="stat-value">380,000<span class="stat-unit">원</span></div></div>
+                        <div class="stat-item"><div class="stat-label">Pre-registrations</div><div class="stat-value">168<span class="stat-unit">건</span></div></div>
+                        <div class="stat-item"><div class="stat-label">CVR (Total)</div><div class="stat-value">15.09<span class="stat-unit">%</span></div></div>
+                        <div class="stat-item"><div class="stat-label">CTR</div><div class="stat-value">4.20<span class="stat-unit">%</span></div></div>
+                        <div class="stat-item"><div class="stat-label">CPC</div><div class="stat-value">366<span class="stat-unit">원</span></div></div>
+                        <div class="stat-item"><div class="stat-label">CPA</div><div class="stat-value">2,261<span class="stat-unit">원</span></div></div>
+                        <div class="stat-item"><div class="stat-label">LP View Rate</div><div class="stat-value">93.35<span class="stat-unit">%</span></div></div>
+                        <div class="stat-item"><div class="stat-label">GA4 분석</div><div class="stat-value">Full<span class="stat-unit">Funnel</span></div></div>
                     </div>
-                    <div>
-                        <img src="../image/reset/02_reset_ad_image_1.jpg" class="asset-img">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <img src="../image/reset/02_reset_ad_video_cos_1.jpg" class="asset-img">
-                            <img src="../image/reset/02_reset_ad_video_cos_2.jpg" class="asset-img">
-                        </div>
-                    </div>
+                    <p style="margin-top: 25px; font-size: 0.9rem; color: #666; line-height: 1.7;">
+                        단기 집행임에도 불구하고 <strong>CVR 15.09%</strong>라는 높은 효율을 달성했습니다. 특히 스크롤/클릭 이벤트를 통해 랜딩 페이지 내 정보 소비 흐름을 분석하여 전환 품질을 검증했습니다.
+                    </p>
                 </div>
             </section>
 
-            <section class="content-section" style="margin-top: 60px;">
-                <span class="section-tag">LP & EP Strategy</span>
-                <div style="margin: 30px 0;">
-                    <ul class="reset-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px;">
-                        <li>유저의 최종 전환을 유도하는 랜딩페이지(LP) 구성</li>
-                        <li>작품 감상 후 이탈을 막는 엔드페이지(EP) 설계</li>
-                        <li>카카오톡 공유 기능을 연계한 바이럴 포인트 설계</li>
-                    </ul>
+            <section class="content-section">
+                <span class="section-tag">Funnel Strategy</span>
+                <div class="funnel-row">
+                    <div class="funnel-label">Ad<span>주목 · 클릭</span></div>
+                    <div class="funnel-content">페르소나 × 페인포인트 가설 기반 메시지 실험 설계 및 소재 ON/OFF 운영</div>
                 </div>
-                
-                <div style="display: flex; gap: 20px; align-items: flex-start;">
-                    <img src="../image/reset/02_reset_lp_1.jpg" style="width: 50%; height: auto;">
-                    <img src="../image/reset/02_reset_lp_2.jpg" style="width: 50%; height: auto;">
+                <div class="funnel-row">
+                    <div class="funnel-label">Landing<span>기대감 · 이해</span></div>
+                    <div class="funnel-content">정보·비주얼 순서를 조정하여 몰입과 이해를 동시에 고려한 사전예약 유도 구조</div>
                 </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-                    <img src="../image/reset/02_reset_ep_1.jpg" class="asset-img">
-                    <img src="../image/reset/02_reset_ep_2.jpg" class="asset-img">
-                    <img src="../image/reset/02_reset_ep_kakaoshare.jpg" class="asset-img">
+                <div class="funnel-row">
+                    <div class="funnel-label">End<span>완료 · 확신</span></div>
+                    <div class="funnel-content">시스템 로그 콘셉트 UI로 세계관 몰입 유지 및 카카오톡 공유 등 추가 행동 유도</div>
+                </div>
+                <div class="funnel-row">
+                    <div class="funnel-label">Email<span>몰입 · 리텐션</span></div>
+                    <div class="funnel-content">사전예약 직후 보상 정보 전달 및 1일 후 리마인드 메일을 통한 런칭 기대감 고취</div>
                 </div>
             </section>
 
-            <section class="content-section" style="border-top: 1px solid #eee; padding-top: 60px; margin-top: 60px;">
-                <span class="section-tag">CRM Strategy</span>
-                <div class="reset-grid">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <img src="../image/reset/02_reset_retention_email_1.jpg" class="asset-img">
-                        <img src="../image/reset/02_reset_retention_email_2.jpg" class="asset-img">
+            <section class="content-section">
+                <span class="section-tag">Campaign Visuals</span>
+                <div class="visual-display">
+                    <div class="visual-card">
+                        <img src="../image/reset/02_reset_ad_video_cos_1.jpg">
+                        <p>Ad Creative (Video)</p>
                     </div>
-                    <div class="reset-box">
-                        <h4>리텐션 및 유저 고착화</h4>
-                        <ul class="reset-list">
-                            <li>예약 완료 유저 대상 주기적인 리텐션 이메일 발송</li>
-                            <li>런칭 시점 재유입을 위한 이탈 방지 메시지 최적화</li>
-                            <li>게임 세계관 기반의 맞춤형 CRM 에셋 기획</li>
-                        </ul>
+                    <div class="visual-card">
+                        <img src="../image/reset/02_reset_ad_image_1.jpg">
+                        <p>Ad Creative (Image)</p>
                     </div>
+                    <div class="visual-card">
+                        <img src="../image/reset/02_reset_lp_1.jpg">
+                        <p>Landing Page</p>
+                    </div>
+                    <div class="visual-card">
+                        <img src="../image/reset/02_reset_ep_1.jpg">
+                        <p>End Page</p>
+                    </div>
+                    <div class="visual-card">
+                        <img src="../image/reset/02_reset_retention_email_1.jpg">
+                        <p>Retention Email</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px;">
+                    <img src="../image/reset/02_reset_ad_video_cos_2.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;">
+                    <img src="../image/reset/02_reset_lp_2.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;">
+                    <img src="../image/reset/02_reset_ep_2.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;">
+                    <img src="../image/reset/02_reset_ep_kakaoshare.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px;">
                 </div>
             </section>
         </main>
