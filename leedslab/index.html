@@ -16,15 +16,16 @@
         .list-dot li { position: relative; padding-left: 15px; margin-bottom: 8px; color: #555; font-size: 0.9rem; line-height: 1.6; }
         .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
 
-        /* SNS 카테고리 그리드 */
-        .insta-category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 30px; }
-        .insta-card { background: #fff; border: 1px solid #eee; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
-        .insta-card .img-box { width: 100%; height: 380px; overflow-y: auto; scrollbar-width: none; border-bottom: 1px solid #f0f0f0; }
+        /* SNS 카테고리 그리드 (여백 최적화) */
+        .insta-category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 30px; align-items: start; }
+        .insta-card { background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease; }
+        .insta-card:hover { transform: translateY(-5px); }
+        .insta-card .img-box { width: 100%; aspect-ratio: 4 / 6; overflow-y: auto; scrollbar-width: none; background: #fcfcfc; }
         .insta-card .img-box::-webkit-scrollbar { display: none; }
         .insta-card .img-box img { width: 100%; display: block; }
-        .insta-card .info-box { padding: 18px; flex-grow: 1; }
-        .insta-card .info-box strong { display: block; font-size: 0.85rem; color: #333; margin-bottom: 10px; border-left: 3px solid #eee; padding-left: 8px; }
-        .insta-card .info-box p { font-size: 0.75rem; color: #777; line-height: 1.6; margin: 0; }
+        .insta-card .info-box { padding: 15px; background: #fff; border-top: 1px solid #f5f5f5; }
+        .insta-card .info-box strong { display: block; font-size: 0.85rem; color: #222; margin-bottom: 8px; font-weight: 700; border-left: 3px solid #eee; padding-left: 8px; }
+        .insta-card .info-box p { font-size: 0.72rem; color: #666; line-height: 1.5; margin: 0; word-break: keep-all; }
 
         /* BTL 섹션 */
         .btl-display { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; margin-top: 30px; }
@@ -57,7 +58,6 @@
                             <li>기존 브랜드 SNS 운영 체계 인계 후 실무 즉시 투입 및 안정화</li>
                             <li>운영 기간: 2025.02.24 ~ 2025.05.24</li>
                             <li>월간 콘텐츠 흐름 관리, 브랜드 톤앤무드 유지 및 캡션/카피라이팅 전담</li>
-                            <li>BTL 현장 캠페인과 온라인 콘텐츠를 연계한 통합 마케팅 실행</li>
                         </ul>
                     </div>
                     <div class="reset-box">
@@ -65,8 +65,7 @@
                         <ul class="list-dot">
                             <li>SNS 콘텐츠 기획 및 월간 운영 관리</li>
                             <li>브랜드 무드 이미지 큐레이션 및 제품컷 촬영 가이드 수립</li>
-                            <li>플레이리스트(PLE:EDS) 등 신규 콘텐츠 카테고리 제안 및 운영</li>
-                            <li>BTL 프로모션 현장 운영 지원 및 기록</li>
+                            <li>플레이리스트(PLE:EDS) 등 신규 콘텐츠 카테고리 제담 및 운영</li>
                         </ul>
                     </div>
                     <div class="reset-box" style="background: #fff;">
@@ -74,7 +73,7 @@
                         <ul class="list-dot">
                             <li>SNS 콘텐츠 운영 안정화 및 카테고리 확장을 통한 도달 확대</li>
                             <li>BTL 캠페인 연계 후 Instagram 팔로워 유의미한 수치 증가</li>
-                            <li>카카오 선물하기 ‘찜’ 수 증가 및 **실시간 랭킹 1위** 달성</li>
+                            <li>카카오 선물하기 ‘찜’ 수 증가 및 <strong>실시간 랭킹 1위</strong> 달성</li>
                         </ul>
                     </div>
                 </div>
@@ -151,7 +150,7 @@
                             <ul class="list-dot">
                                 <li>성수 팝업, 대학 축제 등 주요 현장 동선 및 대기 관리</li>
                                 <li>샘플링 및 리워드 배포 프로세스 보조</li>
-                                <li>현장 프로모터 교육 및 실무 운영 지원</li>
+                                <li>현장 프로모터 지원 및 운영 실무 참여</li>
                             </ul>
                         </div>
                         <div>
