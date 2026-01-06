@@ -11,7 +11,7 @@
         .content-section { margin-bottom: 120px; }
         .section-tag { font-size: 0.75rem; font-weight: 700; color: #888; letter-spacing: 0.1em; display: block; margin-bottom: 20px; text-transform: uppercase; }
         
-        /* 개요, 역할, 성과 박스 1열 3행 배치 */
+        /* 상단 정보 스택 (1열 3행) */
         .info-stack-container { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
         .info-stack-box { background: #f9f9fa; padding: 35px; border-radius: 12px; border: 1px solid #eee; }
         .info-stack-box.white { background: #fff; }
@@ -21,18 +21,30 @@
         .list-dot li { position: relative; padding-left: 15px; margin-bottom: 10px; color: #555; font-size: 1rem; line-height: 1.6; }
         .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
 
-        /* SNS 콘텐츠: 이미지 2장 가로 나란히 */
-        .insta-category-list { display: flex; flex-direction: column; gap: 100px; margin-top: 40px; }
+        /* SNS 콘텐츠: 이미지 여백 제거 및 가로 배치 */
+        .insta-category-list { display: flex; flex-direction: column; gap: 80px; margin-top: 40px; }
         .insta-item { width: 100%; }
-        .insta-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .insta-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        
+        /* 여백 제거를 위해 height 설정 및 overflow 제어 */
         .insta-img-pair .img-box { 
-            width: 100%; height: 650px; overflow-y: auto; scrollbar-width: none; 
-            border: 1px solid #eee; border-radius: 12px; background: #fcfcfc; 
+            width: 100%; 
+            height: auto; /* 이미지 높이에 맞춤 */
+            max-height: 550px; /* 너무 길어지지 않게 제한 */
+            overflow-y: auto; 
+            scrollbar-width: none; 
+            border: 1px solid #eee; 
+            border-radius: 12px; 
+            background: #fff; 
         }
         .insta-img-pair .img-box::-webkit-scrollbar { display: none; }
-        .insta-img-pair .img-box img { width: 100%; display: block; }
+        .insta-img-pair .img-box img { 
+            width: 100%; 
+            display: block; 
+            object-fit: contain; /* 이미지 전체가 잘리지 않게 표시 */
+        }
 
-        .insta-info { padding-left: 5px; }
+        .insta-info { padding-left: 5px; margin-top: 10px; }
         .insta-info h3 { font-size: 1.7rem; color: #111; margin: 0 0 12px 0; font-weight: 700; }
         .insta-info p { font-size: 1.1rem; color: #666; line-height: 1.6; margin: 0; word-break: keep-all; }
 
@@ -54,7 +66,8 @@
         <header style="padding: 80px 0 60px;">
             <span class="section-tag">Project 01</span>
             <h1 style="font-size: 3.8rem; margin: 10px 0; letter-spacing: -0.02em;">리즈랩 (Leeds Lab)</h1>
-            <p style="font-size: 1.25rem; color: #666;">기존 SNS 운영 체계 인계 및 브랜드 안정화 운영</p>
+            <p style="font-size: 1.4rem; color: #222; font-weight: 600;">헬스케어 브랜드 SNS · BTL 운영</p>
+            <p style="font-size: 1.1rem; color: #666; margin-top: 5px;">기존 SNS 운영 체계 인계 및 브랜드 안정화 운영</p>
         </header>
 
         <main>
@@ -64,25 +77,25 @@
                     <div class="info-stack-box">
                         <h4>개요</h4>
                         <ul class="list-dot">
-                            <li>기존 브랜드 SNS 운영 체계를 인계받아 실무 즉시 투입 및 안정화</li>
+                            <li>기존 브랜드 SNS 운영 체계를 인계받아 실무 즉시 투입 및 안정화 운영</li>
                             <li>운영 기간: 2025.02.24 ~ 2025.05.24</li>
-                            <li>브랜드 톤앤무드 유지 및 콘텐츠 흐름 전반 관리 (캡션/카피 포함)</li>
+                            <li>브랜드 톤앤무드 유지 및 콘텐츠 흐름 전반 관리 (캡션/카피라이팅 전담)</li>
                         </ul>
                     </div>
                     <div class="info-stack-box">
                         <h4>주요 역할</h4>
                         <ul class="list-dot">
                             <li>SNS 콘텐츠 기획·운영 관리 및 무드 이미지 큐레이션</li>
-                            <li>제품컷 촬영 가이드 작성 및 신규 플레이리스트 카테고리 제안</li>
-                            <li>BTL 현장 운영 지원 및 온라인 콘텐츠 연계 실행</li>
+                            <li>제품컷 촬영 가이드 작성 및 신규 플레이리스트(PLE:EDS) 카테고리 기획</li>
+                            <li>BTL 현장 운영 지원 및 오프라인-SNS 연계 콘텐츠 실행</li>
                         </ul>
                     </div>
                     <div class="info-stack-box white">
                         <h4>성과</h4>
                         <ul class="list-dot">
-                            <li>월간 SNS 콘텐츠 운영의 안정적 유지 및 카테고리 확장</li>
-                            <li>BTL 행사 이후 Instagram 팔로워 증가</li>
-                            <li>카카오 선물하기 ‘찜’ 수 증가 및 실시간 랭킹 1위 달성</li>
+                            <li>월간 SNS 콘텐츠 운영의 안정적 유지 및 신규 카테고리 확장을 통한 도달 확대</li>
+                            <li>BTL 캠페인 연계 이후 Instagram 팔로워 및 인게이지먼트 유의미한 수치 증가</li>
+                            <li>카카오 선물하기 ‘찜’ 수 증가 및 <strong>실시간 랭킹 1위</strong> 달성</li>
                         </ul>
                     </div>
                 </div>
@@ -162,17 +175,17 @@
                     <div class="info-stack-box" style="padding: 30px;">
                         <div style="margin-bottom: 25px;">
                             <div class="result-badge">오프라인 운영 지원</div>
-                            <ul class="list-dot" style="font-size: 0.9rem;">
-                                <li>성수 팝업, 대학 축제 등 현장 동선 및 대기 관리</li>
-                                <li>샘플링 및 리워드 배포 프로세스 보조</li>
-                                <li>현장 프로모터 교육 및 실무 운영 지원</li>
+                            <ul class="list-dot" style="font-size: 0.95rem;">
+                                <li>성수 팝업, 대학 축제 등 주요 접점 현장 동선 및 대기 관리</li>
+                                <li>제품 샘플링 및 이벤트 리워드 배포 프로세스 보조</li>
+                                <li>현장 프로모터 가이드 및 운영 실무 참여</li>
                             </ul>
                         </div>
                         <div>
                             <div class="result-badge">온오프라인 연계 성과</div>
-                            <ul class="list-dot" style="font-size: 0.9rem;">
-                                <li>현장 기록물을 활용한 SNS 후속 콘텐츠 발행</li>
-                                <li>오프라인 고객 경험을 브랜드 디지털 자산으로 전환</li>
+                            <ul class="list-dot" style="font-size: 0.95rem;">
+                                <li>현장 스케치 기록물을 활용한 SNS 후속 콘텐츠 발행</li>
+                                <li>오프라인 브랜드 경험을 온라인 디지털 자산으로 전환</li>
                             </ul>
                         </div>
                     </div>
