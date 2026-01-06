@@ -13,28 +13,28 @@
         .reset-box { background: #f9f9fa; padding: 30px; border-radius: 12px; border: 1px solid #eee; }
         .section-tag { font-size: 0.75rem; font-weight: 700; color: #888; letter-spacing: 0.1em; display: block; margin-bottom: 20px; }
         
-        /* 텍스트 리스트 스타일 */
+        /* 텍스트 리스트 */
         .list-dot { list-style: none; padding: 0; }
         .list-dot li { position: relative; padding-left: 15px; margin-bottom: 8px; color: #555; font-size: 0.9rem; line-height: 1.6; }
         .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
 
-        /* 성과 지표 (리즈랩 버전) */
+        /* 성과 지표 */
         .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
         .stat-item { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #f0f0f0; }
         .stat-label { font-size: 0.7rem; color: #999; margin-bottom: 8px; font-weight: 600; }
         .stat-value { font-size: 1.1rem; font-weight: 700; color: #333; }
 
-        /* 비주얼 아카이브 - 높이 1440px 대응 및 통일 */
+        /* 비주얼 아카이브 - 높이 1440px 대응 */
         .visual-display { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); /* 이미지가 더 크게 보이도록 3열 배치 */
-            gap: 20px; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 15px; 
             margin-top: 40px; 
         }
         .visual-card { text-align: center; }
         .visual-card .img-container {
             width: 100%;
-            height: 700px; /* 리즈랩은 이미지 디테일이 중요하므로 높이 더 확보 */
+            height: 600px; /* 1440px 이미지를 보여줄 고정 뷰포트 */
             overflow-y: auto; 
             border-radius: 8px;
             border: 1px solid #eee;
@@ -43,13 +43,13 @@
         }
         .visual-card .img-container::-webkit-scrollbar { display: none; }
         .visual-card img { width: 100%; display: block; }
-        .visual-card p { font-size: 0.75rem; color: #888; margin-top: 12px; font-weight: 600; }
+        .visual-card p { font-size: 0.7rem; color: #888; margin-top: 10px; font-weight: 600; text-transform: uppercase; }
 
-        /* 하단 5대 카테고리 전략 섹션 */
+        /* 하단 전략 카테고리 */
         .strategy-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
         .strategy-item { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 8px; text-align: center; }
-        .strategy-item strong { display: block; font-size: 0.8rem; color: #4a90e2; margin-bottom: 5px; }
-        .strategy-item span { font-size: 0.75rem; color: #777; line-height: 1.4; display: block; }
+        .strategy-item strong { display: block; font-size: 0.8rem; color: #333; margin-bottom: 5px; }
+        .strategy-item span { font-size: 0.7rem; color: #888; line-height: 1.4; display: block; }
     </style>
 </head>
 <body>
@@ -73,68 +73,85 @@
                         <h4 style="margin-bottom: 20px;">Project Overview</h4>
                         <ul class="list-dot">
                             <li><strong>기간:</strong> 2025.02.24 - 2025.05.24</li>
-                            <li><strong>목표:</strong> 브랜드 리브랜딩 및 SNS 톤앤무드 가이드 재정립</li>
-                            <li><strong>주요 업무:</strong> 월간 콘텐츠 전략 수립, 비주얼 디렉팅, BTL 현장 실행 지원</li>
+                            <li><strong>형태:</strong> 기존 SNS 운영 체제 인수 및 브랜드 고도화</li>
+                            <li><strong>역할:</strong> 월간 콘텐츠 총괄, 캡션/카피라이팅, 비주얼 디렉팅</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 style="margin-bottom: 20px;">Role & Strategy</h4>
+                        <h4 style="margin-bottom: 20px;">Key Strategy</h4>
                         <ul class="list-dot">
-                            <li>브랜드 정체성 강화를 위한 비주얼 에셋(A-cut) 최적화</li>
-                            <li>오프라인 경험을 실시간 온라인 콘텐츠로 전환 (BTL Sketch)</li>
-                            <li>웰니스 라이프스타일 제안을 통한 고객 인게이지먼트 강화</li>
+                            <li>브랜드 톤앤무드 유지를 위한 비주얼 큐레이션</li>
+                            <li>플레이리스트 카테고리 신규 제안 및 운영</li>
+                            <li>BTL 현장 기록물을 활용한 온-오프라인 연계 콘텐츠</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section class="content-section">
-                <span class="section-tag">Key Achievements</span>
+                <span class="section-tag">Performance Results</span>
                 <div class="reset-box">
                     <div class="stat-grid">
-                        <div class="stat-item"><div class="stat-label">Market Rank</div><div class="stat-value">카카오 선물하기 1위</div></div>
-                        <div class="stat-item"><div class="stat-label">Channel Growth</div><div class="stat-value">팔로워/도달률 지속 상승</div></div>
-                        <div class="stat-item"><div class="stat-label">Brand Identity</div><div class="stat-value">톤앤무드 안정적 정착</div></div>
+                        <div class="stat-item"><div class="stat-label">Market Rank</div><div class="stat-value">카카오 선물하기 1위 달성</div></div>
+                        <div class="stat-item"><div class="stat-label">SNS Growth</div><div class="stat-value">Instagram 팔로워 증가</div></div>
+                        <div class="stat-item"><div class="stat-label">Sales Impact</div><div class="stat-value">선물하기 '찜' 수 증가</div></div>
                     </div>
-                    <p style="margin-top: 25px; font-size: 0.9rem; color: #666; line-height: 1.7;">
-                        단순 제품 홍보에서 벗어나 <strong>감각적인 라이프스타일 큐레이션</strong>을 도입했습니다. 그 결과 브랜드 호감도가 상승했으며, 특히 대규모 BTL 행사와 연계하여 카카오 선물하기 등 실질적인 매출 지표에서 괄목할 성과를 거두었습니다.
-                    </p>
                 </div>
             </section>
 
             <section class="content-section">
-                <span class="section-tag">Content Strategy</span>
+                <span class="section-tag">Content Pillars</span>
                 <div class="strategy-grid">
-                    <div class="strategy-item"><strong>Product</strong><span>비주얼 큐레이션</span></div>
+                    <div class="strategy-item"><strong>Product & Mood</strong><span>비주얼 큐레이션</span></div>
                     <div class="strategy-item"><strong>Leeds Life</strong><span>웰니스 릴스</span></div>
-                    <div class="strategy-item"><strong>Leeview</strong><span>리뷰 아카이브</span></div>
-                    <div class="strategy-item"><strong>PLE:EDS</strong><span>감성 플리</span></div>
-                    <div class="strategy-item"><strong>BTL Sketch</strong><span>현장 생중계</span></div>
+                    <div class="strategy-item"><strong>Leeview</strong><span>리뷰 포스트</span></div>
+                    <div class="strategy-item"><strong>PLE:EDS</strong><span>플리 큐레이션</span></div>
+                    <div class="strategy-item"><strong>BTL Sketch</strong><span>현장 기록</span></div>
                 </div>
             </section>
 
             <section class="content-section">
-                <span class="section-tag">Campaign Visuals</span>
+                <span class="section-tag">Campaign Visuals (H:1440)</span>
                 <div class="visual-display">
                     <div class="visual-card">
-                        <div class="img-container"><img src="../img/leeds/01_leeds_feed_1.jpg"></div>
-                        <p>Instagram Feed Grid</p>
+                        <div class="img-container"><img src="../img/01_leedslab_instagram_grid.jpg"></div>
+                        <p>Instagram Grid</p>
                     </div>
                     <div class="visual-card">
-                        <div class="img-container"><img src="../img/leeds/01_leeds_btl_1.jpg"></div>
-                        <p>BTL Event Sketch</p>
+                        <div class="img-container"><img src="../img/01_leedslab_instagram_product.jpg"></div>
+                        <p>Product Shot</p>
                     </div>
                     <div class="visual-card">
-                        <div class="img-container"><img src="../img/leeds/01_leeds_visual_1.jpg"></div>
-                        <p>Brand Photography</p>
+                        <div class="img-container"><img src="../img/01_leedslab_instagram_mood.jpg"></div>
+                        <p>Brand Mood</p>
+                    </div>
+                    <div class="visual-card">
+                        <div class="img-container"><img src="../img/01_leedslab_intagram_leedslife_1.jpg"></div>
+                        <p>Leeds Life</p>
+                    </div>
+                    <div class="visual-card">
+                        <div class="img-container"><img src="../img/01_leedslab_intagram_pleeds.jpg"></div>
+                        <p>PLE:EDS</p>
                     </div>
                 </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px;">
-                    <img src="../img/leeds/01_leeds_content_1.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; border: 1px solid #eee;">
-                    <img src="../img/leeds/01_leeds_content_2.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; border: 1px solid #eee;">
-                    <img src="../img/leeds/01_leeds_content_3.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; border: 1px solid #eee;">
-                    <img src="../img/leeds/01_leeds_content_4.jpg" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; border: 1px solid #eee;">
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px;">
+                    <div class="visual-card">
+                        <div class="img-container" style="height: 400px;"><img src="../img/01_leedslab_intagram_btl_notice.jpg"></div>
+                        <p>BTL Notice</p>
+                    </div>
+                    <div class="visual-card">
+                        <div class="img-container" style="height: 400px;"><img src="../img/01_leedslab_intagram_btl_sketch_1.jpg"></div>
+                        <p>BTL Sketch</p>
+                    </div>
+                    <div class="visual-card">
+                        <div class="img-container" style="height: 400px;"><img src="../img/01_leedslab_intagram_leeview_1.jpg"></div>
+                        <p>Leeview 01</p>
+                    </div>
+                    <div class="visual-card">
+                        <div class="img-container" style="height: 400px;"><img src="../img/01_leedslab_intagram_leeview_2.jpg"></div>
+                        <p>Leeview 02</p>
+                    </div>
                 </div>
             </section>
         </main>
