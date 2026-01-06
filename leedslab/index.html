@@ -7,71 +7,107 @@
     <link rel="icon" href="../image/favicon_2.png" type="image/png">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="../css/style.css">
-   <style>
-    /* 질서와 간격을 위한 추가 스타일 */
-    .content-section { margin-bottom: 100px; }
-    .display-row { display: flex; gap: 30px; margin-bottom: 30px; align-items: flex-start; }
-    .info-side { flex: 1; }
-    .image-side { flex: 1.5; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    
-    /* 원본 비율 유지 및 깔끔한 간격 */
-    .asset-img { width: 100%; height: auto; border: 1px solid #f0f0f0; display: block; }
-    .full-img { width: 100%; height: auto; margin-top: 20px; }
-    
-    .project-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: #000; margin-bottom: 10px; display: block; }
-    .project-desc { font-size: 0.9rem; color: #666; line-height: 1.6; }
-</style>
+    <style>
+        /* 성혜님의 기존 스타일 그대로 유지 */
+        .leeds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
+        .leeds-box { background: #f9f9f9; padding: 30px; border-radius: 4px; }
+        .leeds-box h4 { margin-bottom: 15px; font-size: 1.1rem; color: #333; }
+        .leeds-list { list-style: none; padding: 0; margin: 0; }
+        .leeds-list li { margin-bottom: 10px; color: #666; font-size: 0.95rem; line-height: 1.6; position: relative; padding-left: 15px; }
+        .leeds-list li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
+        
+        /* 이미지 질서 정렬을 위한 추가 스타일 (원본 비율 유지) */
+        .asset-img { width: 100%; height: auto; display: block; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
 
-<main>
-    <section class="content-section">
-        <div class="display-row">
-            <div class="info-side">
-                <span class="project-label">SNS CATEGORY: PLE:EDS</span>
-                <p class="project-desc">
-                    월간 무드 기반의 음악 큐레이션 콘텐츠.<br>
-                    인스타그램 피드와 유튜브를 연계한<br>신규 카테고리 제안 및 운영.
-                </p>
-            </div>
-            <div class="image-side" style="grid-template-columns: 1.2fr 1fr;">
-                <img src="../image/leedslab/01_leedslab_intagram_pleeds.jpg" class="asset-img">
-                <img src="../image/leedslab/01_leedslab_youtube_pleeds_2.jpg" class="asset-img">
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <nav>
+            <a href="../" class="back-btn">← PROJECT LIST</a>
+            <div>GRACIEEKEEM@GMAIL.COM</div>
+        </nav>
 
-    <section class="content-section">
-        <span class="project-label">VISUAL & REVIEW ARCHIVE</span>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-            <div>
-                <img src="../image/leedslab/01_leedslab_product_1.jpg" class="asset-img">
-                <img src="../image/leedslab/01_leedslab_intagram_leeview_1.jpg" class="asset-img" style="margin-top:20px;">
-            </div>
-            <div>
-                <img src="../image/leedslab/01_leedslab_product_2.jpg" class="asset-img">
-                <img src="../image/leedslab/01_leedslab_intagram_leeview_2.jpg" class="asset-img" style="margin-top:20px;">
-            </div>
-            <div>
-                <img src="../image/leedslab/01_leedslab_intagram_mood.jpg" class="asset-img">
-                <img src="../image/leedslab/01_leedslab_intagram_leedslife_3.jpg" class="asset-img" style="margin-top:20px;">
-            </div>
-        </div>
-    </section>
+        <header style="padding: 80px 0 40px;">
+            <span class="section-tag">Project 01</span>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin: 10px 0;">리즈랩</h1>
+            <p class="hero-subtitle" style="font-size: 1.2rem;">헬스케어 브랜드 SNS · BTL 운영</p>
+        </header>
 
-    <section class="content-section">
-        <div class="display-row" style="flex-direction: row-reverse;">
-            <div class="info-side" style="text-align: right;">
-                <span class="project-label">BTL FIELD OPERATION</span>
-                <p class="project-desc">
-                    성수 팝업 및 대학 축제 현장 운영 지원.<br>
-                    실시간 랭킹 1위 성과 도출 및<br>현장 기록의 콘텐츠 자산화.
-                </p>
-            </div>
-            <div class="image-side" style="grid-template-columns: 1fr;">
-                <img src="../image/leedslab/포트폴리오_김성혜_페이지_05.jpg" class="asset-img">
-            </div>
-        </div>
-    </section>
-</main>
+        <main>
+            <section class="content-section">
+                <div class="leeds-grid">
+                    <div class="leeds-box">
+                        <h4>프로젝트 개요</h4>
+                        <ul class="leeds-list">
+                            <li>운영 기간: 2025.02.24 ~ 2025.05.24</li>
+                            <li>기존 SNS 운영 체계 인수 및 투입</li>
+                            <li>월간 콘텐츠 운영 전반 담당 (브랜드 톤 유지, 카피 작성)</li>
+                            <li>SNS 운영과 BTL 현장 실행의 온라인 콘텐츠 연계</li>
+                        </ul>
+                    </div>
+                    <div class="leeds-box" style="border-top: 3px solid #333;">
+                        <h4>주요 성과 (Results)</h4>
+                        <ul class="leeds-list">
+                            <li>월간 SNS 콘텐츠 운영 안정적 유지 및 범위 확장</li>
+                            <li>BTL 행사 이후 Instagram 팔로워 증가</li>
+                            <li><strong>카카오 선물하기 '찜' 수 증가 및 실시간 랭킹 1위 달성</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <span class="section-tag">SNS Strategy</span>
+                <div class="leeds-grid">
+                    <div>
+                        <ul class="leeds-list">
+                            <li>브랜드 톤에 맞춘 제품·무드 비주얼 운영</li>
+                            <li>직접 촬영 및 스톡 이미지 큐레이션</li>
+                            <li>일상·웰니스 메시지 중심 릴스 콘텐츠</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="leeds-list">
+                            <li>월간 무드 기반 플레이리스트 콘텐츠 제안·운영</li>
+                            <li>YouTube 연계 시리즈 운영</li>
+                            <li>BTL 행사 현장 기록 기반 후속 게시물</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px; margin-top: 20px; align-items: flex-start;">
+                    <img src="../image/leedslab/01_leedslab_intagram_pleeds.jpg" style="width: 55%;" class="asset-img">
+                    <img src="../image/leedslab/01_leedslab_youtube_pleeds_2.jpg" style="width: 45%;" class="asset-img">
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top: 80px;">
+                <span class="section-tag">Visual Archive</span>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
+                    <img src="../image/leedslab/01_leedslab_product_1.jpg" class="asset-img">
+                    <img src="../image/leedslab/01_leedslab_product_2.jpg" class="asset-img">
+                    <img src="../image/leedslab/01_leedslab_intagram_mood.jpg" class="asset-img">
+                    
+                    <img src="../image/leedslab/01_leedslab_intagram_leeview_1.jpg" class="asset-img">
+                    <img src="../image/leedslab/01_leedslab_intagram_leeview_2.jpg" class="asset-img">
+                    <img src="../image/leedslab/01_leedslab_intagram_leedslife_3.jpg" class="asset-img">
+                </div>
+            </section>
+
+            <section class="content-section" style="border-top: 1px solid #eee; padding-top: 60px; margin-top: 80px;">
+                <span class="section-tag">BTL Operations</span>
+                <div style="margin: 30px 0;">
+                    <ul class="leeds-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px;">
+                        <li>PM 주도 하에 현장 운영 지원</li>
+                        <li>프로모터 지원 및 동선·대기 관리</li>
+                        <li>샘플링 및 리워드 운영 보조</li>
+                        <li>오프라인 실행 경험을 온라인 콘텐츠 자산으로 전환</li>
+                    </ul>
+                </div>
+                <img src="../image/leedslab/포트폴리오_김성혜_페이지_05.jpg" style="width: 100%;" class="asset-img">
+            </section>
+        </main>
 
         <footer style="margin-top: 100px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
             <p style="font-size: 0.8rem; color: #aaa; letter-spacing: 0.1em;">© 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.</p>
