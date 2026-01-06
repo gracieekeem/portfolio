@@ -3,114 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEONGHYE KIM — PORTFOLIO</title>
-    <link rel="icon" href="./img/favicon_2.png" type="image/png">
+    <title>SEONGHYE KIM — MARKETING PORTFOLIO</title>
+    <link rel="icon" href="img/favicon_2.png" type="image/png">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* 기본 스타일 및 그리드 설정 */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* PC에서는 2열 */
-            gap: 40px;
-            margin-top: 50px;
+        /* 기존 스타일 보완 및 반응형 추가 */
+        :root {
+            --point-brown: #634e42; /* 요청하신 브라운 계열 */
         }
 
-        .project-card {
+        /* 네비게이션 모바일 대응 */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0;
+        }
+
+        /* 메인 히어로 타이틀 */
+        .hero-title {
+            font-size: 5rem;
+            margin-bottom: 60px;
+            line-height: 1.1;
+            word-break: keep-all;
+        }
+
+        /* 프로젝트 리스트 스타일 */
+        .project-item {
+            display: block;
             text-decoration: none;
             color: inherit;
-            transition: transform 0.3s ease;
+            border-bottom: 1px solid var(--line);
+            padding: 30px 0;
+            transition: all 0.3s ease;
+        }
+        .project-item:hover {
+            padding-left: 10px;
+            background-color: #fafafa;
+        }
+        .project-num {
+            font-weight: 700;
+            color: var(--point-brown); /* 브라운 포인트 */
+            margin-right: 30px;
+            font-size: 1.2rem;
         }
 
-        .project-card:hover { transform: translateY(-10px); }
-
-        .project-img-box {
-            width: 100%;
-            aspect-ratio: 16 / 10;
-            background: #f4f4f4;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #eee;
+        /* 스킬 그리드 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
         }
-
-        .project-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-info { margin-top: 20px; }
-        .project-info h2 { font-size: 1.5rem; margin-bottom: 8px; font-weight: 700; color: #111; }
-        .project-info p { font-size: 1rem; color: #666; line-height: 1.5; }
 
         /* ============================================================
            📱 모바일 반응형 (768px 이하)
         ============================================================ */
         @media (max-width: 768px) {
-            header { padding: 60px 0 40px !important; }
-            header h1 { font-size: 2.5rem !important; }
-
-            /* 네비게이션 간격 조정 */
-            nav { padding: 15px 0 !important; }
-            nav div { font-size: 0.8rem !important; }
-
-            /* 프로젝트 리스트 2열 -> 1열 변경 */
-            .project-grid {
-                grid-template-columns: 1fr; 
-                gap: 50px; /* 카드 사이 간격 확보 */
+            /* 헤더 영역 */
+            header { padding: 40px 0 40px !important; }
+            .hero-title { 
+                font-size: 3rem !important; /* 모바일에서 타이틀 크기 축소 */
+                margin-bottom: 40px !important; 
             }
+            .hero-subtitle { font-size: 1.1rem !important; }
 
-            .project-img-box { aspect-ratio: 1 / 1; /* 모바일은 정사가까운 비율로 시원하게 */ }
+            /* 프로젝트 리스트 */
+            .project-meta {
+                display: flex;
+                flex-direction: column; /* 번호와 제목을 세로로 */
+                gap: 10px;
+            }
+            .project-num { margin-bottom: 5px; font-size: 1rem; }
+            .project-title { font-size: 1.6rem !important; }
+            .project-cat { font-size: 0.95rem !important; }
 
-            .project-info h2 { font-size: 1.3rem; }
-            .project-info p { font-size: 0.95rem; }
+            /* 스킬 그리드 3열 -> 1열 변경 */
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .skill-category h3 { font-size: 1.4rem; margin-bottom: 15px; }
+
+            /* 네비게이션 */
+            nav div { font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 30px 0;">
-            <div style="font-weight: 800; letter-spacing: 0.05em;">SEONGHYE KIM</div>
-            <div style="font-size: 0.9rem; font-weight: 700;">GRACIEEKEEM@GMAIL.COM</div>
+        <nav>
+            <div style="font-weight: 700; letter-spacing: 0.05em;">GRACIEEKEEM@GMAIL.COM</div>
         </nav>
 
-        <header style="padding: 100px 0 60px;">
-            <h1 style="font-size: 4.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;">
-                Strategic Marketer <br>& Content Creator
-            </h1>
+        <header style="padding: 40px 0 80px;">
+            <h1 class="hero-title">SEONGHYE KIM</h1>
+            
+            <div style="border-top: 1px solid var(--line); padding-top: 40px;">
+                <span class="section-tag" style="color: var(--point-brown); font-weight: 800;">Summary</span>
+                <p class="hero-subtitle" style="margin-bottom: 15px; font-weight: 500; color: var(--text-main); line-height: 1.6;">
+                    브랜드 SNS 콘텐츠 기획과 운영을 기반으로 퍼포먼스 캠페인 집행, GA4 퍼널 분석, 그리고 기업 웹사이트 구축까지 경험했습니다.
+                </p>
+                <p class="hero-subtitle" style="line-height: 1.6;">
+                    콘텐츠-광고-데이터-웹을 하나의 흐름으로 연결하는 실무형 마케터입니다.
+                </p>
+            </div>
         </header>
 
-        <main>
-            <div class="project-grid">
-                
-                <a href="./leedslab/index.html" class="project-card">
-                    <div class="project-img-box">
-                        <img src="./img/leedslab/main_thumb.jpg" alt="Leeds Lab">
+        <section class="project-section">
+            <span class="section-tag" style="margin-bottom: 20px;">Selected Projects</span>
+            
+            <a href="leedslab/" class="project-item">
+                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                    <span class="project-num">01</span>
+                    <div class="title-wrap">
+                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">리즈랩</h2>
+                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">헬스케어 브랜드 콘텐츠·BTL 마케팅</p>
                     </div>
-                    <div class="project-info">
-                        <span style="font-size: 0.8rem; font-weight: 700; color: #634e42;">PROJECT 01</span>
-                        <h2>리즈랩 (Leeds Lab)</h2>
-                        <p>헬스케어 브랜드 SNS · BTL 운영 및 콘텐츠 마케팅</p>
-                    </div>
-                </a>
+                </div>
+            </a>
 
-                <a href="./chemeet/index.html" class="project-card">
-                    <div class="project-img-box">
-                        <img src="./img/chemeet/main_thumb.jpg" alt="Chemeet">
+            <a href="reset/" class="project-item">
+                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                    <span class="project-num">02</span>
+                    <div class="title-wrap">
+                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">여고생과 리셋중</h2>
+                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">방치형 RPG 게임 사전예약 캠페인 (Boot Camp)</p>
                     </div>
-                    <div class="project-info">
-                        <span style="font-size: 0.8rem; font-weight: 700; color: #634e42;">PROJECT 02</span>
-                        <h2>케밋 (Chemeet)</h2>
-                        <p>브랜드 퍼포먼스 마케팅 및 광고 전략 수립</p>
-                    </div>
-                </a>
+                </div>
+            </a>
 
+            <a href="chemeet/" class="project-item">
+                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                    <span class="project-num">03</span>
+                    <div class="title-wrap">
+                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">케밋</h2>
+                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">데이팅 앱 인지도 제고 캠페인 (Boot Camp)</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="yeongshin/" class="project-item">
+                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                    <span class="project-num">04</span>
+                    <div class="title-wrap">
+                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">영신코리아</h2>
+                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">가공식품 원료 소싱 기업 웹페이지 구축</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="oner/" class="project-item">
+                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                    <span class="project-num">05</span>
+                    <div class="project-meta">
+                        <div class="title-wrap">
+                            <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">이리오너라</h2>
+                            <p class="project-cat" style="color: #666; font-size: 1.1rem;">프로게이머 개인 유튜브 콘텐츠 제작</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <section class="skills-section" style="margin-top: 100px;">
+            <span class="section-tag">Core Capabilities</span>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">Content</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" style="display: block; font-weight: 600;">SNS 콘텐츠 기획·운영, 브랜드 톤 관리</span>
+                        <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">Figma, Photoshop, Premiere Pro, CapCut</p>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">Performance</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" style="display: block; font-weight: 600;">Meta Ads, 성과 분석</span>
+                        <span class="skill-tag" style="display: block; font-weight: 600; margin-top: 5px;">GA4, GTM 설정 및 퍼널 분석</span>
+                        <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">GA4, GTM, Looker Studio, Meta Ads</p>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">Web</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag" style="display: block; font-weight: 600;">웹 프로젝트 구축 및 관리</span>
+                        <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">HTML / CSS 기초, GitHub Pages</p>
+                    </div>
+                </div>
             </div>
-        </main>
+        </section>
 
-        <footer style="margin-top: 120px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
-            <p style="font-size: 0.8rem; color: #aaa; letter-spacing: 0.1em;">© 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.</p>
+        <footer style="margin-top: 120px; padding: 40px 0; border-top: 1px solid var(--line); text-align: center; color: #aaa; font-size: 0.8rem; letter-spacing: 0.1em;">
+            © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
         </footer>
     </div>
 
