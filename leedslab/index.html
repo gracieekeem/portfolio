@@ -9,25 +9,32 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .content-section { margin-bottom: 120px; }
-        .reset-box { background: #f9f9fa; padding: 30px; border-radius: 12px; border: 1px solid #eee; }
         .section-tag { font-size: 0.75rem; font-weight: 700; color: #888; letter-spacing: 0.1em; display: block; margin-bottom: 20px; text-transform: uppercase; }
         
+        /* 개요, 역할, 성과 박스 1열 3행 배치 */
+        .info-stack-container { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+        .info-stack-box { background: #f9f9fa; padding: 35px; border-radius: 12px; border: 1px solid #eee; }
+        .info-stack-box.white { background: #fff; }
+        .info-stack-box h4 { font-size: 1.1rem; margin-bottom: 20px; color: #111; font-weight: 700; }
+
         .list-dot { list-style: none; padding: 0; }
-        .list-dot li { position: relative; padding-left: 15px; margin-bottom: 8px; color: #555; font-size: 0.95rem; line-height: 1.6; }
+        .list-dot li { position: relative; padding-left: 15px; margin-bottom: 10px; color: #555; font-size: 1rem; line-height: 1.6; }
         .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
 
-        /* SNS 섹션: 1행 1카드 레이아웃 */
-        .insta-category-container { display: flex; flex-direction: column; gap: 40px; margin-top: 30px; }
-        .insta-full-row-card { display: grid; grid-template-columns: 1.2fr 1fr; background: #fff; border: 1px solid #eee; border-radius: 16px; overflow: hidden; transition: all 0.3s ease; }
-        .insta-full-row-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        /* SNS 콘텐츠: 이미지 2장 가로 나란히 */
+        .insta-category-list { display: flex; flex-direction: column; gap: 100px; margin-top: 40px; }
+        .insta-item { width: 100%; }
+        .insta-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .insta-img-pair .img-box { 
+            width: 100%; height: 650px; overflow-y: auto; scrollbar-width: none; 
+            border: 1px solid #eee; border-radius: 12px; background: #fcfcfc; 
+        }
+        .insta-img-pair .img-box::-webkit-scrollbar { display: none; }
+        .insta-img-pair .img-box img { width: 100%; display: block; }
 
-        .insta-full-row-card .img-display { width: 100%; height: 500px; overflow-y: auto; scrollbar-width: none; background: #fcfcfc; border-right: 1px solid #f5f5f5; }
-        .insta-full-row-card .img-display::-webkit-scrollbar { display: none; }
-        .insta-full-row-card .img-display img { width: 100%; display: block; }
-
-        .insta-full-row-card .info-display { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-        .insta-full-row-card .info-display h3 { font-size: 1.6rem; color: #111; margin: 0 0 15px 0; font-weight: 700; }
-        .insta-full-row-card .info-display p { font-size: 1rem; color: #666; line-height: 1.7; margin: 0; word-break: keep-all; }
+        .insta-info { padding-left: 5px; }
+        .insta-info h3 { font-size: 1.7rem; color: #111; margin: 0 0 12px 0; font-weight: 700; }
+        .insta-info p { font-size: 1.1rem; color: #666; line-height: 1.6; margin: 0; word-break: keep-all; }
 
         /* BTL 섹션 */
         .btl-display { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; margin-top: 30px; }
@@ -46,36 +53,36 @@
 
         <header style="padding: 80px 0 60px;">
             <span class="section-tag">Project 01</span>
-            <h1 style="font-size: 3.5rem; margin: 10px 0; letter-spacing: -0.02em;">리즈랩 (Leeds Lab)</h1>
-            <p style="font-size: 1.2rem; color: #666;">헬스케어 브랜드 SNS 운영 및 BTL 통합 마케팅 지원</p>
+            <h1 style="font-size: 3.8rem; margin: 10px 0; letter-spacing: -0.02em;">리즈랩 (Leeds Lab)</h1>
+            <p style="font-size: 1.25rem; color: #666;">기존 SNS 운영 체계 인계 및 브랜드 안정화 운영</p>
         </header>
 
         <main>
             <section class="content-section">
                 <span class="section-tag">Overview & Performance</span>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                    <div class="reset-box">
-                        <h4 style="margin-bottom: 20px;">개요</h4>
+                <div class="info-stack-container">
+                    <div class="info-stack-box">
+                        <h4>개요</h4>
                         <ul class="list-dot">
-                            <li>기존 브랜드 SNS 운영 체계 인계 후 실무 즉시 투입 및 안정화</li>
+                            <li>기존 브랜드 SNS 운영 체계를 인계받아 실무 즉시 투입 및 안정화</li>
                             <li>운영 기간: 2025.02.24 ~ 2025.05.24</li>
-                            <li>브랜드 톤앤무드 유지 및 캡션/카피라이팅 전담 관리</li>
+                            <li>브랜드 톤앤무드 유지 및 콘텐츠 흐름 전반 관리 (캡션/카피 포함)</li>
                         </ul>
                     </div>
-                    <div class="reset-box">
-                        <h4 style="margin-bottom: 20px;">주요 역할</h4>
+                    <div class="info-stack-box">
+                        <h4>주요 역할</h4>
                         <ul class="list-dot">
-                            <li>SNS 콘텐츠 기획 및 월간 운영 관리</li>
-                            <li>무드 이미지 큐레이션 및 제품컷 촬영 가이드 수립</li>
-                            <li>PLE:EDS 등 신규 콘텐츠 카테고리 제안 및 운영</li>
+                            <li>SNS 콘텐츠 기획·운영 관리 및 무드 이미지 큐레이션</li>
+                            <li>제품컷 촬영 가이드 작성 및 신규 플레이리스트 카테고리 제안</li>
+                            <li>BTL 현장 운영 지원 및 온라인 콘텐츠 연계 실행</li>
                         </ul>
                     </div>
-                    <div class="reset-box" style="background: #fff;">
-                        <h4 style="margin-bottom: 20px;">성과</h4>
+                    <div class="info-stack-box white">
+                        <h4>성과</h4>
                         <ul class="list-dot">
-                            <li>SNS 운영 안정화 및 도달 범위 확대</li>
-                            <li>BTL 연계 캠페인 후 팔로워 유의미한 증가</li>
-                            <li>카카오 선물하기 <strong>실시간 랭킹 1위</strong> 달성</li>
+                            <li>월간 SNS 콘텐츠 운영의 안정적 유지 및 카테고리 확장</li>
+                            <li>BTL 행사 이후 Instagram 팔로워 증가</li>
+                            <li>카카오 선물하기 ‘찜’ 수 증가 및 실시간 랭킹 1위 달성</li>
                         </ul>
                     </div>
                 </div>
@@ -83,61 +90,63 @@
 
             <section class="content-section">
                 <span class="section-tag">SNS Content Category</span>
-                <div class="insta-category-container">
-                    <div class="insta-full-row-card">
-                        <div class="img-display">
-                            <img src="../img/leedslab/01_leedslab_instagram_product.jpg">
-                            <img src="../img/leedslab/01_leedslab_instagram_mood.jpg">
+                <div class="insta-category-list">
+                    
+                    <div class="insta-item">
+                        <div class="insta-img-pair">
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_product.jpg"></div>
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_mood.jpg"></div>
                         </div>
-                        <div class="info-display">
+                        <div class="insta-info">
                             <h3>Product & Mood</h3>
                             <p>브랜드 톤에 맞춘 제품 및 무드 비주얼 큐레이션</p>
                         </div>
                     </div>
 
-                    <div class="insta-full-row-card">
-                        <div class="img-display">
-                            <img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg">
-                            <img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg">
+                    <div class="insta-item">
+                        <div class="insta-img-pair">
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg"></div>
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg"></div>
                         </div>
-                        <div class="info-display">
+                        <div class="insta-info">
                             <h3>Leeds life</h3>
                             <p>웰니스 메시지 중심의 릴스 및 일상 콘텐츠 운영</p>
                         </div>
                     </div>
 
-                    <div class="insta-full-row-card">
-                        <div class="img-display">
-                            <img src="../img/leedslab/01_leedslab_intagram_leeview_1.jpg">
-                            <img src="../img/leedslab/01_leedslab_intagram_leeview_2.jpg">
+                    <div class="insta-item">
+                        <div class="insta-img-pair">
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leeview_1.jpg"></div>
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leeview_2.jpg"></div>
                         </div>
-                        <div class="info-display">
+                        <div class="insta-info">
                             <h3>Leeview</h3>
                             <p>실제 사용자 경험 기반의 리뷰 콘텐츠 선별 및 재구성</p>
                         </div>
                     </div>
 
-                    <div class="insta-full-row-card">
-                        <div class="img-display">
-                            <img src="../img/leedslab/01_leedslab_intagram_pleeds.jpg">
-                            <img src="../img/leedslab/01_leedslab_youtube_pleeds_2.jpg">
+                    <div class="insta-item">
+                        <div class="insta-img-pair">
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_pleeds.jpg"></div>
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_youtube_pleeds_2.jpg"></div>
                         </div>
-                        <div class="info-display">
+                        <div class="insta-info">
                             <h3>PLE:EDS</h3>
                             <p>월간 무드별 플레이리스트 및 YouTube 연계 콘텐츠</p>
                         </div>
                     </div>
 
-                    <div class="insta-full-row-card">
-                        <div class="img-display">
-                            <img src="../img/leedslab/01_leedslab_intagram_btl_notice.jpg">
-                            <img src="../img/leedslab/01_leedslab_intagram_btl_sketch_1.jpg">
+                    <div class="insta-item">
+                        <div class="insta-img-pair">
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_btl_notice.jpg"></div>
+                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_btl_sketch_1.jpg"></div>
                         </div>
-                        <div class="info-display">
+                        <div class="insta-info">
                             <h3>BTL Notice & Sketch</h3>
                             <p>오프라인 행사 사전 공지 및 현장 기록 콘텐츠</p>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -150,10 +159,10 @@
                         <img src="../img/leedslab/01_leedslab_btl_musicfestival_1.jpg">
                         <img src="../img/leedslab/01_leedslab_btl_univ_festiv_1.jpg">
                     </div>
-                    <div class="reset-box">
+                    <div class="info-stack-box" style="padding: 30px;">
                         <div style="margin-bottom: 25px;">
                             <div class="result-badge">오프라인 운영 지원</div>
-                            <ul class="list-dot">
+                            <ul class="list-dot" style="font-size: 0.9rem;">
                                 <li>성수 팝업, 대학 축제 등 현장 동선 및 대기 관리</li>
                                 <li>샘플링 및 리워드 배포 프로세스 보조</li>
                                 <li>현장 프로모터 교육 및 실무 운영 지원</li>
@@ -161,7 +170,7 @@
                         </div>
                         <div>
                             <div class="result-badge">온오프라인 연계 성과</div>
-                            <ul class="list-dot">
+                            <ul class="list-dot" style="font-size: 0.9rem;">
                                 <li>현장 기록물을 활용한 SNS 후속 콘텐츠 발행</li>
                                 <li>오프라인 고객 경험을 브랜드 디지털 자산으로 전환</li>
                             </ul>
