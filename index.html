@@ -8,59 +8,88 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="css/style.css">
     <style>
-        :root { --point-brown: #634e42; }
+        :root { --point-brown: #634e42; --line: #eee; --text-main: #111; }
 
         nav { display: flex; justify-content: flex-end; padding: 20px 0; }
+        .contact-mail { font-weight: 700; letter-spacing: 0.05em; font-size: 0.9rem; }
 
+        /* 헤더 & 히어로 */
         .hero-title {
-            font-size: 5rem;
+            font-size: clamp(3rem, 8vw, 5.5rem); /* 반응형 폰트 크기 */
             margin-bottom: 60px;
             line-height: 1.1;
-            word-break: keep-all;
+            font-weight: 800;
         }
 
-        /* 섹션 공통 간격 */
-        .section-tag { margin-bottom: 20px; display: block; }
-        .skills-section { margin-bottom: 100px; }
-        .project-section { margin-top: 50px; }
+        /* [수정] Summary 섹션: 우측 여백 확보 및 줄바꿈 최적화 */
+        .hero-summary-box {
+            border-top: 1px solid var(--line);
+            padding-top: 45px;
+            width: 100%;
+        }
+        .hero-subtitle {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            word-break: keep-all; /* 단어 단위 줄바꿈 */
+            max-width: 1100px; /* 텍스트가 우측으로 더 길게 뻗도록 수정 */
+            font-weight: 500;
+        }
+        .hero-subtitle.light { color: #777; font-weight: 400; }
 
-        /* 프로젝트 리스트 스타일 */
-        .project-item {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            border-bottom: 1px solid var(--line);
-            padding: 30px 0;
-            transition: all 0.3s ease;
+        /* 섹션 공통 스타일 */
+        .section-tag { 
+            color: var(--point-brown); 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            display: block; 
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
         }
-        .project-item:hover { padding-left: 10px; background-color: #fafafa; }
-        .project-num {
-            font-weight: 700;
-            color: var(--point-brown);
-            margin-right: 30px;
-            font-size: 1.2rem;
-        }
+        .content-section { margin-top: 100px; }
 
         /* 스킬 그리드 */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 40px;
             margin-top: 30px;
         }
+        .skill-category h3 { font-size: 1.7rem; font-weight: 800; margin-bottom: 20px; }
+        .skill-tag { display: block; font-weight: 600; font-size: 1.05rem; margin-bottom: 5px; }
+        .skill-desc { font-size: 0.85rem; color: #888; margin-top: 10px; }
+
+        /* 프로젝트 리스트 */
+        .project-item {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid var(--line);
+            padding: 40px 0;
+            transition: all 0.3s ease;
+        }
+        .project-item:hover { padding-left: 15px; background-color: #fafafa; }
+        .project-meta { display: flex; align-items: flex-start; }
+        .project-num {
+            font-weight: 800;
+            color: var(--point-brown);
+            margin-right: 40px;
+            font-size: 1.3rem;
+            padding-top: 5px;
+        }
+        .project-title { font-size: 2.4rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
+        .project-cat { color: #666; font-size: 1.15rem; }
 
         /* 모바일 반응형 */
         @media (max-width: 768px) {
-            header { padding: 40px 0 40px !important; }
-            .hero-title { font-size: 3rem !important; margin-bottom: 40px !important; }
-            .hero-subtitle { font-size: 1.1rem !important; }
-
-            .project-meta { flex-direction: column; gap: 10px; }
-            .project-num { margin-bottom: 5px; font-size: 1rem; }
-            .project-title { font-size: 1.6rem !important; }
-
-            .skills-grid { grid-template-columns: 1fr; gap: 40px; }
-            .skill-category h3 { font-size: 1.4rem; margin-bottom: 15px; }
+            .hero-title { margin-bottom: 40px; }
+            .hero-subtitle { font-size: 1.15rem; max-width: 100%; }
+            .skills-grid { grid-template-columns: 1fr; gap: 50px; }
+            .project-meta { flex-direction: column; }
+            .project-num { margin-bottom: 10px; font-size: 1.1rem; }
+            .project-title { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -68,106 +97,108 @@
 
     <div class="container">
         <nav>
-            <div style="font-weight: 700; letter-spacing: 0.05em;">GRACIEEKEEM@GMAIL.COM</div>
+            <div class="contact-mail">GRACIEEKEEM@GMAIL.COM</div>
         </nav>
 
-        <header style="padding: 40px 0 60px;">
+        <header style="padding: 40px 0 80px;">
             <h1 class="hero-title">SEONGHYE KIM</h1>
             
-            <div style="border-top: 1px solid var(--line); padding-top: 40px;">
-                <span class="section-tag" style="color: var(--point-brown); font-weight: 800; text-transform: uppercase;">Summary</span>
-                <p class="hero-subtitle" style="margin-bottom: 15px; font-weight: 500; color: var(--text-main); line-height: 1.6; font-size: 1.2rem;">
+            <div class="hero-summary-box">
+                <span class="section-tag">Summary</span>
+                <p class="hero-subtitle">
                     브랜드 SNS 콘텐츠 기획과 운영을 기반으로 퍼포먼스 캠페인 집행, GA4 퍼널 분석, 그리고 기업 웹사이트 구축까지 경험했습니다.
                 </p>
-                <p class="hero-subtitle" style="line-height: 1.6; font-size: 1.2rem;">
+                <p class="hero-subtitle light">
                     콘텐츠-광고-데이터-웹을 하나의 흐름으로 연결하는 실무형 마케터입니다.
                 </p>
             </div>
         </header>
 
-        <section class="skills-section">
-            <span class="section-tag" style="text-transform: uppercase;">Core Capabilities</span>
+        <section class="content-section">
+            <span class="section-tag">Core Capabilities</span>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">Content</h3>
+                    <h3>Content</h3>
                     <div class="skill-list">
-                        <span class="skill-tag" style="display: block; font-weight: 600;">SNS 콘텐츠 기획·운영, 브랜드 톤 관리</span>
-                        <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">Figma, Photoshop, Premiere Pro, CapCut</p>
+                        <span class="skill-tag">SNS 콘텐츠 기획·운영</span>
+                        <span class="skill-tag">브랜드 비주얼 및 톤 관리</span>
+                        <p class="skill-desc">Figma, Photoshop, Premiere Pro, CapCut</p>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">Performance</h3>
+                    <h3>Performance</h3>
                     <div class="skill-list">
-                        <span class="skill-tag" style="display: block; font-weight: 600;">Meta Ads, 성과 분석</span>
-                        <span class="skill-tag" style="display: block; font-weight: 600; margin-top: 5px;">GA4, GTM 설정 및 퍼널 분석</span>
-                        <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">GA4, GTM, Looker Studio, Meta Ads</p>
+                        <span class="skill-tag">Meta Ads 전략 및 집행</span>
+                        <span class="skill-tag">GA4 / GTM 퍼널 데이터 분석</span>
+                        <p class="skill-desc">Looker Studio, Meta Ads Manager, GA4</p>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 20px;">Web</h3>
+                    <h3>Web</h3>
                     <div class="skill-list">
-                        <span class="skill-tag" style="display: block; font-weight: 600;">웹 프로젝트 구축 및 관리</span>
-                        <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">HTML / CSS 기초, GitHub Pages</p>
+                        <span class="skill-tag">브랜드 웹사이트 구축</span>
+                        <span class="skill-tag">UI/UX 설계 및 퍼블리싱 지원</span>
+                        <p class="skill-desc">HTML / CSS Foundation, GitHub Pages</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="project-section">
-            <span class="section-tag" style="text-transform: uppercase; margin-bottom: 20px;">Selected Projects</span>
+        <section class="content-section" style="margin-bottom: 100px;">
+            <span class="section-tag">Selected Projects</span>
             
             <a href="leedslab/" class="project-item">
-                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                <div class="project-meta">
                     <span class="project-num">01</span>
                     <div class="title-wrap">
-                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">리즈랩</h2>
-                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">헬스케어 브랜드 콘텐츠·BTL 마케팅</p>
+                        <h2 class="project-title">리즈랩 (Leeds Lab)</h2>
+                        <p class="project-cat">헬스케어 브랜드 SNS·BTL 마케팅 운영</p>
                     </div>
                 </div>
             </a>
 
             <a href="reset/" class="project-item">
-                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                <div class="project-meta">
                     <span class="project-num">02</span>
                     <div class="title-wrap">
-                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">여고생과 리셋중</h2>
-                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">방치형 RPG 게임 사전예약 캠페인 (Boot Camp)</p>
+                        <h2 class="project-title">여고생과 리셋중</h2>
+                        <p class="project-cat">방치형 RPG 게임 사전예약 캠페인 (Boot Camp)</p>
                     </div>
                 </div>
             </a>
 
             <a href="chemeet/" class="project-item">
-                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                <div class="project-meta">
                     <span class="project-num">03</span>
                     <div class="title-wrap">
-                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">케밋</h2>
-                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">데이팅 앱 인지도 제고 캠페인 (Boot Camp)</p>
+                        <h2 class="project-title">케밋 (Chemeet)</h2>
+                        <p class="project-cat">데이팅 앱 인지도 제고 및 리드 확보 캠페인</p>
                     </div>
                 </div>
             </a>
 
             <a href="yeongshin/" class="project-item">
-                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                <div class="project-meta">
                     <span class="project-num">04</span>
                     <div class="title-wrap">
-                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">영신코리아</h2>
-                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">가공식품 원료 소싱 기업 웹페이지 구축</p>
+                        <h2 class="project-title">영신코리아</h2>
+                        <p class="project-cat">가공식품 원료 소싱 B2B 기업 웹페이지 구축</p>
                     </div>
                 </div>
             </a>
 
             <a href="oner/" class="project-item">
-                <div class="project-meta" style="display: flex; align-items: flex-start;">
+                <div class="project-meta">
                     <span class="project-num">05</span>
                     <div class="title-wrap">
-                        <h2 class="project-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">이리오너라</h2>
-                        <p class="project-cat" style="color: #666; font-size: 1.1rem;">프로게이머 개인 유튜브 콘텐츠 제작</p>
+                        <h2 class="project-title">이리오너라 (ONER)</h2>
+                        <p class="project-cat">T1 프로게이머 개인 유튜브 콘텐츠 제작 및 브랜딩</p>
                     </div>
                 </div>
             </a>
         </section>
 
-        <footer style="margin-top: 120px; padding: 40px 0; border-top: 1px solid var(--line); text-align: center; color: #aaa; font-size: 0.8rem; letter-spacing: 0.1em;">
+        <footer style="padding: 60px 0; border-top: 1px solid var(--line); text-align: center; color: #aaa; font-size: 0.85rem; letter-spacing: 0.1em;">
             © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
         </footer>
     </div>
