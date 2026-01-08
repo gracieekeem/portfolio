@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESET — SEONGHYE KIM</title>
- <link rel="icon" href="../img/favicon_2.png" type="image/png">
+    <link rel="icon" href="../img/favicon_2.png" type="image/png">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="../css/style.css">
     <style>
         :root { --point-brown: #634e42; --line: #eee; }
         
-        /* 헤더 & 섹션 공통 */
-        header { padding: 60px 0; border-bottom: 1px solid var(--line); }
-        .hero-subtitle { font-size: 1.4rem; color: #111; font-weight: 700; margin-top: 10px; }
-        section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-        .section-tag { font-size: 0.9rem; font-weight: 800; color: var(--point-brown); letter-spacing: 0.1em; margin-bottom: 30px; display: block; text-transform: uppercase; }
+        /* 섹션 구분 디자인 (리즈랩과 통일) */
+        .content-section { 
+            padding: 100px 0; 
+            border-bottom: 2px solid #f2f2f2; 
+        }
+        .content-section:last-of-type { border-bottom: none; }
 
-        /* 01. 성과 지표 (포트폴리오 7페이지 내용 반영) */
+        .section-tag { 
+            font-size: 1.1rem; font-weight: 800; color: #111; letter-spacing: 0.05em; 
+            display: block; margin-bottom: 40px; text-transform: uppercase;
+            padding-bottom: 10px; position: relative;
+        }
+        .section-tag::after {
+            content: ""; position: absolute; bottom: 0; left: 0;
+            width: 30px; height: 3px; background: var(--point-brown);
+        }
+
+        /* 01. 성과 지표 그리드 */
         .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .stat-item { padding: 25px 0; border-top: 1px solid #f0f0f0; }
         .stat-label { font-size: 0.8rem; color: #aaa; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; }
         .stat-value { font-size: 1.8rem; font-weight: 800; color: #111; }
         .highlight { color: #4466ff !important; }
 
-        /* 02. 캠페인 자산 (3열 레이아웃) */
+        /* 02. 3열 자산 레이아웃 */
         .asset-3col { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 30px; align-items: start; }
         .asset-box { border: 1px solid var(--line); background: #fff; overflow: hidden; border-radius: 12px; position: relative; }
         .scroll-area { height: 550px; overflow-y: auto; scrollbar-width: none; background: #fafafa; }
@@ -31,20 +42,22 @@
         .scroll-area img, .scroll-area video { width: 100%; display: block; }
         .asset-label { padding: 15px; font-size: 0.9rem; font-weight: 700; text-align: center; border-top: 1px solid var(--line); background: #fff; color: #333; }
 
-        /* 카카오 공유 미니 카드 (엔드페이지 우측 하단 배치) */
+        /* 카카오 공유 미니 카드 (엔드페이지 우측 하단 레이어) */
         .kakao-mini-anchor { position: relative; }
         .kakao-mini-card { 
             position: absolute; bottom: 85px; right: -15px; 
             width: 140px; background: #fff; padding: 6px; border-radius: 12px;
             box-shadow: 0 12px 35px rgba(0,0,0,0.18); border: 1px solid #eee;
-            z-index: 10; transition: transform 0.3s ease;
+            z-index: 10;
         }
-        .kakao-mini-card:hover { transform: translateY(-5px); }
         .kakao-mini-card img { width: 100%; border-radius: 8px; }
         .kakao-mini-tag { font-size: 0.65rem; font-weight: 800; color: #febc05; text-align: center; margin-top: 5px; display: block; letter-spacing: 0.05em; }
 
-        /* 03. 인사이트 (8-9페이지 내용 통합) */
-        .insight-section { background: #f9f9fa; padding: 50px; border-radius: 20px; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        /* 03. 인사이트 섹션 (2열) */
+        .insight-section { 
+            background: #f9f9fa; padding: 50px; border-radius: 20px; 
+            margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; 
+        }
         .insight-item h5 { font-size: 1.15rem; font-weight: 800; color: #111; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .insight-item h5::before { content: ""; width: 4px; height: 16px; background: var(--point-brown); display: block; }
         .insight-item p { font-size: 0.95rem; color: #555; line-height: 1.8; word-break: keep-all; }
@@ -59,73 +72,76 @@
 <body>
 
     <div class="container">
-        <header>
-            <a href="../" style="text-decoration: none; color: var(--point-brown); font-weight: 700; font-size: 0.9rem;">← PROJECT LIST</a>
-            <h1 style="font-size: 3.5rem; font-weight: 800; margin-top: 20px; letter-spacing: -0.02em;">여고생과 리셋중</h1>
-            <p class="hero-subtitle">방치형 RPG 사전예약 캠페인 : 퍼널 설계 및 성과 최적화</p>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+            <a href="../" style="text-decoration: underline; color: var(--point-brown); font-weight: 700; font-size: 0.9rem;">← PROJECT LIST</a>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #999;">GRACIEEKEEM@GMAIL.COM</div>
+        </nav>
+
+        <header style="padding: 60px 0;">
+            <span style="font-size: 1rem; font-weight: 800; color: #111;">Project 02</span>
+            <h1 style="font-size: 3.5rem; font-weight: 800; margin: 15px 0 10px; letter-spacing: -0.02em;">여고생과 리셋중</h1>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #111;">퍼널 설계 및 UA 마케팅 캠페인 운영</p>
         </header>
 
-        <section>
-            <span class="section-tag">01. Performance</span>
-            <div class="stat-grid">
-                <div class="stat-item"><span class="stat-label">Spend</span><div class="stat-value">₩ 380,000</div></div>
-                <div class="stat-item"><span class="stat-label">Pre-registrations</span><div class="stat-value">168</div></div>
-                <div class="stat-item"><span class="stat-label highlight">GA4 CVR</span><div class="stat-value highlight">15.09%</div></div>
-                <div class="stat-item"><span class="stat-label">CPA</span><div class="stat-value">₩ 2,794</div></div>
-                <div class="stat-item"><span class="stat-label">CPC</span><div class="stat-value">₩ 366</div></div>
-                <div class="stat-item"><span class="stat-label">CTR</span><div class="stat-value">4.20%</div></div>
-                <div class="stat-item"><span class="stat-label">LP View Rate</span><div class="stat-value">93.35%</div></div>
-                <div class="stat-item"><span class="stat-label">Duration</span><div class="stat-value">7 Days</div></div>
-            </div>
-        </section>
-
-        <section>
-            <span class="section-tag">02. Creative Assets</span>
-            <div class="asset-3col">
-                <div class="asset-box">
-                    <div class="scroll-area">
-                        <video autoplay muted loop playsinline>
-                            <source src="../img/reset/cos_down.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="asset-label">UA 광고 비디오 (직접 제작)</div>
+        <main>
+            <section class="content-section">
+                <span class="section-tag">01. Performance</span>
+                <div class="stat-grid">
+                    <div class="stat-item"><span class="stat-label">Spend</span><div class="stat-value">₩ 380,000</div></div>
+                    <div class="stat-item"><span class="stat-label">Pre-registrations</span><div class="stat-value">168</div></div>
+                    <div class="stat-item"><span class="stat-label highlight">GA4 CVR</span><div class="stat-value highlight">15.09%</div></div>
+                    <div class="stat-item"><span class="stat-label">CPA</span><div class="stat-value">₩ 2,794</div></div>
                 </div>
+            </section>
 
-                <div class="asset-box">
-                    <div class="scroll-area">
-                        <img src="../img/reset/landing_page.jpg" alt="Landing Page">
-                    </div>
-                    <div class="asset-label">사전예약 랜딩페이지 (설계 참여)</div>
-                </div>
-
-                <div class="kakao-mini-anchor">
+            <section class="content-section">
+                <span class="section-tag">02. Creative Assets</span>
+                <div class="asset-3col">
                     <div class="asset-box">
                         <div class="scroll-area">
-                            <img src="../img/reset/end_page.jpg" alt="End Page">
+                            <video autoplay muted loop playsinline>
+                                <source src="../img/reset/cos_down.mp4" type="video/mp4">
+                            </video>
                         </div>
-                        <div class="asset-label">완료 및 SNS 공유 페이지 (직접 제작)</div>
+                        <div class="asset-label">UA 광고 비디오</div>
                     </div>
-                    
-                    <div class="kakao-mini-card">
-                        <img src="../img/reset/kakao_share.jpg" alt="Kakao Share">
-                        <span class="kakao-mini-tag">KAKAO SHARE</span>
+
+                    <div class="asset-box">
+                        <div class="scroll-area">
+                            <img src="../img/reset/02_reset_landingpage_full.jpg" alt="Landing Page">
+                        </div>
+                        <div class="asset-label">사전예약 랜딩페이지</div>
+                    </div>
+
+                    <div class="kakao-mini-anchor">
+                        <div class="asset-box">
+                            <div class="scroll-area">
+                                <img src="../img/reset/02_reset_ep_1.jpg" alt="End Page">
+                            </div>
+                            <div class="asset-label">완료 페이지 (EP 01)</div>
+                        </div>
+                        
+                        <div class="kakao-mini-card">
+                            <img src="../img/reset/02_reset_ep_kakaoshare.jpg" alt="Kakao Share">
+                            <span class="kakao-mini-tag">KAKAO SHARE</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="insight-section">
-                <div class="insight-item">
-                    <h5>Funnel Strategy</h5>
-                    <p>단순 노출을 넘어 광고-랜딩-완료-리텐션 이메일로 이어지는 전 퍼널을 설계했습니다. 특히 GA4 스크롤 이벤트를 활용해 유저가 정보를 어디까지 소비하는지 분석하여 랜딩의 설득력을 높였습니다.</p>
+                <div class="insight-section">
+                    <div class="insight-item">
+                        <h5>Funnel Strategy</h5>
+                        <p>단순 유입을 넘어 광고-랜딩-완료-리텐션으로 이어지는 전 퍼널을 설계했습니다. 특히 GA4 데이터를 기반으로 유저의 랜딩페이지 체류 지점을 분석하여 전환 효율이 가장 높은 위치에 CTA 버튼을 배치했습니다.</p>
+                    </div>
+                    <div class="insight-item">
+                        <h5>Retention & Viral</h5>
+                        <p>예약 완료 유저에게 즉시 확인 메일을 발송하고 런칭 전 리마인드 CRM을 자동화하여 이탈을 최소화했습니다. 또한 인터랙티브한 보상형 완료 페이지를 통해 자발적인 카카오톡 공유를 유도했습니다.</p>
+                    </div>
                 </div>
-                <div class="insight-item">
-                    <h5>Retention & Viral</h5>
-                    <p>사전예약 직후 즉시 메일 발송 및 1일 후 리마인드 문자를 자동화하여 이탈을 최소화했습니다. 시스템 로그 컨셉의 완료 페이지와 카카오톡 공유 장치를 통해 유저의 자발적인 확산을 유도했습니다.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <footer style="padding: 60px 0; text-align: center; color: #bbb; font-size: 0.85rem; letter-spacing: 0.1em;">
+        <footer style="padding: 80px 0; text-align: center; color: #ccc; font-size: 0.8rem;">
             © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
         </footer>
     </div>
