@@ -10,31 +10,22 @@
     <style>
         :root { --point-brown: #634e42; --line: #eee; --text-main: #111; --text-sub: #777; }
         
-        /* 전체 레이아웃 */
         body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; background: #fff; color: var(--text-main); }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-        /* Header / Summary */
         header { padding: 100px 0 80px; border-bottom: 1px solid var(--line); }
         .hero-title { font-size: clamp(3rem, 10vw, 7rem); font-weight: 800; margin: 0 0 60px 0; letter-spacing: -0.03em; }
         .section-tag { color: var(--point-brown); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 30px; display: block; }
         .hero-subtitle { font-size: 1rem; line-height: 1.6; font-weight: 600; word-break: keep-all; max-width: 900px; }
         .hero-subtitle.light { color: var(--text-sub); font-weight: 400; margin-top: 15px; }
 
-        /* Core Capabilities: 쏠림 방지를 위한 그리드 설정 */
         .content-section { padding: 100px 0; border-bottom: 1px solid var(--line); }
-        .skills-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 80px; /* 열 사이 간격을 넓혀 중앙 밸런스 유지 */
-            width: 100%;
-        }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px; width: 100%; }
         .skill-category h3 { font-size: 2.4rem; font-weight: 800; margin-bottom: 30px; letter-spacing: -0.02em; }
         .skill-list { display: flex; flex-direction: column; gap: 10px; }
         .skill-tag { font-size: 1.2rem; font-weight: 700; color: var(--text-main); line-height: 1.4; }
         .skill-desc { font-size: 0.95rem; color: #aaa; margin-top: 20px; font-weight: 400; }
 
-        /* Selected Projects */
         .project-list { margin-top: 40px; }
         .project-item { 
             display: flex; justify-content: space-between; align-items: center; 
@@ -46,57 +37,31 @@
 
         .project-info { display: flex; align-items: baseline; gap: 40px; }
         .project-num { font-size: 1.2rem; font-weight: 800; color: var(--point-brown); }
+        .project-title-group { display: flex; flex-direction: column; gap: 5px; } /* 제목과 실습문구 묶음 */
         .project-title { font-size: 2.5rem; font-weight: 800; transition: color 0.3s; }
+        .project-badge { font-size: 0.85rem; color: #bbb; font-weight: 500; } /* 실습 문구 스타일 */
         .project-cat { font-size: 1.1rem; color: var(--text-sub); font-weight: 500; text-align: right; }
 
-        /* Responsive */
+        .contact-section { padding: 120px 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .contact-title { font-size: 2rem; font-weight: 600; margin-bottom: 40px; letter-spacing: -0.02em; color: #111; }
+        .contact-links { display: flex; gap: 60px; margin-top: 20px; }
+        .contact-box { display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; position: relative; }
+        .contact-sub { font-size: 0.85rem; color: var(--point-brown); font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; }
+        .contact-copy-item { font-size: 1.6rem; font-weight: 700; color: var(--text-main); transition: all 0.3s ease; padding-bottom: 5px; border-bottom: 2px solid #f2f2f2; }
+        .contact-box:hover .contact-copy-item { color: var(--point-brown); border-bottom: 2px solid var(--point-brown); }
+
+        .copy-toast { position: absolute; top: -30px; background: var(--point-brown); color: #fff; font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .copy-toast.show { opacity: 1; }
+
         @media (max-width: 1024px) {
             .skills-grid { gap: 40px; }
             .project-title { font-size: 2rem; }
         }
         @media (max-width: 768px) {
-            .hero-title { margin-bottom: 40px; }
             .skills-grid { grid-template-columns: 1fr; gap: 60px; }
             .project-item { flex-direction: column; align-items: flex-start; gap: 15px; }
             .project-cat { text-align: left; font-size: 1rem; }
-        }
-     /* Contact Section 수정본 */
-        .contact-section { 
-            padding: 120px 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center;
-        }
-        /* 요청하신 2em, 600 weight 반영 */
-        .contact-title { font-size: 2rem; font-weight: 600; margin-bottom: 40px; letter-spacing: -0.02em; color: #111; }
-        
-        .contact-links { display: flex; gap: 60px; margin-top: 20px; }
-        .contact-box { display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; position: relative; }
-        
-        .contact-sub { 
-            font-size: 0.85rem; color: var(--point-brown); 
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; 
-        }
-        
-        .contact-copy-item { 
-            font-size: 1.6rem; font-weight: 700; color: var(--text-main);
-            transition: all 0.3s ease; padding-bottom: 5px;
-            border-bottom: 2px solid #f2f2f2;
-        }
-        .contact-box:hover .contact-copy-item { color: var(--point-brown); border-bottom: 2px solid var(--point-brown); }
-
-        /* 복사 완료 알림 툴팁 */
-        .copy-toast {
-            position: absolute; top: -30px; background: var(--point-brown);
-            color: #fff; font-size: 0.7rem; padding: 4px 8px; border-radius: 4px;
-            opacity: 0; transition: opacity 0.3s; pointer-events: none;
-        }
-        .copy-toast.show { opacity: 1; }
-
-        @media (max-width: 768px) {
             .contact-links { flex-direction: column; gap: 40px; }
-            .contact-copy-item { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -152,55 +117,81 @@
                 <a href="leedslab/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">01</span>
-                        <h2 class="project-title">리즈랩</h2>
+                        <div class="project-title-group">
+                            <h2 class="project-title">리즈랩</h2>
+                        </div>
                     </div>
                     <span class="project-cat">헬스케어 브랜드 SNS 운영 및 BTL 마케팅</span>
                 </a>
+
                 <a href="reset/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">02</span>
-                        <h2 class="project-title">여고생과 리셋중</h2>
+                        <div class="project-title-group">
+                            <h2 class="project-title">여고생과 리셋중</h2>
+                            <span class="project-badge">그로스마케팅 부트캠프 실습</span>
+                        </div>
                     </div>
                     <span class="project-cat">모바일 방치형 RPG 사전예약 캠페인</span>
                 </a>
+
                 <a href="chemeet/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">03</span>
-                        <h2 class="project-title">케밋</h2>
+                        <div class="project-title-group">
+                            <h2 class="project-title">케밋</h2>
+                            <span class="project-badge">그로스마케팅 부트캠프 실습</span>
+                        </div>
                     </div>
                     <span class="project-cat">데이팅 앱 인지도 제고 캠페인</span>
                 </a>
-                <a href="yeongshin/" class="project-item">
+
+                <a href="irion/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">04</span>
-                        <h2 class="project-title">영신코리아</h2>
+                        <div class="project-title-group">
+                            <h2 class="project-title">이리오너라</h2>
+                        </div>
+                    </div>
+                    <span class="project-cat">전통주 큐레이션 플랫폼 SNS 브랜딩</span>
+                </a>
+
+                <a href="yeongshin/" class="project-item">
+                    <div class="project-info">
+                        <span class="project-num">05</span>
+                        <div class="project-title-group">
+                            <h2 class="project-title">영신코리아</h2>
+                        </div>
                     </div>
                     <span class="project-cat">식품 원료 수입 B2B 기업 공식 웹사이트 구축</span>
                 </a>
             </div>
         </section>
-<section class="contact-section">
-        <span class="section-tag">Contact</span>
-        <h2 class="contact-title">함께 성장할 기회를 기다립니다.</h2>
-        
-        <div class="contact-links">
-            <div class="contact-box" onclick="copyToClipboard('gracieekeem@gmail.com', this)">
-                <div class="copy-toast">복사 완료!</div>
-                <p class="contact-sub">Email (Click to Copy)</p>
-                <div class="contact-copy-item">gracieekeem@gmail.com</div>
+
+        <section class="contact-section">
+            <span class="section-tag">Contact</span>
+            <h2 class="contact-title">함께 성장할 기회를 기다립니다.</h2>
+            <div class="contact-links">
+                <div class="contact-box" onclick="copyToClipboard('gracieekeem@gmail.com', this)">
+                    <div class="copy-toast">복사 완료!</div>
+                    <p class="contact-sub">Email (Click to Copy)</p>
+                    <div class="contact-copy-item">gracieekeem@gmail.com</div>
+                </div>
+                <div class="contact-box" onclick="copyToClipboard('010-6202-9510', this)">
+                    <div class="copy-toast">복사 완료!</div>
+                    <p class="contact-sub">Phone (Click to Copy)</p>
+                    <div class="contact-copy-item">010-6202-9510</div>
+                </div>
             </div>
-            
-            <div class="contact-box" onclick="copyToClipboard('010-6202-9510', this)">
-                <div class="copy-toast">복사 완료!</div>
-                <p class="contact-sub">Phone (Click to Copy)</p>
-                <div class="contact-copy-item">010-6202-9510</div>
-            </div>
-        </div>
-    </section>
+        </section>
+
+        <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem; letter-spacing: 0.1em;">
+            © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
+        </footer>
+    </div>
 
     <script>
         function copyToClipboard(text, element) {
-            // 텍스트 복사 실행
             const textArea = document.createElement("textarea");
             textArea.value = text;
             document.body.appendChild(textArea);
@@ -208,21 +199,10 @@
             document.execCommand("copy");
             document.body.removeChild(textArea);
 
-            // 알림 툴팁 표시
             const toast = element.querySelector('.copy-toast');
             toast.classList.add('show');
-            
-            // 1.5초 후 알림 숨기기
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 1500);
+            setTimeout(() => { toast.classList.remove('show'); }, 1500);
         }
     </script>
-
-        <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem; letter-spacing: 0.1em;">
-            © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
-        </footer>
-    </div>
-
 </body>
 </html>
