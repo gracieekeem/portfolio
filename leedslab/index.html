@@ -10,7 +10,7 @@
     <style>
         :root { --point-brown: #634e42; --line: #eee; }
         
-        /* 섹션 구분 디자인 */
+        /* 섹션 기본 설정 */
         .content-section { padding: 100px 0; border-bottom: 2px solid #f2f2f2; }
         .content-section:last-of-type { border-bottom: none; }
 
@@ -24,40 +24,41 @@
             width: 30px; height: 3px; background: var(--point-brown);
         }
 
-        /* 01. 성과 지표 */
-        .info-stack-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .info-stack-box { padding: 20px 0; border-top: 2px solid #333; }
-        .info-stack-box h4 { font-size: 1.1rem; margin-bottom: 20px; font-weight: 800; color: var(--point-brown); text-transform: uppercase; }
-        .info-stack-box.white { border-top: 2px solid var(--point-brown); }
-
-        .list-dot { list-style: none; padding: 0; margin: 0; }
-        .list-dot li { position: relative; padding-left: 15px; margin-bottom: 10px; font-size: 0.95rem; line-height: 1.6; color: #444; }
-        .list-dot li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
-        
-        /* 02. SNS 카테고리 (1열 와이드 배치) */
-        .insta-category-list { display: flex; flex-direction: column; gap: 60px; }
+        /* [02] SNS 컨텐츠: 요청하신 시안 스타일 (1열 와이드 박스) */
+        .insta-category-list { display: flex; flex-direction: column; gap: 80px; }
         .insta-item { 
-            border: 1px solid #eee; border-radius: 24px; padding: 40px; background: #fff; 
-            display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; 
+            background: #fff; border-radius: 20px; overflow: hidden;
+            /* 시안처럼 살짝 그림자나 테두리를 주어 박스감 강조 */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+            border: 1px solid #f2f2f2;
         }
-        .insta-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .img-box { line-height: 0; } /* 이미지 하단 여백 제거 */
-        .img-box img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 15px; background: #f5f5f5; }
-        .insta-info h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: #111; }
-        .insta-info p { font-size: 1.05rem; color: #666; line-height: 1.7; word-break: keep-all; }
+        
+        /* 이미지 영역: 상단 배치 */
+        .insta-img-container { 
+            background: #f9f9f9; padding: 60px 40px; 
+            display: flex; justify-content: center; gap: 20px;
+            line-height: 0; /* 이미지 하단 여백 제거 */
+        }
+        .insta-img-container img { 
+            width: 45%; max-width: 400px; aspect-ratio: 1/1; 
+            object-fit: cover; border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
 
-        /* 03. BTL 섹션 */
-        .btl-full-container { margin-top: 20px; }
+        /* 텍스트 영역: 하단 배치 */
+        .insta-info-container { padding: 50px 40px; text-align: left; }
+        .insta-info-container h3 { font-size: 2rem; font-weight: 800; color: #111; margin-bottom: 20px; }
+        .insta-info-container p { font-size: 1.1rem; color: #555; line-height: 1.8; word-break: keep-all; max-width: 800px; }
+
+        /* [03] BTL 섹션 그리드 */
         .btl-grid-v2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 40px; }
         .btl-grid-v2 img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }
-        .btl-content-v2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .btl-title-sm { font-size: 1.2rem; font-weight: 800; color: #111; margin-bottom: 20px; display: block; border-left: 4px solid var(--point-brown); padding-left: 15px; }
 
-        /* 반응형 대응 */
+        /* 모바일 반응형 */
         @media (max-width: 1024px) {
-            .info-stack-container, .btl-content-v2 { grid-template-columns: 1fr; gap: 40px; }
-            .insta-item { grid-template-columns: 1fr; padding: 25px; gap: 25px; }
-            .insta-info h3 { font-size: 1.4rem; }
+            .insta-img-container { padding: 40px 20px; }
+            .insta-info-container { padding: 30px 20px; }
+            .insta-info-container h3 { font-size: 1.6rem; }
             .btl-grid-v2 { grid-template-columns: 1fr 1fr; }
         }
     </style>
@@ -78,30 +79,18 @@
         <main>
             <section class="content-section">
                 <span class="section-tag">01. Overview & Performance</span>
-                <div class="info-stack-container">
-                    <div class="info-stack-box">
-                        <h4>개요</h4>
-                        <ul class="list-dot">
-                            <li>기존 브랜드 SNS 운영 체계를 인계받아 실무 즉시 투입 및 안정화 운영</li>
-                            <li>브랜드 톤앤무드 유지 및 콘텐츠 흐름 전반 관리 (캡션/카피라이팅 전담)</li>
-                            <li>신규 카테고리 확장을 통한 유저 인게이지먼트 강화 전략 수립</li>
-                        </ul>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                    <div style="padding: 20px 0; border-top: 2px solid #333;">
+                        <h4 style="color:var(--point-brown); font-weight:800; margin-bottom:15px;">개요</h4>
+                        <p style="font-size:0.95rem; color:#666; line-height:1.6;">브랜드 SNS 운영 체계 안정화 및 브랜드 톤앤무드 유지를 위한 콘텐츠 큐레이션/카피라이팅 전담 운영</p>
                     </div>
-                    <div class="info-stack-box">
-                        <h4>주요 역할</h4>
-                        <ul class="list-dot">
-                            <li>월간 SNS 콘텐츠 기획·운영 관리 및 비주얼 큐레이션</li>
-                            <li>제품컷 촬영 가이드 작성 및 신규 플레이리스트(PLE:EDS) 기획·런칭</li>
-                            <li>BTL 현장 운영 지원 및 오프라인-SNS 연계 실무 참여</li>
-                        </ul>
+                    <div style="padding: 20px 0; border-top: 2px solid #333;">
+                        <h4 style="color:var(--point-brown); font-weight:800; margin-bottom:15px;">주요 역할</h4>
+                        <p style="font-size:0.95rem; color:#666; line-height:1.6;">월간 콘텐츠 기획, 제품컷 촬영 가이드 수립, 신규 카테고리(PLE:EDS) 런칭 및 BTL 현장 운영</p>
                     </div>
-                    <div class="info-stack-box white">
-                        <h4>성과</h4>
-                        <ul class="list-dot">
-                            <li>카카오 선물하기 <strong>실시간 랭킹 1위</strong> 달성 기여</li>
-                            <li>브랜드 검색량 증대 및 SNS 도달/인게이지먼트 유의미한 수치 상승</li>
-                            <li>신규 플레이리스트 카테고리 도입 후 유저 자발적 저장/공유수 증가</li>
-                        </ul>
+                    <div style="padding: 20px 0; border-top: 2px solid var(--point-brown);">
+                        <h4 style="color:var(--point-brown); font-weight:800; margin-bottom:15px;">성과</h4>
+                        <p style="font-size:0.95rem; color:#666; line-height:1.6;"><strong>카카오 선물하기 랭킹 1위</strong> 달성 기여 및 인스타그램 도달/인게이지먼트 유의미한 상승</p>
                     </div>
                 </div>
             </section>
@@ -109,46 +98,51 @@
             <section class="content-section">
                 <span class="section-tag">02. SNS Content Category</span>
                 <div class="insta-category-list">
+                    
                     <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_product.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_mood.jpg"></div>
+                        <div class="insta-img-container">
+                            <img src="../img/leedslab/01_leedslab_instagram_product.jpg">
+                            <img src="../img/leedslab/01_leedslab_instagram_mood.jpg">
                         </div>
-                        <div class="insta-info">
+                        <div class="insta-info-container">
                             <h3>Product & Mood</h3>
                             <p>브랜드 비주얼 가이드에 입각한 고감도 제품 큐레이션을 통해 리즈랩만의 정체성을 강화했습니다. 브랜드의 '무드'를 소비할 수 있는 비주얼 전략을 수행했습니다.</p>
                         </div>
                     </div>
+
                     <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg"></div>
+                        <div class="insta-img-container">
+                            <img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg">
+                            <img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg">
                         </div>
-                        <div class="insta-info">
+                        <div class="insta-info-container">
                             <h3>Leeds Life</h3>
                             <p>건강한 라이프스타일을 제안하는 웰니스 메시지 중심의 콘텐츠를 기획하여 유저의 일상 속에 브랜드가 자연스럽게 스며들 수 있도록 유도했습니다.</p>
                         </div>
                     </div>
+
                     <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_pleeds.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_youtube_pleeds_2.jpg"></div>
+                        <div class="insta-img-container">
+                            <img src="../img/leedslab/01_leedslab_intagram_pleeds.jpg">
+                            <img src="../img/leedslab/01_leedslab_youtube_pleeds_2.jpg">
                         </div>
-                        <div class="insta-info">
+                        <div class="insta-info-container">
                             <h3>PLE:EDS (Playlist)</h3>
                             <p>음악 큐레이션 신규 카테고리를 런칭하여 브랜드 감성을 확장했습니다. 높은 저장 및 공유수를 기록하며 도달 범위를 획기적으로 넓혔습니다.</p>
                         </div>
                     </div>
+
                     <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leeview_1.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leeview_2.jpg"></div>
+                        <div class="insta-img-container">
+                            <img src="../img/leedslab/01_leedslab_intagram_leeview_1.jpg">
+                            <img src="../img/leedslab/01_leedslab_intagram_leeview_2.jpg">
                         </div>
-                        <div class="insta-info">
+                        <div class="insta-info-container">
                             <h3>Campaign & Review</h3>
                             <p>실제 구매 고객의 리뷰 'Leeview'와 시즌별 이벤트를 유기적으로 연결하여 브랜드 신뢰도를 제고하고 커머스 전환을 지원했습니다.</p>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -161,22 +155,14 @@
                         <img src="../img/leedslab/01_leedslab_btl_musicfestival_1.jpg">
                         <img src="../img/leedslab/01_leedslab_btl_univ_festiv_1.jpg">
                     </div>
-                    <div class="btl-content-v2">
-                        <div class="btl-info-card">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                        <div>
                             <span class="btl-title-sm">오프라인 운영 지원</span>
-                            <ul class="list-dot">
-                                <li>성수 팝업스토어, 주요 대학 축제 및 대규모 뮤직 페스티벌 현장 오퍼레이션</li>
-                                <li>방문객 동선 관리 및 이벤트 리워드 샘플링 프로세스 효율화</li>
-                                <li>실시간 이슈 대응을 통해 안정적인 현장 운영 지원</li>
-                            </ul>
+                            <p style="font-size:0.95rem; color:#666; line-height:1.7;">주요 대학 축제 및 대규모 뮤직 페스티벌 현장 오퍼레이션. 방문객 동선 관리 및 샘플링 프로세스 효율화.</p>
                         </div>
-                        <div class="btl-info-card">
+                        <div>
                             <span class="btl-title-sm">온오프라인 연계 성과</span>
-                            <ul class="list-dot">
-                                <li>현장 확보 자산을 활용한 SNS 후속 콘텐츠 발행 및 아카이빙</li>
-                                <li>오프라인 방문객 대상 디지털 채널 유입 이벤트 설계</li>
-                                <li>캠페인 기간 내 브랜드 언급량 및 인스타그램 태그 콘텐츠 수 증가 기여</li>
-                            </ul>
+                            <p style="font-size:0.95rem; color:#666; line-height:1.7;">현장 확보 자산을 활용한 SNS 아카이빙 전략 수행. 캠페인 기간 내 인스타그램 태그 콘텐츠 수 증가 기여.</p>
                         </div>
                     </div>
                 </div>
