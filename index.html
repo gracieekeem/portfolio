@@ -60,49 +60,43 @@
             .project-item { flex-direction: column; align-items: flex-start; gap: 15px; }
             .project-cat { text-align: left; font-size: 1rem; }
         }
-        /* Contact Section */
+     /* Contact Section 수정본 */
         .contact-section { 
             padding: 120px 0; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             text-align: center;
-            background: #fff;
         }
-        .contact-title { font-size: 2rem; font-weight: 600; margin-bottom: 40px; letter-spacing: -0.02em; }
+        /* 요청하신 2em, 600 weight 반영 */
+        .contact-title { font-size: 2rem; font-weight: 600; margin-bottom: 40px; letter-spacing: -0.02em; color: #111; }
         
-        .contact-links { 
-            display: flex; 
-            gap: 60px; 
-            margin-top: 20px; 
-        }
-        .contact-box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .contact-links { display: flex; gap: 60px; margin-top: 20px; }
+        .contact-box { display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: pointer; position: relative; }
+        
         .contact-sub { 
-            font-size: 0.85rem; 
-            color: var(--point-brown); 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 0.15em; 
+            font-size: 0.85rem; color: var(--point-brown); 
+            font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; 
         }
-        .contact-link-item { 
-            text-decoration: none; 
-            color: var(--text-main); 
-            font-size: 1.6rem; 
-            font-weight: 700; 
-            transition: all 0.3s ease; 
-            padding-bottom: 5px;
+        
+        .contact-copy-item { 
+            font-size: 1.6rem; font-weight: 700; color: var(--text-main);
+            transition: all 0.3s ease; padding-bottom: 5px;
             border-bottom: 2px solid #f2f2f2;
         }
-        .contact-link-item:hover { 
-            color: var(--point-brown); 
-            border-bottom: 2px solid var(--point-brown); 
-            transform: translateY(-3px);
+        .contact-box:hover .contact-copy-item { color: var(--point-brown); border-bottom: 2px solid var(--point-brown); }
+
+        /* 복사 완료 알림 툴팁 */
+        .copy-toast {
+            position: absolute; top: -30px; background: var(--point-brown);
+            color: #fff; font-size: 0.7rem; padding: 4px 8px; border-radius: 4px;
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
         }
+        .copy-toast.show { opacity: 1; }
 
         @media (max-width: 768px) {
             .contact-links { flex-direction: column; gap: 40px; }
-            .contact-title { font-size: 2rem; }
-            .contact-link-item { font-size: 1.3rem; }
+            .contact-copy-item { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -186,20 +180,44 @@
             </div>
         </section>
 <section class="contact-section">
-            <span class="section-tag">Contact</span>
-            <h2 class="contact-title">함께 성장할 기회를 기다립니다.</h2>
-            
-            <div class="contact-links">
-                <div class="contact-box">
-                    <p class="contact-sub">Email</p>
-                    <a href="mailto:gracieekeem@gmail.com" class="contact-link-item">gracieekeem@gmail.com</a>
-                </div>
-                <div class="contact-box">
-                    <p class="contact-sub">Phone</p>
-                    <a href="tel:010-6202-9510" class="contact-link-item">010-6202-9510</a>
-                </div>
+        <span class="section-tag">Contact</span>
+        <h2 class="contact-title">함께 성장할 기회를 기다립니다.</h2>
+        
+        <div class="contact-links">
+            <div class="contact-box" onclick="copyToClipboard('gracieekeem@gmail.com', this)">
+                <div class="copy-toast">복사 완료!</div>
+                <p class="contact-sub">Email (Click to Copy)</p>
+                <div class="contact-copy-item">gracieekeem@gmail.com</div>
             </div>
-        </section>
+            
+            <div class="contact-box" onclick="copyToClipboard('010-6202-9510', this)">
+                <div class="copy-toast">복사 완료!</div>
+                <p class="contact-sub">Phone (Click to Copy)</p>
+                <div class="contact-copy-item">010-6202-9510</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function copyToClipboard(text, element) {
+            // 텍스트 복사 실행
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+
+            // 알림 툴팁 표시
+            const toast = element.querySelector('.copy-toast');
+            toast.classList.add('show');
+            
+            // 1.5초 후 알림 숨기기
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 1500);
+        }
+    </script>
 
         <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem; letter-spacing: 0.1em;">
             © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
