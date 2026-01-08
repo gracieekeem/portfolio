@@ -46,12 +46,49 @@
         .insta-info h3 { font-size: 1.7rem; color: #111; margin: 0 0 10px 0; font-weight: 700; }
         .insta-info p { font-size: 1.1rem; color: #666; line-height: 1.6; margin: 0; word-break: keep-all; }
 
-        /* BTL 섹션 */
-        .btl-display { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; margin-top: 10px; }
-        .btl-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .btl-images img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }
-        .result-badge { display: inline-block; background: #333; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 12px; }
+     /* BTL 섹션 수정본 */
+        .btl-full-container { margin-top: 10px; }
+        
+        .btl-grid-v2 { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            margin-bottom: 25px; 
+        }
+        .btl-grid-v2 img { 
+            width: 100%; 
+            aspect-ratio: 1.2 / 1; 
+            object-fit: cover; 
+            border-radius: 12px; 
+            border: 1px solid #eee; 
+        }
 
+        .btl-content-v2 { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+        }
+        .btl-info-card { 
+            background: #f9f9fa; 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid #eee;
+        }
+        .btl-info-card .result-badge { 
+            background: #333; 
+            color: #fff; 
+            padding: 5px 12px; 
+            border-radius: 4px; 
+            font-size: 0.85rem; 
+            margin-bottom: 20px; 
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .btl-grid-v2 { gap: 10px; }
+            .btl-content-v2 { grid-template-columns: 1fr; gap: 15px; }
+            .btl-info-card { padding: 30px; }
+        }
         /* ============================================================
            📱 모바일 반응형 (768px 이하)
         ============================================================ */
@@ -94,7 +131,7 @@
         <main>
             <section class="content-section">
                 <span class="section-tag">Overview & Performance</span>
-                <div class="info-stack-container">
+                <div class="info-stack-container">a
                     <div class="info-stack-box">
                         <h4>개요</h4>
                         <ul class="list-dot">
@@ -182,35 +219,39 @@
                     </div>
                 </div>
             </section>
-
-            <section class="content-section">
+<section class="content-section">
                 <span class="section-tag">BTL Field Operation</span>
-                <div class="btl-display">
-                    <div class="btl-images">
+                <div class="btl-full-container">
+                    <div class="btl-grid-v2">
                         <img src="../img/leedslab/01_leedslab_btl_deliveryweek_1.jpg">
                         <img src="../img/leedslab/01_leedslab_btl_univ_midterm_1.jpg">
                         <img src="../img/leedslab/01_leedslab_btl_musicfestival_1.jpg">
                         <img src="../img/leedslab/01_leedslab_btl_univ_festiv_1.jpg">
                     </div>
-                    <div class="info-stack-box" style="padding: 30px;">
-                        <div style="margin-bottom: 25px;">
+
+                    <div class="btl-content-v2">
+                        <div class="btl-info-card">
                             <div class="result-badge">오프라인 운영 지원</div>
-                            <ul class="list-dot" style="font-size: 0.95rem;">
+                            <ul class="list-dot">
                                 <li>성수 팝업, 대학 축제 등 주요 접점 현장 동선 및 대기 관리</li>
                                 <li>제품 샘플링 및 이벤트 리워드 배포 프로세스 보조</li>
                                 <li>현장 프로모터 가이드 및 운영 실무 참여</li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="btl-info-card">
                             <div class="result-badge">온오프라인 연계 성과</div>
-                            <ul class="list-dot" style="font-size: 0.95rem;">
+                            <ul class="list-dot">
                                 <li>현장 스케치 기록물을 활용한 SNS 후속 콘텐츠 발행</li>
                                 <li>오프라인 브랜드 경험을 온라인 디지털 자산으로 전환</li>
+                                <li>현장 방문객 대상 온라인 채널 유입 이벤트 운영</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
+            ```
+
+이렇게 바꾸시면 이미지는 위에서 큼직하게 4개가 보이고, 그 밑으로 설명이 깔끔하게 왼쪽/오른쪽으로 나뉘어서 들어갈 거예요. 혹시 적용하다가 꼬이면 다시 말씀해 주세요! 바로 도와드릴게요.
         </main>
 
         <footer style="margin-top: 100px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
