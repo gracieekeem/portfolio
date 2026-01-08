@@ -9,51 +9,55 @@
     <style>
         :root { --point-brown: #634e42; --line: #eee; --text-main: #111; --text-sub: #777; }
         
-        /* 중앙 정렬 컨테이너 */
+        /* 전체 레이아웃 */
+        body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; background: #fff; color: var(--text-main); }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-        /* [수정] Summary 섹션: 텍스트 줄바꿈 및 너비 확장 */
-        header { padding: 80px 0; border-bottom: 1px solid var(--line); }
-        .hero-title { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; margin-bottom: 60px; }
-        .hero-summary-box { width: 100%; }
+        /* Header / Summary */
+        header { padding: 100px 0 80px; border-bottom: 1px solid var(--line); }
+        .hero-title { font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 800; margin: 0 0 60px 0; letter-spacing: -0.03em; }
         .section-tag { color: var(--point-brown); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 30px; display: block; }
-        .hero-subtitle { font-size: 1.4rem; line-height: 1.6; font-weight: 600; word-break: keep-all; max-width: 100%; }
-        .hero-subtitle.light { color: var(--text-sub); font-weight: 400; margin-top: 10px; }
+        .hero-subtitle { font-size: 1.5rem; line-height: 1.6; font-weight: 600; word-break: keep-all; max-width: 900px; }
+        .hero-subtitle.light { color: var(--text-sub); font-weight: 400; margin-top: 15px; }
 
-        /* [수정] Core Capabilities 섹션: 좌우 밸런스 조정 */
+        /* Core Capabilities: 쏠림 방지를 위한 그리드 설정 */
         .content-section { padding: 100px 0; border-bottom: 1px solid var(--line); }
         .skills-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
-            gap: 60px; /* 아이템 간 간격을 충분히 주어 쏠림 현상 방지 */
+            gap: 80px; /* 열 사이 간격을 넓혀 중앙 밸런스 유지 */
             width: 100%;
         }
-        .skill-category h3 { font-size: 2.2rem; font-weight: 800; margin-bottom: 25px; letter-spacing: -0.02em; }
-        .skill-list { display: flex; flex-direction: column; gap: 8px; }
-        .skill-tag { font-size: 1.15rem; font-weight: 700; color: var(--text-main); }
-        .skill-desc { font-size: 0.9rem; color: #aaa; margin-top: 15px; font-weight: 400; }
+        .skill-category h3 { font-size: 2.4rem; font-weight: 800; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .skill-list { display: flex; flex-direction: column; gap: 10px; }
+        .skill-tag { font-size: 1.2rem; font-weight: 700; color: var(--text-main); line-height: 1.4; }
+        .skill-desc { font-size: 0.95rem; color: #aaa; margin-top: 20px; font-weight: 400; }
 
         /* Selected Projects */
         .project-list { margin-top: 40px; }
         .project-item { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 45px 0; border-bottom: 1px solid #f2f2f2; text-decoration: none; color: inherit;
-            transition: all 0.3s ease;
+            padding: 50px 0; border-bottom: 1px solid #f2f2f2; text-decoration: none; color: inherit;
+            transition: all 0.4s ease;
         }
         .project-item:hover { padding-left: 20px; background: #fafafa; }
+        .project-item:hover .project-title { color: var(--point-brown); }
+
         .project-info { display: flex; align-items: baseline; gap: 40px; }
         .project-num { font-size: 1.2rem; font-weight: 800; color: var(--point-brown); }
-        .project-title { font-size: 2.2rem; font-weight: 800; }
-        .project-cat { font-size: 1.1rem; color: var(--text-sub); font-weight: 500; }
+        .project-title { font-size: 2.5rem; font-weight: 800; transition: color 0.3s; }
+        .project-cat { font-size: 1.1rem; color: var(--text-sub); font-weight: 500; text-align: right; }
 
+        /* Responsive */
         @media (max-width: 1024px) {
-            .skills-grid { gap: 30px; }
-            .project-title { font-size: 1.8rem; }
+            .skills-grid { gap: 40px; }
+            .project-title { font-size: 2rem; }
         }
         @media (max-width: 768px) {
+            .hero-title { margin-bottom: 40px; }
             .skills-grid { grid-template-columns: 1fr; gap: 60px; }
-            .project-info { flex-direction: column; gap: 10px; }
-            .project-title { font-size: 1.6rem; }
+            .project-item { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .project-cat { text-align: left; font-size: 1rem; }
         }
     </style>
 </head>
@@ -111,33 +115,33 @@
                         <span class="project-num">01</span>
                         <h2 class="project-title">리즈랩 (Leeds Lab)</h2>
                     </div>
-                    <span class="project-cat">헬스케어 브랜드 SNS·BTL 마케팅 운영</span>
+                    <span class="project-cat">건강기능식품 브랜드 마케팅 운영 및 BTL</span>
                 </a>
                 <a href="reset/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">02</span>
                         <h2 class="project-title">여고생과 리셋중</h2>
                     </div>
-                    <span class="project-cat">사전예약 캠페인 퍼널 설계 및 실습</span>
+                    <span class="project-cat">사전예약 캠페인 퍼널 설계 및 UA 마케팅</span>
                 </a>
                 <a href="chemeet/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">03</span>
                         <h2 class="project-title">케밋 (Chemeet)</h2>
                     </div>
-                    <span class="project-cat">데이팅 앱 리드 확보 캠페인</span>
+                    <span class="project-cat">데이팅 앱 리드 확보 퍼포먼스 캠페인</span>
                 </a>
                 <a href="yeongshin/" class="project-item">
                     <div class="project-info">
                         <span class="project-num">04</span>
                         <h2 class="project-title">영신코리아</h2>
                     </div>
-                    <span class="project-cat">B2B 기업 웹페이지 구축</span>
+                    <span class="project-cat">B2B 기업 공식 웹사이트 구축</span>
                 </a>
             </div>
         </section>
 
-        <footer style="padding: 60px 0; border-top: 1px solid var(--line); text-align: center; color: #aaa; font-size: 0.8rem; letter-spacing: 0.1em;">
+        <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem; letter-spacing: 0.1em;">
             © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
         </footer>
     </div>
