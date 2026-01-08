@@ -8,22 +8,34 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* 기본 레이아웃 */
-        .content-section { margin-bottom: 120px; }
-        .back-btn { 
-            color: #634e42 !important; 
-            text-decoration: underline; 
-            font-weight: 700; 
-            letter-spacing: 0.05em;
-            transition: color 0.3s ease;
-        }
-        .back-btn:hover { color: #4a3a31 !important; }
+/* 섹션 구분을 위한 스타일 추가 */
+    .content-section { 
+        padding: 80px 0; 
+        border-bottom: 2px solid #f2f2f2; /* 섹션 사이를 가르는 연한 회색 선 */
+    }
+    
+    /* 마지막 섹션은 선이 없어야 깔끔합니다 */
+    .content-section:last-of-type { 
+        border-bottom: none; 
+    }
 
-        .section-tag { 
-            font-size: 1.15rem; font-weight: 800; color: #111; letter-spacing: 0.05em; 
-            display: block; margin-bottom: 30px; text-transform: uppercase;
-            border-bottom: 2px solid #eee; padding-bottom: 12px;
-        }
+    .section-tag { 
+        font-size: 1.15rem; font-weight: 800; color: #111; letter-spacing: 0.05em; 
+        display: block; margin-bottom: 40px; text-transform: uppercase;
+        padding-bottom: 12px;
+        position: relative;
+    }
+
+    /* 태그 아래 포인트 선 */
+    .section-tag::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: #634e42;
+    }
         
         /* 정보 스택 */
         .info-stack-container { display: flex; flex-direction: column; gap: 15px; margin-top: 10px; }
@@ -128,131 +140,93 @@
             <p style="font-size: 1.15rem; color: #666;">기존 브랜드 SNS 운영 체계 인계 및 안정화 운영</p>
         </header>
 
-        <main>
-            <section class="content-section">
-                <span class="section-tag">Overview & Performance</span>
-                <div class="info-stack-container">a
-                    <div class="info-stack-box">
-                        <h4>개요</h4>
-                        <ul class="list-dot">
-                            <li>기존 브랜드 SNS 운영 체계를 인계받아 실무 즉시 투입 및 안정화 운영</li>
-                            <li>운영 기간: 2025.02.24 ~ 2025.05.24</li>
-                            <li>브랜드 톤앤무드 유지 및 콘텐츠 흐름 전반 관리 (캡션/카피라이팅 전담)</li>
-                        </ul>
-                    </div>
-                    <div class="info-stack-box">
-                        <h4>주요 역할</h4>
-                        <ul class="list-dot">
-                            <li>SNS 콘텐츠 기획·운영 관리 및 무드 이미지 큐레이션</li>
-                            <li>제품컷 촬영 가이드 작성 및 신규 플레이리스트(PLE:EDS) 카테고리 기획</li>
-                            <li>BTL 현장 운영 지원 및 오프라인-SNS 연계 콘텐츠 실행</li>
-                        </ul>
-                    </div>
-                    <div class="info-stack-box white">
-                        <h4>성과</h4>
-                        <ul class="list-dot">
-                            <li>월간 SNS 콘텐츠 운영 안정화 및 신규 카테고리 확장을 통한 도달 확대</li>
-                            <li>BTL 캠페인 연계 이후 Instagram 팔로워 및 인게이지먼트 유의미한 수치 증가</li>
-                            <li>카카오 선물하기 ‘찜’ 수 증가 및 <strong>실시간 랭킹 1위</strong> 달성</li>
-                        </ul>
-                    </div>
+       <main>
+    <section class="content-section">
+        <span class="section-tag">Overview & Performance</span>
+        <div class="info-stack-container">
+            <div class="info-stack-box">
+                <h4>개요</h4>
+                <ul class="list-dot">
+                    <li>기존 브랜드 SNS 운영 체계를 인계받아 실무 즉시 투입 및 안정화 운영</li>
+                    <li>운영 기간: 2025.02.24 ~ 2025.05.24</li>
+                    <li>브랜드 톤앤무드 유지 및 콘텐츠 흐름 전반 관리 (캡션/카피라이팅 전담)</li>
+                </ul>
+            </div>
+            <div class="info-stack-box">
+                <h4>주요 역할</h4>
+                <ul class="list-dot">
+                    <li>SNS 콘텐츠 기획·운영 관리 및 무드 이미지 큐레이션</li>
+                    <li>제품컷 촬영 가이드 작성 및 신규 플레이리스트(PLE:EDS) 카테고리 기획</li>
+                    <li>BTL 현장 운영 지원 및 오프라인-SNS 연계 콘텐츠 실행</li>
+                </ul>
+            </div>
+            <div class="info-stack-box white">
+                <h4>성과</h4>
+                <ul class="list-dot">
+                    <li>월간 SNS 콘텐츠 운영 안정화 및 신규 카테고리 확장을 통한 도달 확대</li>
+                    <li>BTL 캠페인 연계 이후 Instagram 팔로워 및 인게이지먼트 유의미한 수치 증가</li>
+                    <li>카카오 선물하기 ‘찜’ 수 증가 및 <strong>실시간 랭킹 1위</strong> 달성</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <span class="section-tag">SNS Content Category</span>
+        <div class="insta-category-list">
+            <div class="insta-item">
+                <div class="insta-img-pair">
+                    <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_product.jpg"></div>
+                    <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_mood.jpg"></div>
                 </div>
-            </section>
-
-            <section class="content-section">
-                <span class="section-tag">SNS Content Category</span>
-                <div class="insta-category-list">
-                    
-                    <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_product.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_instagram_mood.jpg"></div>
-                        </div>
-                        <div class="insta-info">
-                            <h3>Product & Mood</h3>
-                            <p>브랜드 톤에 맞춘 제품 및 무드 비주얼 큐레이션</p>
-                        </div>
-                    </div>
-
-                    <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg"></div>
-                        </div>
-                        <div class="insta-info">
-                            <h3>Leeds life</h3>
-                            <p>웰니스 메시지 중심의 릴스 및 일상 콘텐츠 운영</p>
-                        </div>
-                    </div>
-
-                    <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leeview_1.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leeview_2.jpg"></div>
-                        </div>
-                        <div class="insta-info">
-                            <h3>Leeview</h3>
-                            <p>실제 사용자 경험 기반의 리뷰 콘텐츠 선별 및 재구성</p>
-                        </div>
-                    </div>
-
-                    <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_pleeds.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_youtube_pleeds_2.jpg"></div>
-                        </div>
-                        <div class="insta-info">
-                            <h3>PLE:EDS</h3>
-                            <p>월간 무드별 플레이리스트 및 YouTube 연계 콘텐츠</p>
-                        </div>
-                    </div>
-
-                    <div class="insta-item">
-                        <div class="insta-img-pair">
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_btl_notice.jpg"></div>
-                            <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_btl_sketch_1.jpg"></div>
-                        </div>
-                        <div class="insta-info">
-                            <h3>BTL Notice & Sketch</h3>
-                            <p>오프라인 행사 사전 공지 및 현장 기록 콘텐츠</p>
-                        </div>
-                    </div>
+                <div class="insta-info">
+                    <h3>Product & Mood</h3>
+                    <p>브랜드 톤에 맞춘 제품 및 무드 비주얼 큐레이션</p>
                 </div>
-            </section>
-<section class="content-section">
-                <span class="section-tag">BTL Field Operation</span>
-                <div class="btl-full-container">
-                    <div class="btl-grid-v2">
-                        <img src="../img/leedslab/01_leedslab_btl_deliveryweek_1.jpg">
-                        <img src="../img/leedslab/01_leedslab_btl_univ_midterm_1.jpg">
-                        <img src="../img/leedslab/01_leedslab_btl_musicfestival_1.jpg">
-                        <img src="../img/leedslab/01_leedslab_btl_univ_festiv_1.jpg">
-                    </div>
-
-                    <div class="btl-content-v2">
-                        <div class="btl-info-card">
-                            <div class="result-badge">오프라인 운영 지원</div>
-                            <ul class="list-dot">
-                                <li>성수 팝업, 대학 축제 등 주요 접점 현장 동선 및 대기 관리</li>
-                                <li>제품 샘플링 및 이벤트 리워드 배포 프로세스 보조</li>
-                                <li>현장 프로모터 가이드 및 운영 실무 참여</li>
-                            </ul>
-                        </div>
-                        <div class="btl-info-card">
-                            <div class="result-badge">온오프라인 연계 성과</div>
-                            <ul class="list-dot">
-                                <li>현장 스케치 기록물을 활용한 SNS 후속 콘텐츠 발행</li>
-                                <li>오프라인 브랜드 경험을 온라인 디지털 자산으로 전환</li>
-                                <li>현장 방문객 대상 온라인 채널 유입 이벤트 운영</li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+            <div class="insta-item">
+                <div class="insta-img-pair">
+                    <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg"></div>
+                    <div class="img-box"><img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg"></div>
                 </div>
-            </section>
-            ```
+                <div class="insta-info">
+                    <h3>Leeds life</h3>
+                    <p>웰니스 메시지 중심의 릴스 및 일상 콘텐츠 운영</p>
+                </div>
+            </div>
+            </div>
+    </section>
 
-이렇게 바꾸시면 이미지는 위에서 큼직하게 4개가 보이고, 그 밑으로 설명이 깔끔하게 왼쪽/오른쪽으로 나뉘어서 들어갈 거예요. 혹시 적용하다가 꼬이면 다시 말씀해 주세요! 바로 도와드릴게요.
-        </main>
+    <section class="content-section">
+        <span class="section-tag">BTL Field Operation</span>
+        <div class="btl-full-container">
+            <div class="btl-grid-v2">
+                <img src="../img/leedslab/01_leedslab_btl_deliveryweek_1.jpg">
+                <img src="../img/leedslab/01_leedslab_btl_univ_midterm_1.jpg">
+                <img src="../img/leedslab/01_leedslab_btl_musicfestival_1.jpg">
+                <img src="../img/leedslab/01_leedslab_btl_univ_festiv_1.jpg">
+            </div>
+            <div class="btl-content-v2">
+                <div class="btl-info-card">
+                    <div class="result-badge">오프라인 운영 지원</div>
+                    <ul class="list-dot">
+                        <li>성수 팝업, 대학 축제 등 주요 현장 동선 및 대기 관리</li>
+                        <li>제품 샘플링 및 이벤트 리워드 배포 프로세스 보조</li>
+                        <li>현장 프로모터 가이드 및 운영 실무 참여</li>
+                    </ul>
+                </div>
+                <div class="btl-info-card">
+                    <div class="result-badge">온오프라인 연계 성과</div>
+                    <ul class="list-dot">
+                        <li>현장 스케치 기록물을 활용한 SNS 후속 콘텐츠 발행</li>
+                        <li>오프라인 브랜드 경험을 온라인 디지털 자산으로 전환</li>
+                        <li>현장 방문객 대상 온라인 채널 유입 이벤트 운영</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
         <footer style="margin-top: 100px; padding: 40px 0; border-top: 1px solid #eee; text-align: center;">
             <p style="font-size: 0.8rem; color: #aaa; letter-spacing: 0.1em;">© 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.</p>
