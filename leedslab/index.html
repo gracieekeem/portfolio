@@ -60,7 +60,8 @@
         @media (max-width: 768px) {
             .insta-img-container { flex-direction: column; padding: 20px; }
             .insta-img-container img { width: 100%; }
-            .btl-grid-v2 { grid-template-columns: 1fr; }
+            /* 요청하신 부분: 모바일에서도 2열 유지 */
+            .btl-grid-v2 { grid-template-columns: 1fr 1fr; } 
         }
     </style>
 </head>
