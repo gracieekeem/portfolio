@@ -3,178 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>여고생과 리셋중 - 김성혜 포트폴리오</title>
-        <link rel="icon" href="../img/favicon_2.png" type="image/png">
+    <title>여고생과 리셋중 — SEONGHYE KIM</title>
+    <link rel="icon" href="../img/favicon_2.png" type="image/png">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
-        :root {
-            --primary: #634e42;
-            --bg-light: #f8f9fa;
-            --text-dark: #1d1d1f;
-            --text-gray: #6e6e73;
-            --border: #e5e5e7;
-            --white: #ffffff;
-            --asset-height: 600px; /* 모든 박스의 고정 높이 */
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
-        body { background-color: var(--white); color: var(--text-dark); line-height: 1.6; word-break: keep-all; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Navigation & Header (생략 - 이전과 동일) */
-        nav { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; }
-        .back-link { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.9rem; }
-        header { padding: 60px 0 40px; border-bottom: 1px solid var(--border); }
-        .project-num { font-size: 1.1rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 10px; }
-        header h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 15px; }
-
-        /* Section Common */
-        .section { padding: 80px 0; border-bottom: 1px solid var(--border); }
-        .section-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 40px; position: relative; display: inline-block; }
-        .section-title::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 40px; height: 4px; background: var(--primary); }
-
-        /* Performance & Funnel (생략 - 이전과 동일하게 유지 가능) */
-        .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
-        @media (min-width: 768px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
-        .stat-card { background: var(--bg-light); padding: 25px; border-radius: 16px; text-align: center; }
-        .stat-card .value { font-size: 1.4rem; font-weight: 800; }
-        .funnel-step { background: var(--bg-light); border-radius: 12px; padding: 20px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px; }
-        @media (min-width: 768px) { .funnel-step { flex-direction: row; align-items: center; } }
-
-        /* 04. Campaign Visuals - 핵심 수정 부분 */
-        .visual-group { margin-bottom: 60px; }
-        .visual-group h3 { font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-bottom: 20px; border-left: 4px solid var(--primary); padding-left: 12px; }
+        /* 기본 설정 및 메인 페이지와 환경 통일 */
+        :root { --point-brown: #634e42; --line: #eee; --text-main: #111; --text-sub: #777; --asset-h: 600px; }
         
-        .creative-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; 
+        body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; background: #fff; color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+        /* Navigation */
+        nav { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; }
+        .back-link { text-decoration: underline; color: var(--point-brown); font-weight: 700; font-size: 0.9rem; }
+
+        /* Header */
+        header { padding: 60px 0 80px; border-bottom: 1px solid var(--line); }
+        .project-num { color: var(--point-brown); font-weight: 800; font-size: 1rem; display: block; margin-bottom: 15px; }
+        header h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin: 0 0 15px 0; letter-spacing: -0.03em; }
+        .header-sub { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+
+        /* Section Style */
+        .content-section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+        .section-tag { color: var(--point-brown); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 40px; display: block; }
+
+        /* Visual Assets Grid */
+        .creative-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        .asset-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+        
+        /* [중요] 내부 스크롤 및 고정 영역 설정 */
+        .media-box { height: var(--asset-h); background: #f9f9f9; position: relative; overflow: hidden; }
+        
+        /* 1. 고정형 (이미지/영상 꽉 차게) */
+        .media-box.fixed img, .media-box.fixed video { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* 2. 스크롤형 (긴 _full 이미지용) */
+        .media-box.scroll { overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+        .media-box.scroll::-webkit-scrollbar { display: none; } /* 크롬/사파리 스크롤바 숨김 */
+        .media-box.scroll img { width: 100%; height: auto; display: block; }
+
+        .asset-info { padding: 25px; border-top: 1px solid var(--line); background: #fff; flex-grow: 1; }
+        .asset-info h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; color: #000; }
+        .asset-info ul { padding: 0; margin: 0; list-style: none; }
+        .asset-info li { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 5px; position: relative; padding-left: 12px; }
+        .asset-info li::before { content: "•"; position: absolute; left: 0; color: #ccc; }
+
+        /* Stats Grid */
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .stat-item { padding: 25px 0; border-top: 1px solid var(--line); }
+        .stat-label { font-size: 0.8rem; color: #aaa; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .stat-value { font-size: 1.8rem; font-weight: 800; }
+        .highlight { color: var(--point-brown); }
+
+        @media (max-width: 1024px) {
+            .creative-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .container { padding: 0 25px; }
         }
-
-        .asset-card { 
-            border: 1px solid var(--border); 
-            border-radius: 16px; 
-            overflow: hidden; 
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* 미디어 컨테이너 */
-        .media-container { 
-            height: var(--asset-height); 
-            background: #f0f0f0; 
-            position: relative;
-            overflow: hidden; /* 기본값: 넘치는 부분 숨김 */
-        }
-
-        /* 스크롤이 필요한 경우 (랜딩, 엔드페이지, 이메일) */
-        .scrollable { 
-            overflow-y: auto; 
-            scrollbar-width: none; /* Firefox */
-        }
-        .scrollable::-webkit-scrollbar { display: none; /* Chrome, Safari */ }
-
-        /* 스크롤이 안되는 경우 (영상, 캡쳐본) */
-        .fixed-media img, .fixed-media video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 영역에 꽉 차게 */
-        }
-
-        /* 스크롤되는 긴 이미지용 */
-        .scrollable img {
-            width: 100%;
-            display: block;
-            height: auto; /* 이미지 본래 세로 비율 유지 */
-        }
-
-        .asset-info { 
-            padding: 15px; 
-            text-align: center; 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            background: #fff; 
-            border-top: 1px solid var(--border);
-            color: var(--text-dark);
-        }
-
-        footer { padding: 60px 0; text-align: center; color: var(--text-gray); font-size: 0.85rem; }
-
     </style>
 </head>
 <body>
 
-<div class="container">
-    <nav>
-        <a href="../" class="back-link">← PROJECTS</a>
-        <div>GRACIEEKEEM@GMAIL.COM</div>
-    </nav>
+    <div class="container">
+        <nav>
+            <a href="../" class="back-link">← PROJECT LIST</a>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-sub);">GRACIEEKEEM@GMAIL.COM</div>
+        </nav>
 
-    <header>
-        <span class="project-num">Project 02</span>
-        <h1>여고생과 리셋중</h1>
-        <p class="project-desc">방치형 RPG 사전예약 캠페인 퍼널 최적화</p>
-    </header>
+        <header>
+            <span class="project-num">Project 02</span>
+            <h1>여고생과 리셋중</h1>
+            <p class="header-sub">방치형 RPG 사전예약 캠페인 퍼널 최적화</p>
+        </header>
 
-    <main>
-        <section class="section">
-            <h2 class="section-title">Campaign Visuals</h2>
+        <main>
+            <section class="content-section">
+                <span class="section-tag">01. Performance & GA4</span>
+                <div class="stat-grid">
+                    <div class="stat-item"><span class="stat-label">Spend</span><div class="stat-value">₩ 380,000</div></div>
+                    <div class="stat-item"><span class="stat-label">Pre-registrations</span><div class="stat-value highlight">168</div></div>
+                    <div class="stat-item"><span class="stat-label">GA4 CVR</span><div class="stat-value highlight">15.09%</div></div>
+                    <div class="stat-item"><span class="stat-label">CPA</span><div class="stat-value">₩ 2,794</div></div>
+                </div>
+            </section>
 
-            <div class="visual-group">
-                <h3>Ad Creative (Fixed)</h3>
+            <section class="content-section">
+                <span class="section-tag">02. Campaign Visuals</span>
+                
                 <div class="creative-grid">
                     <div class="asset-card">
-                        <div class="media-container fixed-media">
+                        <div class="media-box fixed">
                             <video autoplay muted loop playsinline><source src="../img/reset/cos_down.mp4" type="video/mp4"></video>
                         </div>
-                        <div class="asset-info">Main Video Ad (직접 제작)</div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-container fixed-media">
-                            <img src="../img/reset/02_reset_ad_video_cos_1.jpg" alt="Video Capture">
+                        <div class="asset-info">
+                            <h4>광고 소재 비디오</h4>
+                            <ul>
+                                <li>전체 페르소나 공통 메시지 설정</li>
+                                <li>코스튬/캐릭터 중심 인지 포인트</li>
+                            </ul>
                         </div>
-                        <div class="asset-info">Video Capture (페르소나 강조)</div>
                     </div>
+
                     <div class="asset-card">
-                        <div class="media-container fixed-media">
-                            <img src="../img/reset/02_reset_ad_image_1.jpg" alt="Image Creative">
+                        <div class="media-box fixed">
+                            <img src="../img/reset/02_reset_ad_image_1.jpg">
                         </div>
-                        <div class="asset-info">Image Variation (기획 참여)</div>
+                        <div class="asset-info">
+                            <h4>광고 소재 이미지</h4>
+                            <ul>
+                                <li>메인 페르소나 페인포인트 공략</li>
+                                <li>카피-CTA 변주를 통한 효율 검증</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="asset-card">
+                        <div class="media-box scroll">
+                            <img src="../img/reset/02_reset_landingpage_full.jpg">
+                        </div>
+                        <div class="asset-info">
+                            <h4>사전예약 랜딩 (Full)</h4>
+                            <ul>
+                                <li>이해 → 몰입 → 보상 → 전환 구조</li>
+                                <li>정보와 비주얼의 균형감 유지</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="asset-card">
+                        <div class="media-box scroll">
+                            <img src="../img/reset/02_reset_ep_full.jpg">
+                        </div>
+                        <div class="asset-info">
+                            <h4>완료 및 SNS 공유 (Full)</h4>
+                            <ul>
+                                <li>예약 완료 즉시 인지 구조</li>
+                                <li>시스템 로그 콘셉트의 세계관 유지</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="asset-card">
+                        <div class="media-box scroll">
+                            <img src="../img/reset/02_reset_retention_email_full.jpg">
+                        </div>
+                        <div class="asset-info">
+                            <h4>리텐션 이메일 (Full)</h4>
+                            <ul>
+                                <li>보상 중심의 명확한 정보 전달</li>
+                                <li>HTML 기반 이메일 퍼블리싱</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+        </main>
 
-            <div class="visual-group">
-                <h3>Conversion Path (Scrollable)</h3>
-                <div class="creative-grid">
-                    <div class="asset-card">
-                        <div class="media-container scrollable">
-                            <img src="../img/reset/02_reset_landingpage_full.jpg" alt="Landing Page">
-                        </div>
-                        <div class="asset-info">Landing Page (구조 설계)</div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-container scrollable">
-                            <img src="../img/reset/02_reset_ep_1.jpg" alt="End Page">
-                        </div>
-                        <div class="asset-info">End Page (전환 완료 및 SNS 공유)</div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-container scrollable">
-                            <img src="../img/reset/02_reset_retention_email.jpg" alt="Retention Email">
-                        </div>
-                        <div class="asset-info">Retention Email (HTML 퍼블리싱)</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2026 SEONGHYE KIM. All Rights Reserved.
-    </footer>
-</div>
+        <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem;">
+            © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
+        </footer>
+    </div>
 
 </body>
 </html>
