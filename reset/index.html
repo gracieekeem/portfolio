@@ -1,137 +1,205 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>여고생과 리셋중 — SEONGHYE KIM</title>
-    <link rel="icon" href="../img/favicon_2.png" type="image/png">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <style>
-        :root { --point-brown: #634e42; --line: #eee; --text-main: #111; --text-sub: #777; --asset-h: 600px; }
-        
-        body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; background: #fff; color: var(--text-main); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-
-        nav { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; }
-        .back-link { text-decoration: underline; color: var(--point-brown); font-weight: 700; font-size: 0.9rem; }
-
-        header { padding: 60px 0 80px; border-bottom: 1px solid var(--line); }
-        .project-num { color: var(--point-brown); font-weight: 800; font-size: 1rem; display: block; margin-bottom: 15px; }
-        header h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin: 0 0 15px 0; letter-spacing: -0.03em; }
-        .header-sub { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
-
-        .content-section { padding: 100px 0; border-bottom: 1px solid var(--line); }
-        .section-tag { color: var(--point-brown); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 40px; display: block; }
-
-        /* Visual Assets Grid */
-        .creative-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
-        .asset-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
-        
-        /* 미디어 박스 공통 */
-        .media-box { height: var(--asset-h); background: #f9f9f9; position: relative; overflow: hidden; }
-        
-        /* 1. 고정형 (Ad Assets) */
-        .media-box.fixed img, .media-box.fixed video { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* 2. 스크롤형 (Landing / Email) */
-        .media-box.scroll { overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
-        .media-box.scroll::-webkit-scrollbar { display: none; }
-        .media-box.scroll img { width: 100%; height: auto; display: block; }
-
-        .asset-info { padding: 25px; border-top: 1px solid var(--line); background: #fff; }
-        .asset-info h4 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; color: #000; }
-        .asset-info p { font-size: 0.85rem; color: var(--text-sub); margin: 0; word-break: keep-all; }
-
-        @media (max-width: 1024px) {
-            .creative-grid { grid-template-columns: 1fr; }
-            .container { padding: 0 25px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>여고생과 리셋중 — Seonghye Kim</title>
+<link rel="icon" href="../img/favicon_2.png">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="../" class="back-link">← PROJECT LIST</a>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-sub);">GRACIEEKEEM@GMAIL.COM</div>
-        </nav>
+<nav>
+  <a class="nav-logo" href="../index.html">Seonghye Kim</a>
+  <div class="nav-right">
+    <a class="nb" href="../index.html">Overview</a>
+    <a class="nb" href="../leedslab/">01 리즈랩</a>
+    <a class="nb on" href="../reset/">02 여고생과 리셋중</a>
+    <a class="nb" href="../chemeet/">03 케밋</a>
+    <a class="nb" href="../yeongshin/">04 영신코리아</a>
+    <a class="nb" href="../oner/">05 이리오너라</a>
+  </div>
+</nav>
 
-        <header>
-            <span class="project-num">Project 02</span>
-            <h1>여고생과 리셋중</h1>
-            <p class="header-sub">방치형 RPG 사전예약 캠페인 비주얼 및 퍼널 설계</p>
-        </header>
+<div class="wrap">
 
-        <main>
-            <section class="content-section">
-                <span class="section-tag">Campaign Visuals</span>
-                
-                <div class="creative-grid">
-                    <div class="asset-card">
-                        <div class="media-box fixed">
-                            <video autoplay muted loop playsinline><source src="../img/reset/cos_down.mp4" type="video/mp4"></video>
-                        </div>
-                        <div class="asset-info">
-                            <h4>광고 소재 비디오 (직접 제작)</h4>
-                            <p>코스튬·캐릭터 중심 핵심 인지 포인트 구성 및 전체 페르소나 공통 메시지 전달</p>
-                        </div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-box fixed">
-                            <img src="../img/reset/02_reset_ad_video_cos_1.jpg">
-                        </div>
-                        <div class="asset-info">
-                            <h4>광고 적용 캡쳐본</h4>
-                            <p>실제 매체 집행 화면 및 영상 내 주요 컷 활용 페르소나 대응</p>
-                        </div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-box fixed">
-                            <img src="../img/reset/02_reset_ad_image_1.jpg">
-                        </div>
-                        <div class="asset-info">
-                            <h4>광고 소재 이미지 (기획 참여)</h4>
-                            <p>메인 페르소나 페인포인트 중심 메시지 기획 및 카피-CTA 변주</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="creative-grid">
-                    <div class="asset-card">
-                        <div class="media-box scroll">
-                            <img src="../img/reset/02_reset_landingpage_full.jpg">
-                        </div>
-                        <div class="asset-info">
-                            <h4>사전예약 랜딩 (Full)</h4>
-                            <p>이해 → 몰입 → 보상 → 전환 흐름 설계 및 정보-비주얼 균형</p>
-                        </div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-box fixed">
-                            <img src="../img/reset/02_reset_ep_1.jpg">
-                        </div>
-                        <div class="asset-info">
-                            <h4>완료 및 SNS 공유 페이지</h4>
-                            <p>예약 완료 즉시 인지 및 다음 행동(공유) 유도 구조</p>
-                        </div>
-                    </div>
-                    <div class="asset-card">
-                        <div class="media-box scroll">
-                            <img src="../img/reset/02_reset_retention_email_full.jpg">
-                        </div>
-                        <div class="asset-info">
-                            <h4>리텐션 이메일 (Full)</h4>
-                            <p>세계관 흐름을 잇는 메시지 전달 및 HTML 기반 퍼블리싱</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem;">
-            © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
-        </footer>
+  <div class="p-header">
+    <div>
+      <a class="p-back" href="../index.html">← Overview</a>
+      <h1 class="p-title">여고생과 리셋중<br><em>방치형 RPG 사전예약 캠페인</em></h1>
     </div>
+    <div class="p-chips">
+      <span class="chip">Meta Ads</span>
+      <span class="chip">LP / End</span>
+      <span class="chip">GA4 / GTM</span>
+    </div>
+  </div>
 
+  <!-- 개요 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">개요</div>
+      <div class="card"><ul>
+        <li>그로스마케팅 부트캠프 실습 프로젝트</li>
+        <li>사전예약 캠페인에서 퍼널 구조를 설계하고 전환 성과를 중심으로 광고·랜딩·리텐션을 연결한 사례</li>
+        <li>광고 집행 기간: 2025.11.18 – 2025.11.24 (7 days)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- 성과 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">성과 지표</div>
+      <div class="m-strip">
+        <div class="m-cell"><div class="mk">Spend</div><div class="mv">₩380,000</div><div class="mn">Meta Ads 실 예산</div></div>
+        <div class="m-cell"><div class="mk">Pre-registrations</div><div class="mv">168</div><div class="mn">총 사전예약 수</div></div>
+        <div class="m-cell"><div class="mk">CVR Total</div><div class="mv">15.09%</div><div class="mn">GA4 기준</div></div>
+        <div class="m-cell"><div class="mk">CVR Paid</div><div class="mv">13.09%</div><div class="mn">Meta Ads 기준</div></div>
+        <div class="m-cell"><div class="mk">CPC</div><div class="mv">₩366</div><div class="mn">링크 클릭 기준</div></div>
+        <div class="m-cell"><div class="mk">CPA</div><div class="mv">₩2,794</div><div class="mn">폼 제출 기준</div></div>
+        <div class="m-cell"><div class="mk">LP View Rate</div><div class="mv">93.35%</div><div class="mn">Meta Ads 기준</div></div>
+        <div class="m-cell"><div class="mk">CTR</div><div class="mv">4.20%</div><div class="mn">링크 클릭 기준</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 광고 소재 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">광고 소재</div>
+      <div>
+        <div class="card" style="margin-bottom:12px"><h4>광고 소재 비디오 (직접 제작)</h4><ul>
+          <li>전체 페르소나 공통 메시지 방향 설정</li>
+          <li>코스튬·캐릭터 중심 핵심 인지 포인트 구성</li>
+          <li>AUTO / MANUAL TARGETING 분리로 전환 효율 차이 검증</li>
+        </ul></div>
+        <div class="vid-zone" id="vid-drop" onclick="document.getElementById('vid-inp').click()"
+          ondragover="event.preventDefault();this.style.borderColor='var(--ink3)'"
+          ondragleave="this.style.borderColor='var(--ln)'"
+          ondrop="dropVid(event)">
+          <div class="vid-icon">▶</div>
+          <h5>광고 영상 파일을 업로드하세요</h5>
+          <p>클릭 또는 드래그 · MP4, MOV, WebM</p>
+        </div>
+        <input id="vid-inp" type="file" accept="video/*" style="display:none" onchange="loadVid(event)">
+        <div id="vid-player" style="display:none">
+          <video id="ad-video" controls><source id="vid-src" src=""></video>
+          <button class="vid-swap" onclick="document.getElementById('vid-inp').click()">다른 파일로 교체</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 퍼널 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">퍼널 설계</div>
+      <div class="funnel">
+        <div class="f-stage"><div class="f-stage-n">Ad</div><div class="f-stage-s">주목 · 클릭</div></div>
+        <div class="f-body"><span>페르소나 × 페인포인트 가설 기반 메시지 실험 설계</span><span>AUTO / MANUAL TARGETING 분리로 전환 효율 차이 검증</span><span>성과 신호 기준으로 소재 ON/OFF 운영</span></div>
+        <div class="f-stage"><div class="f-stage-n">Landing</div><div class="f-stage-s">기대감 · 이해</div></div>
+        <div class="f-body"><span>게임 이해부터 사전예약까지 흐름을 단계적으로 구성한 랜딩 구조</span><span>정보·비주얼 순서를 조정해 몰입과 이해를 동시에 고려한 설계</span><span>사전예약 행동으로 자연스럽게 이어지도록 화면 흐름 정리</span></div>
+        <div class="f-stage"><div class="f-stage-n">End</div><div class="f-stage-s">완료 · 확신</div></div>
+        <div class="f-body"><span>사전예약 완료 상태를 즉시 인지하도록 설계</span><span>시스템 로그 콘셉트로 세계관 몰입 유지</span><span>공유·후속 행동으로 자연스러운 다음 단계 유도</span></div>
+        <div class="f-stage"><div class="f-stage-n">Email</div><div class="f-stage-s">몰입 · 리텐션</div></div>
+        <div class="f-body"><span>사전예약 직후 이메일로 완료·보상 정보 전달</span><span>1일 후 리마인드 문자로 재인지 유도</span><span>예약 데이터 연동 기반 CRM 자동화 구성</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 산출물 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">산출물</div>
+      <div class="g2">
+        <div>
+          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px">랜딩 페이지 — 구조 설계 참여</div>
+          <div class="sframe">
+            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">사전예약 랜딩</span></div>
+            <div class="sframe-inner" style="height:460px">
+              <div class="lp-bg">
+                <div class="lp-hero">
+                  <h3>여고생과 리셋중<br>사전예약 진행 중</h3>
+                  <p>방치형 RPG · 지금 바로 사전예약하고 특별 보상을</p>
+                  <div class="lp-cta">사전예약 바로가기 →</div>
+                </div>
+                <div class="lp-form">
+                  <h4>사전예약 신청 정보 입력</h4>
+                  <input class="lp-inp" type="text" placeholder="닉네임">
+                  <input class="lp-inp" type="text" placeholder="플랫폼 (구글 플레이 / 애플 스토어)">
+                  <input class="lp-inp" type="email" placeholder="이메일">
+                  <div class="lp-chk"><input type="checkbox" id="c1"><label for="c1">[필수] 개인정보 수집 및 이용 동의 · 이벤트 관련 안내 이메일 수신 동의</label></div>
+                  <div class="lp-chk"><input type="checkbox" id="c2"><label for="c2">[선택] 마케팅 활용 동의 및 광고성 정보 수신 동의</label></div>
+                  <button class="lp-btn">사전예약하기 →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px">리텐션 이메일 — 직접 제작</div>
+          <div class="sframe">
+            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">사전예약 완료 이메일</span></div>
+            <div class="sframe-inner" style="height:460px">
+              <div class="em-bg">
+                <div class="em-card">
+                  <div class="em-top"><h3>사전예약 완료!</h3><p>이세계 전송 준비 중...</p></div>
+                  <div class="em-body">
+                    <p>안녕하세요! 여고생과 리셋중 사전예약이 완료되었습니다. 출시 후 준비된 특별 보상이 기다리고 있어요.</p>
+                    <div class="em-reward">
+                      <div class="r-item"><div class="r-icon">💎</div><div class="r-val">1,000</div><div class="r-sub">다이아</div></div>
+                      <div class="r-item"><div class="r-icon">⚔️</div><div class="r-val">30개</div><div class="r-sub">소환권</div></div>
+                      <div class="r-item"><div class="r-icon">🧪</div><div class="r-val">5개</div><div class="r-sub">강화석</div></div>
+                    </div>
+                    <p>출시 일정과 추가 이벤트 소식은 공식 SNS에서 가장 먼저 확인하세요!</p>
+                    <div class="em-cta">공식 SNS 바로가기</div>
+                    <p class="em-foot">본 메일은 사전예약 신청에 의해 발송되었습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 인사이트 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">GA4 &amp; 인사이트</div>
+      <div class="g2">
+        <div class="card"><h4>GA4 분석 구성</h4><ul>
+          <li>광고 유입 → 랜딩 도달 → 완료 페이지 흐름 기반 퍼널 분석</li>
+          <li>스크롤·체류 이벤트로 전환 전 이탈 구간 점검</li>
+          <li>캠페인·소재 단위로 전환 품질 비교</li>
+        </ul></div>
+        <div class="card"><h4>보고서 인사이트</h4><ul>
+          <li>자동 타겟팅 세트가 전환 볼륨 확보에 가장 안정적인 구조로 작동</li>
+          <li>체류·스크롤이 안정적인 유입일수록 전환율이 유의미하게 높음</li>
+          <li>즉시 메일 + SMS 자동화가 예약 후 이탈 최소화에 기여</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function loadVid(e) { const f = e.target.files[0]; if (f) applyVid(f); }
+function dropVid(e) {
+  e.preventDefault();
+  document.getElementById('vid-drop').style.borderColor = 'var(--ln)';
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('video/')) applyVid(f);
+}
+function applyVid(f) {
+  document.getElementById('vid-src').src = URL.createObjectURL(f);
+  document.getElementById('ad-video').load();
+  document.getElementById('vid-drop').style.display = 'none';
+  document.getElementById('vid-player').style.display = 'block';
+}
+</script>
 </body>
 </html>
