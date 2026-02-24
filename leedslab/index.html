@@ -1,195 +1,149 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEEDS LAB — SEONGHYE KIM</title>
-    <link rel="icon" href="../img/favicon_2.png" type="image/png">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* 메인 페이지와 색상 및 환경 통일 */
-        :root { --point-brown: #634e42; --line: #eee; --text-main: #111; --text-sub: #777; --asset-h: 550px; }
-        
-        body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; background: #fff; color: var(--text-main); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-
-        /* Navigation */
-        nav { padding: 40px 0; display: flex; justify-content: space-between; align-items: center; }
-        .back-link { text-decoration: underline; color: var(--point-brown); font-weight: 700; font-size: 0.9rem; }
-
-        /* Header */
-        header { padding: 60px 0 80px; border-bottom: 1px solid var(--line); }
-        header h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; margin: 0 0 15px 0; letter-spacing: -0.03em; }
-        .header-sub { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
-
-        /* Common Section */
-        .content-section { padding: 100px 0; border-bottom: 1px solid var(--line); }
-        .section-tag { color: var(--point-brown); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 40px; display: block; }
-
-        /* 01. Overview Stack */
-        .overview-stack { display: flex; flex-direction: column; gap: 0; }
-        .overview-item { padding: 40px 0; border-top: 1px solid var(--line); }
-        .overview-item:first-child { border-top: 2px solid #333; }
-        .overview-item.point { border-top: 2px solid var(--point-brown); }
-        .overview-item h4 { color: var(--point-brown); font-weight: 800; margin-bottom: 15px; font-size: 1.2rem; }
-        .overview-item p { font-size: 1.1rem; color: #444; word-break: keep-all; margin: 0; }
-
-        /* 02. SNS Content Category (Fixed & Scroll Layout) */
-        .insta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
-        .insta-card { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
-        
-        .media-box { height: var(--asset-h); background: #fafafa; position: relative; overflow: hidden; }
-        .media-box.fixed { display: flex; align-items: center; justify-content: center; padding: 30px; gap: 15px; }
-        .media-box.fixed img { width: 48%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); object-fit: contain; }
-        
-        .media-box.scroll { overflow-y: auto; scrollbar-width: none; }
-        .media-box.scroll::-webkit-scrollbar { display: none; }
-        .media-box.scroll img { width: 100%; height: auto; display: block; }
-
-        .insta-info { padding: 40px; border-top: 1px solid var(--line); }
-        .insta-info h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; }
-        .insta-info p { color: var(--text-sub); font-size: 1rem; margin: 0; }
-
-        /* 03. BTL Field Grid */
-        .btl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 30px; }
-        .btl-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; }
-
-        .btl-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .btl-detail-box { padding: 30px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-        .btl-detail-box h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 20px; }
-        .btl-detail-box ul { list-style: none; padding: 0; margin: 0; }
-        .btl-detail-box li { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 10px; padding-left: 15px; position: relative; }
-        .btl-detail-box li::before { content: '•'; position: absolute; left: 0; color: #ccc; }
-
-        /* Mobile */
-        @media (max-width: 1024px) {
-            .insta-grid { grid-template-columns: 1fr; }
-            .btl-detail-grid { grid-template-columns: 1fr; }
-            .btl-grid { grid-template-columns: repeat(2, 1fr); }
-            .container { padding: 0 25px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리즈랩 — Seonghye Kim</title>
+<link rel="icon" href="../img/favicon_2.png">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="../" class="back-link">← PROJECT LIST</a>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-sub);">GRACIEEKEEM@GMAIL.COM</div>
-        </nav>
+<nav>
+  <a class="nav-logo" href="../index.html">Seonghye Kim</a>
+  <div class="nav-right">
+    <a class="nb" href="../index.html">Overview</a>
+    <a class="nb on" href="../leedslab/">01 리즈랩</a>
+    <a class="nb" href="../reset/">02 여고생과 리셋중</a>
+    <a class="nb" href="../chemeet/">03 케밋</a>
+    <a class="nb" href="../yeongshin/">04 영신코리아</a>
+    <a class="nb" href="../oner/">05 이리오너라</a>
+  </div>
+</nav>
 
-        <header>
-            <h1>리즈랩 (Leeds Lab)</h1>
-            <p class="header-sub">브랜드 SNS 운영 및 BTL 캠페인 필드 오퍼레이션</p>
-        </header>
+<div class="wrap">
 
-        <main>
-            <section class="content-section">
-                <span class="section-tag">01. Overview</span>
-                <div class="overview-stack">
-                    <div class="overview-item">      
-                        <h4>Project Overview</h4>
-                        <p>기존 브랜드 SNS 운영 체계를 인계받아 브랜드 톤앤무드를 유지하며 카피라이팅 및 비주얼 큐레이션을 전담했습니다.</p>
-                    </div>
-                    <div class="overview-item">
-                        <h4>Key Roles</h4>
-                        <p>월간 콘텐츠 기획, 촬영 가이드 제작, 신규 플레이리스트 카테고리 기획 및 BTL 현장 운영 지원.</p>
-                    </div>
-                    <div class="overview-item point">
-                        <h4>Key Achievement</h4>
-                        <p>카카오 선물하기 실시간 랭킹 1위 달성 기여 및 신규 카테고리 도입을 통한 유저 인게이지먼트 증대.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <span class="section-tag">02. SNS Content Category</span>
-                <div class="insta-grid">
-                    <div class="insta-card">
-                        <div class="media-box fixed">
-                            <img src="../img/leedslab/01_leedslab_instagram_product.jpg">
-                            <img src="../img/leedslab/01_leedslab_instagram_mood.jpg">
-                        </div>
-                        <div class="insta-info">
-                            <h3>Product & Mood</h3>
-                            <p>브랜드 비주얼 가이드에 입각한 제품 큐레이션</p>
-                        </div>
-                    </div>
-                    <div class="insta-card">
-                        <div class="media-box fixed">
-                            <img src="../img/leedslab/01_leedslab_intagram_leedslife_1.jpg">
-                            <img src="../img/leedslab/01_leedslab_intagram_leedslife_2.jpg">
-                        </div>
-                        <div class="insta-info">
-                            <h3>Leeds Life</h3>
-                            <p>웰니스와 건강한 루틴 제안 라이프스타일 콘텐츠</p>
-                        </div>
-                    </div>
-                    <div class="insta-card">
-                        <div class="media-box fixed">
-                            <img src="../img/leedslab/01_leedslab_intagram_pleeds.jpg">
-                            <img src="../img/leedslab/01_leedslab_youtube_pleeds_2.jpg">
-                        </div>
-                        <div class="insta-info">
-                            <h3>PLE:EDS (Playlist)</h3>
-                            <p>브랜드 감성을 음악으로 전달하는 신규 카테고리</p>
-                        </div>
-                    </div>
-                    <div class="insta-card">
-                        <div class="media-box fixed">
-                            <img src="../img/leedslab/01_leedslab_intagram_leeview_1.jpg">
-                            <img src="../img/leedslab/01_leedslab_intagram_leeview_2.jpg">
-                        </div>
-                        <div class="insta-info">
-                            <h3>Leeview</h3>
-                            <p>실제 고객 리뷰를 통한 브랜드 신뢰도 제고</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section" style="border-bottom: none;">
-                <span class="section-tag">03. BTL Field Operation</span>
-                <div class="btl-grid">
-                    <img src="../img/leedslab/01_leedslab_btl_deliveryweek_1.jpg">
-                    <img src="../img/leedslab/01_leedslab_btl_univ_midterm_1.jpg">
-                    <img src="../img/leedslab/01_leedslab_btl_musicfestival_1.jpg">
-                    <img src="../img/leedslab/01_leedslab_btl_univ_festiv_1.jpg">
-                </div>
-
-                <div class="btl-detail-grid">
-                    <div class="btl-detail-box">
-                        <h4>BTL 현장 실무</h4>
-                        <ul>
-                            <li>PM 주도 하에 현장 운영 지원</li>
-                            <li>프로모터 지원 및 동선·대기 관리</li>
-                            <li>샘플링 및 리워드 운영 보조</li>
-                        </ul>
-                    </div>
-                    <div class="btl-detail-box">
-                        <h4>기록 및 연계</h4>
-                        <ul>
-                            <li>행사 현장 사진·영상 기록</li>
-                            <li>SNS 콘텐츠 활용을 위한 자료 정리</li>
-                            <li>행사 종료 후 후속 게시물 운영</li>
-                        </ul>
-                    </div>
-                    <div class="btl-detail-box">
-                        <h4>운영 기준</h4>
-                        <ul>
-                            <li>기존 운영 흐름을 해치지 않는 보조</li>
-                            <li>오프라인 경험을 온라인 자산으로 전환</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer style="padding: 80px 0; border-top: 1px solid var(--line); text-align: center; color: #bbb; font-size: 0.85rem;">
-            © 2026 SEONGHYE KIM. ALL RIGHTS RESERVED.
-        </footer>
+  <div class="p-header">
+    <div>
+      <a class="p-back" href="../index.html">← Overview</a>
+      <h1 class="p-title">리즈랩<br><em>헬스케어 브랜드 SNS · BTL 운영</em></h1>
     </div>
+    <div class="p-chips">
+      <span class="chip">Handover</span>
+      <span class="chip">SNS Ops</span>
+      <span class="chip">BTL Support</span>
+    </div>
+  </div>
 
+  <!-- 개요 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">개요</div>
+      <div class="card"><ul>
+        <li>기존 SNS 운영 체계를 인수한 중간 투입 형태 (운영 기간: 2025.02.24~2025.05.24)</li>
+        <li>월간 콘텐츠 운영 전반 담당 (콘텐츠 흐름 관리, 브랜드 톤·무드 유지, 캡션·카피 작성)</li>
+        <li>SNS 콘텐츠 운영과 BTL 현장 실행을 온라인 콘텐츠로 연계</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- SNS 콘텐츠 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">SNS 콘텐츠</div>
+      <div class="g2" style="align-items:start">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card"><h4>운영 내용</h4><ul>
+            <li>월간 콘텐츠 기획·운영 관리</li>
+            <li>브랜드 톤·무드 유지</li>
+            <li>무드 이미지 큐레이션 및 기존 템플릿 기반 운영</li>
+            <li>제품컷 촬영·촬영 가이드 작성</li>
+            <li>플레이리스트 카테고리 신규 제안·운영</li>
+          </ul></div>
+          <div class="card"><h4>콘텐츠 카테고리</h4><ul>
+            <li><strong style="color:var(--ink);font-weight:500">Product</strong> — 브랜드 톤에 맞춘 제품·무드 비주얼, 직접 촬영 및 스톡 이미지 큐레이션</li>
+            <li><strong style="color:var(--ink);font-weight:500">Leeds life</strong> — 일상·웰니스 메시지 중심 릴스, 브랜드 무드 유지 영상 포맷</li>
+            <li><strong style="color:var(--ink);font-weight:500">Leeview</strong> — 제품 경험 기반 리뷰 콘텐츠, 인플루언서 시딩 활용</li>
+            <li><strong style="color:var(--ink);font-weight:500">PLE:EDS</strong> — 월간 무드 기반 플레이리스트, YouTube 연계 시리즈</li>
+            <li><strong style="color:var(--ink);font-weight:500">BTL Notice</strong> — 행사 사전 공지 기획, 현장 기록 후속 게시물 운영</li>
+          </ul></div>
+        </div>
+        <div class="sframe">
+          <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">leedslab.official</span></div>
+          <div class="sframe-inner" style="height:388px">
+            <div class="sns-grid">
+              <div class="sns-cell"><img src="../img/leedslab/sns_01.jpg" alt="Product"><div class="sns-lbl">Product</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_02.jpg" alt="Leeds life Reels"><div class="sns-lbl">Leeds life Reels</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_03.jpg" alt="PLE:EDS"><div class="sns-lbl">PLE:EDS</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_04.jpg" alt="BTL Notice"><div class="sns-lbl">BTL Notice</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_05.jpg" alt="Mood"><div class="sns-lbl">Mood</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_06.jpg" alt="Leeview"><div class="sns-lbl">Leeview</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_07.jpg" alt="Product"><div class="sns-lbl">Product</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_08.jpg" alt="Leeds Delivery"><div class="sns-lbl">Leeds Delivery</div></div>
+              <div class="sns-cell"><img src="../img/leedslab/sns_09.jpg" alt="Brand Mood"><div class="sns-lbl">Brand Mood</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BTL -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">BTL 운영</div>
+      <div>
+        <div class="card" style="margin-bottom:12px"><h4>현장 실무</h4><ul>
+          <li>PM 하에 현장 운영 지원</li>
+          <li>프로모터 지원 및 동선·대기 관리</li>
+          <li>샘플링 및 리워드 운영 보조</li>
+          <li>행사 현장 사진·영상 기록 및 SNS 콘텐츠 활용을 위한 자료 전달</li>
+        </ul></div>
+        <div class="btl-grid">
+          <div class="btl-card">
+            <div class="btl-head"><h5>Delivery Week in Seongsu</h5><p>이동형 팝업 · 로드 샘플링 · 카페 콜라보</p></div>
+            <div class="btl-photos">
+              <div class="btl-photo"><img src="../img/leedslab/btl_seongsu_01.jpg" alt="Delivery Week in Seongsu"></div>
+              <div class="btl-photo"><img src="../img/leedslab/btl_seongsu_02.jpg" alt="Delivery Week in Seongsu"></div>
+            </div>
+          </div>
+          <div class="btl-card">
+            <div class="btl-head"><h5>Delivery Truck — Univ. (Midterm)</h5><p>대학교 시험기간 방문 샘플링</p></div>
+            <div class="btl-photos">
+              <div class="btl-photo"><img src="../img/leedslab/btl_midterm_01.jpg" alt="Delivery Truck Midterm"></div>
+              <div class="btl-photo"><img src="../img/leedslab/btl_midterm_02.jpg" alt="Delivery Truck Midterm"></div>
+            </div>
+          </div>
+          <div class="btl-card">
+            <div class="btl-head"><h5>Delivery Truck — Music Festival</h5><p>뮤직 페스티벌 스폰서 부스 참가</p></div>
+            <div class="btl-photos">
+              <div class="btl-photo"><img src="../img/leedslab/btl_festival_01.jpg" alt="Music Festival"></div>
+              <div class="btl-photo"><img src="../img/leedslab/btl_festival_02.jpg" alt="Music Festival"></div>
+            </div>
+          </div>
+          <div class="btl-card">
+            <div class="btl-head"><h5>Delivery Truck — Univ. (Festival)</h5><p>대학교 축제기간 방문 샘플링</p></div>
+            <div class="btl-photos">
+              <div class="btl-photo"><img src="../img/leedslab/btl_univ_festival_01.jpg" alt="Univ Festival"></div>
+              <div class="btl-photo"><img src="../img/leedslab/btl_univ_festival_02.jpg" alt="Univ Festival"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결과 -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">결과</div>
+      <div class="g2">
+        <div class="card"><h4>SNS 운영</h4><ul><li>월간 SNS 콘텐츠 운영 안정적 유지</li><li>콘텐츠 범위 확장</li></ul></div>
+        <div class="card"><h4>BTL 행사 이후</h4><ul><li>Instagram 팔로워 증가</li><li>카카오 선물하기 '찜' 수 증가</li><li>실시간 랭킹 1위 달성</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
