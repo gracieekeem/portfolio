@@ -52,7 +52,7 @@ nav {
   border-radius: 100px; background: var(--sur);
 }
 
-/* ── INDEX PAGE SPECIFIC (Added for clean HTML) ── */
+/* ── INDEX PAGE SPECIFIC ── */
 .hero-sec { padding: 68px 0 52px; border-bottom: 1px solid var(--ln); }
 .chip-group { display: flex; gap: 6px; margin-bottom: 36px; flex-wrap: wrap; }
 .hero-title { font-family: 'EB Garamond', serif; font-size: clamp(42px, 7vw, 84px); font-weight: 400; line-height: 1.0; letter-spacing: -.015em; margin-bottom: 24px; }
@@ -116,7 +116,7 @@ nav {
 .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
 .sp12 { height: 12px; }
 
-/* ── METRICS, FUNNEL, SNS, BTL, PREVIEWS (Original styles preserved) ── */
+/* ── METRICS, FUNNEL, SNS, BTL, PREVIEWS ── */
 .m-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; }
 .m-cell { background: var(--sur); padding: 18px 20px; }
 .mk { font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); margin-bottom: 4px; }
@@ -157,6 +157,7 @@ nav {
 .btl-photo { aspect-ratio: 4/3; background: #d5d0c8; overflow: hidden; }
 .btl-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* ── PREVIEWS (RPG, WEB, YT) ── */
 .lp-bg { background: #09091a; }
 .lp-hero { background: linear-gradient(180deg,#0c0c1e,#18073a); padding: 36px 22px 26px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.05); }
 .lp-hero h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 7px; line-height: 1.3; font-family: 'DM Sans', sans-serif; }
@@ -263,19 +264,13 @@ nav {
 .wrap > *:nth-child(5) { animation-delay: .20s; }
 .wrap > *:nth-child(6) { animation-delay: .22s; }
 
-/* ── RESPONSIVE CORE ── */
+/* ── RESPONSIVE (840px 이하는 모바일로 간주) ── */
 @media (max-width: 840px) {
-  nav { padding: 0 18px; justify-content: space-between; }
-  .nav-right { 
-    overflow-x: auto; 
-    white-space: nowrap; 
-    gap: 0; 
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; 
-  }
-  .nav-right::-webkit-scrollbar { display: none; }
-  .nb { padding: 6px 10px; flex-shrink: 0; font-size: 11px; }
-
+  nav { padding: 0 18px; justify-content: center; } /* 로고를 중앙 정렬하거나 간격 조정 */
+  
+  /* [변경] 모바일에서 상단 프로젝트 메뉴 전체 숨김 */
+  .nav-right { display: none; }
+  
   .wrap { padding: 0 18px; }
   .hero-sec { padding: 40px 0; }
   .hero-title { font-size: 42px; }
