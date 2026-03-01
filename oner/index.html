@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>이리오너라 — Seonghye Kim</title>
-<link rel="icon" href="../img/favicon_2.png?v=2">
-<link rel="apple-touch-icon" href="../img/favicon_2.png?v=2">
+<link rel="icon" href="../img/favicon_2.png">
+<link rel="apple-touch-icon" href="../img/favicon_2.png">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -20,7 +20,16 @@
     <a class="nb" href="../yeongshin/">04 영신코리아</a>
     <a class="nb on" href="../oner/">05 이리오너라</a>
   </div>
+  <button class="ham" id="ham" onclick="toggleMenu()" aria-label="메뉴"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a class="nb" href="../index.html">Overview</a>
+  <a class="nb" href="../leedslab/">01 리즈랩</a>
+  <a class="nb" href="../reset/">02 여고생과 리셋중</a>
+  <a class="nb" href="../chemeet/">03 케밋</a>
+  <a class="nb" href="../yeongshin/">04 영신코리아</a>
+  <a class="nb on" href="../oner/">05 이리오너라</a>
+</div>
 
 <div class="wrap">
 
@@ -74,11 +83,9 @@
       <div class="p-lbl">대표 쇼츠</div>
       <div>
         <div class="yt-pager">
-          <!-- 슬라이드 1 -->
           <div class="yt-slide active" id="yt-slide-1">
             <div class="yt-slide-inner">
               <div class="yt-embed-wrap">
-                <!-- SHORTS_ID_01 자리에 실제 YouTube Shorts 영상 ID 입력 -->
                 <iframe src="https://www.youtube.com/embed/Kd2ksj6403s?rel=0&modestbranding=1"
                   title="실버 정도면... 랭킹 100위쯤 되나?"
                   allowfullscreen
@@ -92,11 +99,9 @@
               </div>
             </div>
           </div>
-          <!-- 슬라이드 2 -->
           <div class="yt-slide" id="yt-slide-2">
             <div class="yt-slide-inner">
               <div class="yt-embed-wrap">
-                <!-- SHORTS_ID_02 자리에 실제 YouTube Shorts 영상 ID 입력 -->
                 <iframe src="https://www.youtube.com/embed/vdnzSZBEXE4?rel=0&modestbranding=1"
                   title="탑과 정글 둘은 문제이지만 최강"
                   allowfullscreen
@@ -110,11 +115,9 @@
               </div>
             </div>
           </div>
-          <!-- 슬라이드 3 -->
           <div class="yt-slide" id="yt-slide-3">
             <div class="yt-slide-inner">
               <div class="yt-embed-wrap">
-                <!-- SHORTS_ID_03 자리에 실제 YouTube Shorts 영상 ID 입력 -->
                 <iframe src="https://www.youtube.com/embed/y1xG_KQn-VA?rel=0&modestbranding=1"
                   title="소개팅 3꽉"
                   allowfullscreen
@@ -128,7 +131,6 @@
               </div>
             </div>
           </div>
-          <!-- 컨트롤 -->
           <div class="yt-controls">
             <button class="yt-btn" id="yt-prev" onclick="ytPrev()" disabled>←</button>
             <div class="yt-dots">
@@ -165,6 +167,10 @@ function ytGo(n) {
 }
 function ytPrev() { if (ytCur > 1) ytGo(ytCur - 1); }
 function ytNext() { if (ytCur < ytTotal) ytGo(ytCur + 1); }
+function toggleMenu() {
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
 </script>
 </body>
 </html>
