@@ -24,7 +24,7 @@
 .sns-cat-imgs { background: var(--ln); display: flex; flex-direction: column; gap: 2px; padding: 2px; flex: 1; }
 .sns-cat-imgs.two { display: grid; grid-template-columns: 1fr 1fr; }
 .sns-cat-img { overflow: hidden; background: #d5d0c8; }
-.sns-cat-img img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.sns-cat-img img { width: 100%; display: block; }
 .sns-cat-desc { padding: 8px 11px; border-top: 1px solid var(--lns); list-style: none; }
 .sns-cat-desc li { font-size: 10.5px; color: var(--ink3); font-weight: 300; padding-left: 10px; position: relative; line-height: 1.45; margin-bottom: 2px; }
 .sns-cat-desc li::before { content: '–'; position: absolute; left: 0; }
@@ -42,7 +42,7 @@
 .btl-imgs { display: grid; gap: 2px; background: var(--ln); padding: 2px; }
 .btl-imgs.c2 { grid-template-columns: 1fr 1fr; }
 .btl-imgs.c3 { grid-template-columns: 1fr 1fr 1fr; }
-.btl-img { overflow: hidden; background: #d5d0c8; aspect-ratio: 4/3; }
+.btl-img { overflow: hidden; background: #d5d0c8; }
 .btl-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .btl-side { display: flex; flex-direction: column; gap: 12px; }
 
@@ -276,6 +276,8 @@
             <div class="btl-imgs c2">
               <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_deliveryweek_1.jpg" alt="Delivery Week 1"></div>
               <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_deliveryweek_2.jpg" alt="Delivery Week 2"></div>
+              <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_deliveryweek_3.jpg" alt="Delivery Week 3"></div>
+              <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_deliveryweek_4.jpg" alt="Delivery Week 4"></div>
             </div>
           </div>
 
@@ -285,10 +287,11 @@
               <span class="btl-badge">Delivery Truck — Univ. (Midterm)</span>
               <span class="btl-sub2">대학교 시험기간 방문 샘플링</span>
             </div>
-            <div class="btl-imgs c3">
+            <div class="btl-imgs c2">
               <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_univ_midterm_1.jpg" alt="Midterm 1"></div>
               <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_univ_midterm_2.jpg" alt="Midterm 2"></div>
               <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_univ_midterm_3.jpg" alt="Midterm 3"></div>
+              <div class="btl-img"><img src="../img/leedslab/01_leedslab_btl_univ_midterm_4.jpg" alt="Midterm 4"></div>
             </div>
           </div>
 
@@ -361,5 +364,11 @@
   </div>
 
 </div>
+<script>
+function toggleMenu() {
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+</script>
 </body>
 </html>
