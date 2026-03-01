@@ -7,6 +7,17 @@
 <link rel="icon" href="../img/favicon_2.png">
 <link rel="apple-touch-icon" href="../img/favicon_2.png">
 <link rel="stylesheet" href="../css/style.css">
+<style>
+/* reset 전용 — EP 이미지 직접 배치 (스크롤 없이) */
+.ep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.ep-img { border-radius: 8px; overflow: hidden; border: 1px solid var(--ln); }
+.ep-img img { width: 100%; display: block; }
+.ep-lbl { font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink3); padding: 7px 10px; background: var(--sur); border-top: 1px solid var(--lns); text-align: center; }
+
+@media (max-width: 768px) {
+  .ep-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+}
+</style>
 </head>
 <body>
 
@@ -79,24 +90,25 @@
     <div class="p-sec-row">
       <div class="p-lbl">광고 소재</div>
       <div>
-        <div class="card" style="margin-bottom:12px"><h4>광고 소재 비디오 (직접 제작)</h4><ul>
+        <div class="card" style="margin-bottom:12px"><h4>광고 소재 (직접 제작)</h4><ul>
           <li>전체 페르소나 공통 메시지 방향 설정</li>
           <li>코스튬·캐릭터 중심 핵심 인지 포인트 구성</li>
           <li>AUTO / MANUAL TARGETING 분리로 전환 효율 차이 검증</li>
         </ul></div>
-        <!-- 광고 소재: 실제 영상 + 썸네일 이미지 나란히 -->
         <div class="g2" style="align-items:start">
           <div>
-            <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px">광고 영상</div>
+            <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">광고 영상</div>
             <video controls style="width:100%;border-radius:8px;display:block;background:#000">
               <source src="../img/reset/cos_down.mp4" type="video/mp4">
             </video>
           </div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:1px">광고 소재 이미지</div>
-            <img src="../img/reset/02_reset_ad_image_1.jpg.jpg" alt="광고 소재 이미지" style="width:100%;border-radius:8px;display:block;border:1px solid var(--ln)">
-            <img src="../img/reset/02_reset_ad_video_cos_1.jpg" alt="광고 소재 코스 1" style="width:100%;border-radius:8px;display:block;border:1px solid var(--ln)">
-            <img src="../img/reset/02_reset_ad_video_cos_2.jpg" alt="광고 소재 코스 2" style="width:100%;border-radius:8px;display:block;border:1px solid var(--ln)">
+          <div>
+            <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">광고 소재 이미지</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <img src="../img/reset/02_reset_ad_image_1.jpg.jpg" alt="광고 소재 이미지" style="width:100%;border-radius:8px;border:1px solid var(--ln);display:block">
+              <img src="../img/reset/02_reset_ad_video_cos_1.jpg" alt="광고 소재 코스 1" style="width:100%;border-radius:8px;border:1px solid var(--ln);display:block">
+              <img src="../img/reset/02_reset_ad_video_cos_2.jpg" alt="광고 소재 코스 2" style="width:100%;border-radius:8px;border:1px solid var(--ln);display:block">
+            </div>
           </div>
         </div>
       </div>
@@ -109,70 +121,64 @@
       <div class="p-lbl">퍼널 설계</div>
       <div class="funnel">
         <div class="f-stage"><div class="f-stage-n">Ad</div><div class="f-stage-s">주목 · 클릭</div></div>
-        <div class="f-body"><span>페르소나 × 페인포인트 가설 기반 메시지 실험 설계</span><span>AUTO / MANUAL TARGETING 분리로 전환 효율 차이 검증</span><span>성과 신호 기준으로 소재 ON/OFF 운영</span></div>
+        <div class="f-body"><span>페르소나 × 페인포인트 가설 기반 메시지 실험 설계</span><span>AUTO / MANUAL TARGETING 분리로 전환 효율 차이 검증</span></div>
         <div class="f-stage"><div class="f-stage-n">Landing</div><div class="f-stage-s">기대감 · 이해</div></div>
-        <div class="f-body"><span>게임 이해부터 사전예약까지 흐름을 단계적으로 구성한 랜딩 구조</span><span>정보·비주얼 순서를 조정해 몰입과 이해를 동시에 고려한 설계</span><span>사전예약 행동으로 자연스럽게 이어지도록 화면 흐름 정리</span></div>
+        <div class="f-body"><span>게임 이해부터 사전예약까지 흐름을 단계적으로 구성한 랜딩 구조</span><span>사전예약 행동으로 자연스럽게 이어지도록 화면 흐름 정리</span></div>
         <div class="f-stage"><div class="f-stage-n">End</div><div class="f-stage-s">완료 · 확신</div></div>
-        <div class="f-body"><span>사전예약 완료 상태를 즉시 인지하도록 설계</span><span>시스템 로그 콘셉트로 세계관 몰입 유지</span><span>공유·후속 행동으로 자연스러운 다음 단계 유도</span></div>
+        <div class="f-body"><span>사전예약 완료 상태를 즉시 인지하도록 설계</span><span>시스템 로그 콘셉트로 세계관 몰입 유지</span></div>
         <div class="f-stage"><div class="f-stage-n">Email</div><div class="f-stage-s">몰입 · 리텐션</div></div>
-        <div class="f-body"><span>사전예약 직후 이메일로 완료·보상 정보 전달</span><span>1일 후 리마인드 문자로 재인지 유도</span><span>예약 데이터 연동 기반 CRM 자동화 구성</span></div>
+        <div class="f-body"><span>사전예약 직후 이메일로 완료·보상 정보 전달</span><span>1일 후 리마인드 문자로 재인지 유도</span></div>
       </div>
     </div>
   </div>
 
-  <!-- 산출물 -->
+  <!-- 산출물: 랜딩 + 이메일 (스크롤 프레임) -->
   <div class="p-sec">
     <div class="p-sec-row">
       <div class="p-lbl">산출물</div>
-      <div class="g2">
-        <div>
-          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px">랜딩 페이지 — 구조 설계 참여</div>
-          <div class="sframe">
-            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">사전예약 랜딩</span></div>
-            <div class="sframe-inner" style="height:460px">
-              <img src="../img/reset/02_reset_landingpage_full.jpg" alt="랜딩 페이지 전체" style="width:100%;display:block">
+      <div>
+        <div class="g2" style="margin-bottom:16px">
+          <div>
+            <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">랜딩 페이지 — 구조 설계 참여</div>
+            <div class="sframe">
+              <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">사전예약 랜딩</span></div>
+              <div class="sframe-inner" style="height:420px">
+                <img src="../img/reset/02_reset_landingpage_full.jpg" alt="랜딩 페이지 전체" style="width:100%;display:block">
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">리텐션 이메일 — 직접 제작</div>
+            <div class="sframe">
+              <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">사전예약 완료 이메일</span></div>
+              <div class="sframe-inner" style="height:420px">
+                <img src="../img/reset/02_reset_retention_email_full.jpg" alt="리텐션 이메일 전체" style="width:100%;display:block">
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px">리텐션 이메일 — 직접 제작</div>
-          <div class="sframe">
-            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">사전예약 완료 이메일</span></div>
-            <div class="sframe-inner" style="height:460px">
-              <img src="../img/reset/02_reset_retention_email_full.jpg" alt="리텐션 이메일 전체" style="width:100%;display:block">
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- End 페이지 + EP/카카오 공유 -->
-      <div style="margin-top:12px">
-        <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:9px">End 페이지 &amp; 공유 기능</div>
-        <div class="g3">
-          <div class="sframe">
-            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">EP 완료 페이지 1</span></div>
-            <div class="sframe-inner" style="height:300px">
-              <img src="../img/reset/02_reset_ep_1.jpg" alt="EP 1" style="width:100%;display:block">
-            </div>
+        <!-- End 페이지 + 카카오 공유 — 스크롤 없이 이미지 직접 -->
+        <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">End 페이지 &amp; 카카오 공유</div>
+        <div class="ep-grid">
+          <div class="ep-img">
+            <img src="../img/reset/02_reset_ep_1.jpg" alt="EP 1">
+            <div class="ep-lbl">EP 완료 1</div>
           </div>
-          <div class="sframe">
-            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">EP 완료 페이지 2</span></div>
-            <div class="sframe-inner" style="height:300px">
-              <img src="../img/reset/02_reset_ep_2.jpg" alt="EP 2" style="width:100%;display:block">
-            </div>
+          <div class="ep-img">
+            <img src="../img/reset/02_reset_ep_2.jpg" alt="EP 2">
+            <div class="ep-lbl">EP 완료 2</div>
           </div>
-          <div class="sframe">
-            <div class="sframe-bar"><div class="mdots"><i></i><i></i><i></i></div><span class="sframe-lbl">카카오 공유</span></div>
-            <div class="sframe-inner" style="height:300px">
-              <img src="../img/reset/02_reset_ep_kakaoshare.jpg" alt="카카오 공유" style="width:100%;display:block">
-            </div>
+          <div class="ep-img">
+            <img src="../img/reset/02_reset_ep_kakaoshare.jpg" alt="카카오 공유">
+            <div class="ep-lbl">카카오 공유</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 인사이트 -->
+  <!-- GA4 -->
   <div class="p-sec">
     <div class="p-sec-row">
       <div class="p-lbl">GA4 &amp; 인사이트</div>
@@ -194,18 +200,9 @@
 </div>
 
 <script>
-function loadVid(e) { const f = e.target.files[0]; if (f) applyVid(f); }
-function dropVid(e) {
-  e.preventDefault();
-  document.getElementById('vid-drop').style.borderColor = 'var(--ln)';
-  const f = e.dataTransfer.files[0];
-  if (f && f.type.startsWith('video/')) applyVid(f);
-}
-function applyVid(f) {
-  document.getElementById('vid-src').src = URL.createObjectURL(f);
-  document.getElementById('ad-video').load();
-  document.getElementById('vid-drop').style.display = 'none';
-  document.getElementById('vid-player').style.display = 'block';
+function toggleMenu() {
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
 }
 </script>
 </body>
