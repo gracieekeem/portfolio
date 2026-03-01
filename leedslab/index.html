@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리즈랩 — Seonghye Kim</title>
 <link rel="icon" href="../img/favicon_2.png">
+<link rel="apple-touch-icon" href="../img/favicon_2.png">
 <link rel="stylesheet" href="../css/style.css">
 <style>
 /* 개요 비주얼 */
@@ -45,18 +46,29 @@
 .btl-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .btl-side { display: flex; flex-direction: column; gap: 12px; }
 
-@media (max-width: 900px) {
-  .sns-cat-grid { grid-template-columns: 1fr 1fr; }
-  .sns-col-stack { flex-direction: row; gap: 10px; }
-  .btl-layout { grid-template-columns: 1fr; }
-  .btl-events { grid-template-columns: 1fr; }
-  .overview-visual { grid-template-columns: 1fr; }
-}
-@media (max-width: 540px) {
-  .sns-cat-grid { grid-template-columns: 1fr; }
-  .sns-col-stack { flex-direction: column; }
-  .btl-imgs.c3 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 768px) {
+  /* 개요 비주얼 — 1열 (그리드 한 장이라 의미 있음) */
+  .overview-visual { grid-template-columns: 1fr; gap: 16px; }
   .photo-grid4 { grid-template-columns: 1fr 1fr; }
+
+  /* SNS 카테고리 — 2열 */
+  .sns-cat-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sns-col-stack { flex-direction: column; gap: 8px; }
+  .sns-cat-head { padding: 7px 9px; }
+  .sns-cat-desc li { font-size: 10px; }
+  .sns-cat-badge { font-size: 9.5px; }
+  .sns-cat-sub { font-size: 9.5px; }
+
+  /* BTL — 사이드 텍스트 아래로 */
+  .btl-layout { grid-template-columns: 1fr; gap: 14px; }
+  /* 행사 카드 2열 유지 */
+  .btl-events { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .btl-badge { font-size: 9.5px; }
+  .btl-sub2 { font-size: 9.5px; }
+  /* 3열 사진 → 2+1 or just 2열 */
+  .btl-imgs.c3 { grid-template-columns: 1fr 1fr; }
+  .btl-side { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .btl-side .card { flex: 1 1 140px; min-width: 0; }
 }
 </style>
 </head>
