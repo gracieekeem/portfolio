@@ -120,7 +120,7 @@ nav {
 .btl-head p { font-size: 11px; color: var(--ink3); font-weight: 300; }
 .btl-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ln); padding: 2px; }
 .btl-photos.four { grid-template-columns: 1fr 1fr; }
-.btl-photo { aspect-ratio: 4/3; background: #d5d0c8; overflow: hidden; }
+.btl-photo { background: #d5d0c8; overflow: hidden; }
 .btl-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ── LANDING PREVIEW ── */
@@ -322,7 +322,7 @@ nav {
 
   /* YouTube pager */
   .yt-slide-inner { grid-template-columns: 1fr; gap: 16px; }
-  .yt-embed-wrap { max-width: 220px; margin: 0 auto; }
+  .yt-embed-wrap { max-width: 200px; margin: 0 auto; }
   .yt-slide-title { font-size: 16px; margin-top: 4px; }
   .yt-slide-num { font-size: 10px; }
   .yt-slide-desc { font-size: 12px; }
