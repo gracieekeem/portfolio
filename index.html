@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,7 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seonghye Kim — Marketing Portfolio</title>
 <link rel="icon" href="./img/favicon_2.png">
+<link rel="apple-touch-icon" href="./img/favicon_2.png">
 <link rel="stylesheet" href="./css/style.css">
+<style>
+/* Overview page specific */
+.ov-section { padding: 40px 0; border-bottom: 1px solid var(--ln); }
+.ov-section:last-child { border-bottom: none; padding-bottom: 80px; }
+.ov-row { display: grid; grid-template-columns: 148px 1fr; gap: 40px; align-items: start; }
+.ov-lbl { font-size: 11px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--ink3); padding-top: 2px; }
+
+.comp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; }
+.comp-cell { background: var(--sur); padding: 18px 20px; }
+.comp-cell h4 { font-size: 11px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
+.comp-cell p { font-size: 12.5px; color: var(--ink2); font-weight: 300; line-height: 1.55; }
+
+.proj-list { background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; gap: 1px; }
+.proj-row { display: grid; grid-template-columns: 34px 1fr 20px; align-items: center; gap: 16px; padding: 14px 20px; background: var(--sur); text-decoration: none; transition: background .12s; }
+.proj-row:hover { background: rgba(28,25,22,0.04); }
+.proj-num { font-family: 'EB Garamond', serif; font-size: 15px; color: var(--ink3); }
+.proj-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.proj-info strong { font-size: 13px; font-weight: 500; color: var(--ink); }
+.proj-info span { font-size: 11.5px; color: var(--ink3); font-weight: 300; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.proj-arr { color: var(--ink3); font-size: 13px; transition: transform .15s; justify-self: end; }
+.proj-row:hover .proj-arr { transform: translateX(2px); color: var(--ink); }
+
+.tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; }
+.tools-cell { background: var(--sur); padding: 16px 20px; display: grid; grid-template-columns: 80px 1fr; gap: 12px; align-items: baseline; }
+.tools-cell .tk { font-size: 11.5px; font-weight: 500; color: var(--ink2); }
+.tools-cell .tv { font-size: 12.5px; color: var(--ink3); font-weight: 300; line-height: 1.5; }
+
+/* Hero */
+.hero { padding: 64px 0 48px; border-bottom: 1px solid var(--ln); }
+.hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(48px, 8vw, 84px); font-weight: 400; line-height: 1.0; letter-spacing: -.015em; margin-bottom: 22px; }
+.hero h1 em { font-style: italic; color: var(--ink2); }
+.hero p { font-size: 13.5px; color: var(--ink2); max-width: 480px; line-height: 1.75; font-weight: 300; }
+.hero-chips { display: flex; gap: 6px; margin-bottom: 32px; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .ov-row { grid-template-columns: 1fr; gap: 10px; }
+  .ov-lbl { font-size: 10px; margin-bottom: 2px; }
+  .ov-section { padding: 24px 0; }
+  .hero { padding: 36px 0 28px; }
+  .hero h1 { font-size: clamp(36px, 10vw, 52px); margin-bottom: 14px; }
+  .hero p { font-size: 13px; }
+  .hero-chips { margin-bottom: 24px; gap: 5px; }
+  .comp-grid { grid-template-columns: 1fr 1fr; }
+  .comp-cell { padding: 12px 12px; }
+  .comp-cell h4 { font-size: 9.5px; margin-bottom: 3px; }
+  .comp-cell p { font-size: 11px; line-height: 1.5; }
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .tools-cell { grid-template-columns: 1fr; gap: 2px; padding: 11px 12px; }
+  .tools-cell .tk { font-size: 11px; }
+  .tools-cell .tv { font-size: 11px; line-height: 1.5; }
+  .proj-row { padding: 11px 13px; gap: 10px; grid-template-columns: 28px 1fr 16px; }
+  .proj-num { font-size: 13px; }
+  .proj-info strong { font-size: 12.5px; }
+  .proj-info span { font-size: 11px; white-space: normal; overflow: visible; text-overflow: unset; line-height: 1.4; }
+  .proj-arr { font-size: 11px; }
+}
+</style>
 </head>
 <body>
 
@@ -34,38 +91,34 @@
 <div class="wrap">
 
   <!-- HERO -->
-  <div style="padding:68px 0 52px;border-bottom:1px solid var(--ln)">
-    <div style="display:flex;gap:6px;margin-bottom:36px;flex-wrap:wrap">
+  <div class="hero">
+    <div class="hero-chips">
       <span class="chip">Content Marketing</span>
       <span class="chip">Brand &amp; Visual</span>
       <span class="chip">Video Editing</span>
     </div>
-    <h1 style="font-family:'EB Garamond',serif;font-size:clamp(50px,7vw,84px);font-weight:400;line-height:1.0;letter-spacing:-.015em;margin-bottom:24px">
-      Marketing<br><em style="font-style:italic;color:var(--ink2)">Portfolio</em>
-    </h1>
-    <p style="font-size:14px;color:var(--ink2);max-width:500px;line-height:1.75;font-weight:300">
-      브랜드 SNS 콘텐츠 기획과 운영을 기반으로 퍼포먼스 캠페인 집행, GA4 퍼널 분석, 그리고 기업 웹사이트 구축까지. 콘텐츠–광고–데이터–웹을 하나의 흐름으로 연결하는 실무형 마케터입니다.
-    </p>
+    <h1>Marketing<br><em>Portfolio</em></h1>
+    <p>브랜드 SNS 콘텐츠 기획과 운영을 기반으로 퍼포먼스 캠페인 집행, GA4 퍼널 분석, 그리고 기업 웹사이트 구축까지. 콘텐츠–광고–데이터–웹을 하나의 흐름으로 연결하는 실무형 마케터입니다.</p>
   </div>
 
   <!-- COMPETENCIES -->
-  <div style="padding:44px 0;border-bottom:1px solid var(--ln)">
-    <div style="display:grid;grid-template-columns:148px 1fr;gap:40px;align-items:start">
-      <div style="font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);padding-top:2px">Competencies</div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:8px;overflow:hidden">
-        <div style="background:var(--sur);padding:20px 22px"><p style="font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:5px">Content</p><p style="font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.55">SNS 콘텐츠 기획·운영, 브랜드 톤 관리</p></div>
-        <div style="background:var(--sur);padding:20px 22px"><p style="font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:5px">Performance</p><p style="font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.55">Meta Ads, CTR/CPC 기반 성과 분석</p></div>
-        <div style="background:var(--sur);padding:20px 22px"><p style="font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:5px">Analytics</p><p style="font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.55">GA4, GTM 설정 및 퍼널 분석</p></div>
-        <div style="background:var(--sur);padding:20px 22px"><p style="font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:5px">Web</p><p style="font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.55">웹 프로젝트 기획 및 구축 관리</p></div>
+  <div class="ov-section">
+    <div class="ov-row">
+      <div class="ov-lbl">Competencies</div>
+      <div class="comp-grid">
+        <div class="comp-cell"><h4>Content</h4><p>SNS 콘텐츠 기획·운영, 브랜드 톤 관리</p></div>
+        <div class="comp-cell"><h4>Performance</h4><p>Meta Ads, CTR/CPC 기반 성과 분석</p></div>
+        <div class="comp-cell"><h4>Analytics</h4><p>GA4, GTM 설정 및 퍼널 분석</p></div>
+        <div class="comp-cell"><h4>Web</h4><p>웹 프로젝트 기획 및 구축 관리</p></div>
       </div>
     </div>
   </div>
 
   <!-- PROJECTS -->
-  <div style="padding:44px 0;border-bottom:1px solid var(--ln)">
-    <div style="display:grid;grid-template-columns:148px 1fr;gap:40px;align-items:start">
-      <div style="font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);padding-top:2px">Projects</div>
-      <div style="background:var(--ln);border:1px solid var(--ln);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;gap:1px">
+  <div class="ov-section">
+    <div class="ov-row">
+      <div class="ov-lbl">Projects</div>
+      <div class="proj-list">
         <a href="./leedslab/" class="proj-row">
           <span class="proj-num">01</span>
           <span class="proj-info"><strong>리즈랩</strong><span>헬스케어 브랜드 콘텐츠 · BTL 마케팅</span></span>
@@ -96,30 +149,19 @@
   </div>
 
   <!-- TOOLS -->
-  <div style="padding:44px 0 80px">
-    <div style="display:grid;grid-template-columns:148px 1fr;gap:40px;align-items:start">
-      <div style="font-size:11px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);padding-top:2px">Tools</div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:8px;overflow:hidden">
-        <div style="background:var(--sur);padding:18px 22px;display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:baseline"><span style="font-size:11.5px;font-weight:500;color:var(--ink2)">Content</span><span style="font-size:12.5px;color:var(--ink3);font-weight:300">Figma, Photoshop, Premiere Pro, CapCut</span></div>
-        <div style="background:var(--sur);padding:18px 22px;display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:baseline"><span style="font-size:11.5px;font-weight:500;color:var(--ink2)">Ads</span><span style="font-size:12.5px;color:var(--ink3);font-weight:300">Meta Ads Manager</span></div>
-        <div style="background:var(--sur);padding:18px 22px;display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:baseline"><span style="font-size:11.5px;font-weight:500;color:var(--ink2)">Analytics</span><span style="font-size:12.5px;color:var(--ink3);font-weight:300">GA4, GTM, Looker Studio</span></div>
-        <div style="background:var(--sur);padding:18px 22px;display:grid;grid-template-columns:90px 1fr;gap:14px;align-items:baseline"><span style="font-size:11.5px;font-weight:500;color:var(--ink2)">Web</span><span style="font-size:12.5px;color:var(--ink3);font-weight:300">HTML / CSS, GitHub Pages · AI-assisted: Gemini</span></div>
+  <div class="ov-section">
+    <div class="ov-row">
+      <div class="ov-lbl">Tools</div>
+      <div class="tools-grid">
+        <div class="tools-cell"><span class="tk">Content</span><span class="tv">Figma, Photoshop, Premiere Pro, CapCut</span></div>
+        <div class="tools-cell"><span class="tk">Ads</span><span class="tv">Meta Ads Manager</span></div>
+        <div class="tools-cell"><span class="tk">Analytics</span><span class="tv">GA4, GTM, Looker Studio</span></div>
+        <div class="tools-cell"><span class="tk">Web</span><span class="tv">HTML / CSS, GitHub Pages · AI-assisted: Gemini</span></div>
       </div>
     </div>
   </div>
 
 </div>
-
-<style>
-.proj-row { display:grid; grid-template-columns:36px 1fr 20px; align-items:center; gap:20px; padding:16px 22px; background:var(--sur); text-decoration:none; transition:background .12s; }
-.proj-row:hover { background:rgba(28,25,22,0.04); }
-.proj-num { font-family:'EB Garamond',serif; font-size:15px; color:var(--ink3); }
-.proj-info { display:flex; flex-direction:column; gap:2px; }
-.proj-info strong { font-size:13.5px; font-weight:500; color:var(--ink); }
-.proj-info span { font-size:12px; color:var(--ink3); font-weight:300; }
-.proj-arr { color:var(--ink3); font-size:13px; transition:transform .15s; justify-self:end; }
-.proj-row:hover .proj-arr { transform:translateX(2px); color:var(--ink); }
-</style>
 
 <script>
 function toggleMenu() {
