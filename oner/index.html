@@ -8,26 +8,32 @@
 <link rel="apple-touch-icon" href="../img/favicon_2.png">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-/* YouTube 썸네일 카드 */
-.yt-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-.yt-card { border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; background: var(--sur); text-decoration: none; display: block; transition: box-shadow .15s; }
-.yt-card:hover { box-shadow: 0 4px 20px rgba(28,25,22,.10); }
-.yt-thumb { position: relative; background: #111; aspect-ratio: 9/16; overflow: hidden; }
-.yt-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.yt-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.25); transition: background .15s; }
-.yt-card:hover .yt-play { background: rgba(0,0,0,.40); }
-.yt-play-btn { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,.92); display: flex; align-items: center; justify-content: center; }
-.yt-play-btn::after { content: ''; border-style: solid; border-width: 9px 0 9px 18px; border-color: transparent transparent transparent #FF0000; margin-left: 3px; }
-.yt-card-body { padding: 12px 13px; }
+.yt-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+.yt-card { border: 1px solid var(--ln); border-radius: 10px; overflow: hidden; background: var(--sur); }
+.yt-card-body { padding: 12px 14px; }
 .yt-card-num { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); margin-bottom: 4px; }
-.yt-card-title { font-family: 'EB Garamond', serif; font-size: 15px; color: var(--ink); line-height: 1.35; margin-bottom: 6px; }
-.yt-card-desc { font-size: 11px; color: var(--ink3); font-weight: 300; line-height: 1.5; }
+.yt-card-title { font-family: 'EB Garamond', serif; font-size: 16px; color: var(--ink); line-height: 1.35; margin-bottom: 5px; }
+.yt-card-desc { font-size: 11.5px; color: var(--ink3); font-weight: 300; line-height: 1.5; }
+
+/* 9:16 iframe 컨테이너 */
+.yt-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%; /* 9:16 */
+  background: #000;
+}
+.yt-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
 
 @media (max-width: 768px) {
-  .yt-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .yt-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
   .yt-card-title { font-size: 13px; }
-  .yt-card-desc { font-size: 10px; }
-  .yt-card-body { padding: 9px 10px; }
+  .yt-card-desc { font-size: 10.5px; }
+  .yt-card-body { padding: 9px 11px; }
 }
 </style>
 </head>
@@ -107,44 +113,53 @@
       <div>
         <div class="yt-cards">
 
-          <a class="yt-card" href="https://youtube.com/shorts/Kd2ksj6403s" target="_blank" rel="noopener">
-            <div class="yt-thumb">
-              <img src="https://i.ytimg.com/vi/Kd2ksj6403s/oq1.jpg" alt="실버 정도면 랭킹 100위쯤 되나"
-                onerror="this.style.display='none'">
-              <div class="yt-play"><div class="yt-play-btn"></div></div>
+          <div class="yt-card">
+            <div class="yt-embed">
+              <iframe
+                src="https://www.youtube.com/embed/Kd2ksj6403s?rel=0&playsinline=1&modestbranding=1"
+                title="실버 정도면... 랭킹 100위쯤 되나?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
             <div class="yt-card-body">
               <div class="yt-card-num">01 / 03</div>
               <div class="yt-card-title">실버 정도면... 랭킹 100위쯤 되나?</div>
               <div class="yt-card-desc">랭킹 시스템 설명하다 나온 한마디 — 캐릭터 반응과 타이밍</div>
             </div>
-          </a>
+          </div>
 
-          <a class="yt-card" href="https://youtube.com/shorts/vdnzSZBEXE4" target="_blank" rel="noopener">
-            <div class="yt-thumb">
-              <img src="https://i.ytimg.com/vi/vdnzSZBEXE4/oq1.jpg" alt="탑과 정글 둘은 문제이지만 최강"
-                onerror="this.style.display='none'">
-              <div class="yt-play"><div class="yt-play-btn"></div></div>
+          <div class="yt-card">
+            <div class="yt-embed">
+              <iframe
+                src="https://www.youtube.com/embed/vdnzSZBEXE4?rel=0&playsinline=1&modestbranding=1"
+                title="탑과 정글 둘은 문제이지만 최강"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
             <div class="yt-card-body">
               <div class="yt-card-num">02 / 03</div>
               <div class="yt-card-title">탑과 정글 둘은 문제이지만 최강</div>
               <div class="yt-card-desc">팀원과의 케미 — 리액션 컷과 자연스러운 전환</div>
             </div>
-          </a>
+          </div>
 
-          <a class="yt-card" href="https://youtube.com/shorts/y1xG_KQn-VA" target="_blank" rel="noopener">
-            <div class="yt-thumb">
-              <img src="https://i.ytimg.com/vi/y1xG_KQn-VA/oq1.jpg" alt="소개팅 3꽉"
-                onerror="this.style.display='none'">
-              <div class="yt-play"><div class="yt-play-btn"></div></div>
+          <div class="yt-card">
+            <div class="yt-embed">
+              <iframe
+                src="https://www.youtube.com/embed/y1xG_KQn-VA?rel=0&playsinline=1&modestbranding=1"
+                title="소개팅 3꽉"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
             <div class="yt-card-body">
               <div class="yt-card-num">03 / 03</div>
               <div class="yt-card-title">소개팅 3꽉</div>
               <div class="yt-card-desc">결혼정보회사 상담 콘텐츠 — 멘트 흐름과 텐션 유지</div>
             </div>
-          </a>
+          </div>
 
         </div>
         <p style="margin-top:12px;font-size:11.5px;color:var(--ink3);font-weight:300">
