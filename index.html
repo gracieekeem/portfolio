@@ -11,13 +11,13 @@
 /* Overview page specific */
 .ov-section { padding: 40px 0; border-bottom: 1px solid var(--ln); }
 .ov-section:last-child { border-bottom: none; padding-bottom: 80px; }
-.ov-row { display: grid; grid-template-columns: 148px 1fr; gap: 40px; align-items: start; }
+.ov-row { display: grid; grid-template-columns: 110px 1fr; gap: 32px; align-items: start; }
 .ov-lbl { font-size: 11px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--ink3); padding-top: 2px; }
 
-.comp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; }
+.comp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; min-width: 0; }
 .comp-cell { background: var(--sur); padding: 18px 20px; }
 .comp-cell h4 { font-size: 11px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
-.comp-cell p { font-size: 12.5px; color: var(--ink2); font-weight: 300; line-height: 1.55; }
+.comp-cell p { font-size: 12px; color: var(--ink2); font-weight: 300; line-height: 1.6; word-break: keep-all; }
 
 .proj-list { background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; gap: 1px; }
 .proj-row { display: grid; grid-template-columns: 34px 1fr 20px; align-items: center; gap: 16px; padding: 14px 20px; background: var(--sur); text-decoration: none; transition: background .12s; }
@@ -32,13 +32,13 @@
 .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--ln); border: 1px solid var(--ln); border-radius: 8px; overflow: hidden; }
 .tools-cell { background: var(--sur); padding: 16px 20px; display: grid; grid-template-columns: 80px 1fr; gap: 12px; align-items: baseline; }
 .tools-cell .tk { font-size: 11.5px; font-weight: 500; color: var(--ink2); }
-.tools-cell .tv { font-size: 12.5px; color: var(--ink3); font-weight: 300; line-height: 1.5; }
+.tools-cell .tv { font-size: 12px; color: var(--ink3); font-weight: 300; line-height: 1.6; word-break: keep-all; }
 
 /* Hero */
 .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--ln); }
 .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(48px, 8vw, 84px); font-weight: 400; line-height: 1.0; letter-spacing: -.015em; margin-bottom: 22px; }
 .hero h1 em { font-style: italic; color: var(--ink2); }
-.hero p { font-size: 13.5px; color: var(--ink2); max-width: 480px; line-height: 1.75; font-weight: 300; }
+.hero p { font-size: 14px; color: var(--ink2); max-width: 600px; line-height: 1.8; font-weight: 300; word-break: keep-all; }
 .hero-chips { display: flex; gap: 6px; margin-bottom: 32px; flex-wrap: wrap; }
 
 @media (max-width: 768px) {
@@ -47,7 +47,7 @@
   .ov-section { padding: 24px 0; }
   .hero { padding: 36px 0 28px; }
   .hero h1 { font-size: clamp(36px, 10vw, 52px); margin-bottom: 14px; }
-  .hero p { font-size: 13px; }
+  .hero p { font-size: 13px; max-width: 100%; }
   .hero-chips { margin-bottom: 24px; gap: 5px; }
   .comp-grid { grid-template-columns: 1fr 1fr; }
   .comp-cell { padding: 12px 12px; }
@@ -97,7 +97,7 @@
       <span class="chip">Brand &amp; Visual</span>
       <span class="chip">Video Editing</span>
     </div>
-    <h1>Marketing<br><em>Portfolio</em></h1>
+    <h1>Marketing <em>Portfolio</em></h1>
     <p>브랜드 SNS 콘텐츠 기획과 운영을 기반으로 퍼포먼스 캠페인 집행, GA4 퍼널 분석, 그리고 기업 웹사이트 구축까지. 콘텐츠–광고–데이터–웹을 하나의 흐름으로 연결하는 실무형 마케터입니다.</p>
   </div>
 
