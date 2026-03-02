@@ -8,6 +8,7 @@
 <link rel="apple-touch-icon" href="../img/favicon_2.png">
 <link rel="stylesheet" href="../css/style.css">
 <style>
+/* 데스크탑: 3열 그리드 */
 .yt-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
 .yt-card { border: 1px solid var(--ln); border-radius: 10px; overflow: hidden; background: var(--sur); }
 .yt-card-body { padding: 12px 14px; }
@@ -15,25 +16,37 @@
 .yt-card-title { font-family: 'EB Garamond', serif; font-size: 16px; color: var(--ink); line-height: 1.35; margin-bottom: 5px; }
 .yt-card-desc { font-size: 11.5px; color: var(--ink3); font-weight: 300; line-height: 1.5; }
 
-/* 9:16 iframe 컨테이너 */
-.yt-embed {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.78%; /* 9:16 */
-  background: #000;
-}
-.yt-embed iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: 0;
-}
+.yt-embed { position: relative; width: 100%; padding-bottom: 177.78%; background: #000; }
+.yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
+/* 모바일: 캐러셀 */
 @media (max-width: 768px) {
-  .yt-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .yt-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .yt-cards::-webkit-scrollbar { display: none; }
+  .yt-card {
+    flex: 0 0 72vw;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
   .yt-card-title { font-size: 13px; }
   .yt-card-desc { font-size: 10.5px; }
   .yt-card-body { padding: 9px 11px; }
+
+  /* 캐러셀 인디케이터 */
+  .yt-dots-wrap { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
+  .yt-dot2 { width: 5px; height: 5px; border-radius: 50%; background: var(--ln); transition: background .2s; cursor: pointer; }
+  .yt-dot2.on { background: var(--ink2); }
+}
+@media (min-width: 769px) {
+  .yt-dots-wrap { display: none; }
 }
 </style>
 </head>
@@ -111,16 +124,14 @@
     <div class="p-sec-row">
       <div class="p-lbl">대표 쇼츠</div>
       <div>
-        <div class="yt-cards">
+        <div class="yt-cards" id="yt-cards">
 
           <div class="yt-card">
             <div class="yt-embed">
-              <iframe
-                src="https://www.youtube.com/embed/Kd2ksj6403s?rel=0&playsinline=1&modestbranding=1"
+              <iframe src="https://www.youtube.com/embed/Kd2ksj6403s?rel=0&playsinline=1&modestbranding=1"
                 title="실버 정도면... 랭킹 100위쯤 되나?"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+                allowfullscreen></iframe>
             </div>
             <div class="yt-card-body">
               <div class="yt-card-num">01 / 03</div>
@@ -131,12 +142,10 @@
 
           <div class="yt-card">
             <div class="yt-embed">
-              <iframe
-                src="https://www.youtube.com/embed/vdnzSZBEXE4?rel=0&playsinline=1&modestbranding=1"
+              <iframe src="https://www.youtube.com/embed/vdnzSZBEXE4?rel=0&playsinline=1&modestbranding=1"
                 title="탑과 정글 둘은 문제이지만 최강"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+                allowfullscreen></iframe>
             </div>
             <div class="yt-card-body">
               <div class="yt-card-num">02 / 03</div>
@@ -147,12 +156,10 @@
 
           <div class="yt-card">
             <div class="yt-embed">
-              <iframe
-                src="https://www.youtube.com/embed/y1xG_KQn-VA?rel=0&playsinline=1&modestbranding=1"
+              <iframe src="https://www.youtube.com/embed/y1xG_KQn-VA?rel=0&playsinline=1&modestbranding=1"
                 title="소개팅 3꽉"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+                allowfullscreen></iframe>
             </div>
             <div class="yt-card-body">
               <div class="yt-card-num">03 / 03</div>
@@ -162,6 +169,14 @@
           </div>
 
         </div>
+
+        <!-- 모바일 인디케이터 -->
+        <div class="yt-dots-wrap" id="yt-dots">
+          <div class="yt-dot2 on"></div>
+          <div class="yt-dot2"></div>
+          <div class="yt-dot2"></div>
+        </div>
+
         <p style="margin-top:12px;font-size:11.5px;color:var(--ink3);font-weight:300">
           채널: <a href="https://www.youtube.com/@ComehereONER" target="_blank" rel="noopener"
             style="color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--ln)">
@@ -179,6 +194,19 @@ function toggleMenu() {
   document.getElementById('ham').classList.toggle('open');
   document.getElementById('mobile-menu').classList.toggle('open');
 }
+
+// 모바일 캐러셀 인디케이터
+(function() {
+  var el = document.getElementById('yt-cards');
+  var dots = document.querySelectorAll('.yt-dot2');
+  if (!el || !dots.length) return;
+
+  el.addEventListener('scroll', function() {
+    var w = el.scrollWidth / 3;
+    var idx = Math.round(el.scrollLeft / w);
+    dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
