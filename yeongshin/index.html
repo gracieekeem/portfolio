@@ -8,10 +8,13 @@
 <link rel="apple-touch-icon" href="../img/favicon_2.png">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-/* 영신 이미지 그리드 */
-.ys-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.ys-img-grid img { width: 100%; border-radius: 8px; border: 1px solid var(--ln); display: block; }
-.ys-img-lbl { font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px; }
+/* 이미지 2열 + 아래 설명 */
+.ys-block { margin-bottom: 20px; }
+.ys-block:last-child { margin-bottom: 0; }
+.ys-title { font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px; }
+.ys-img2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+.ys-img2 img { width: 100%; border-radius: 8px; border: 1px solid var(--ln); display: block; }
+.ys-img1 img { width: 100%; border-radius: 8px; border: 1px solid var(--ln); display: block; margin-bottom: 8px; }
 </style>
 </head>
 <body>
@@ -70,74 +73,64 @@
     </div>
   </div>
 
-  <!-- 웹사이트 메인 -->
+  <!-- 메인 화면 -->
   <div class="p-sec">
     <div class="p-sec-row">
       <div class="p-lbl">메인 화면</div>
       <div>
-        <div class="ys-img-lbl">PC</div>
-        <img src="../img/yeongshin/04_yeongshin_main_pc.jpg" alt="PC 메인" style="width:100%;border-radius:8px;border:1px solid var(--ln);display:block;margin-bottom:12px">
-        <div class="ys-img-grid">
-          <div>
-            <div class="ys-img-lbl">Mobile</div>
+        <div class="ys-block">
+          <div class="ys-title">PC 메인</div>
+          <div class="ys-img1">
+            <img src="../img/yeongshin/04_yeongshin_main_pc.jpg" alt="PC 메인">
+          </div>
+        </div>
+        <div class="ys-block">
+          <div class="ys-img2">
             <img src="../img/yeongshin/04_yeongshin_main_mo.jpg" alt="모바일 메인">
+            <img src="../img/yeongshin/04_yeongshin_lang.jpg" alt="다국어 전환">
           </div>
-          <div>
-            <div class="ys-img-lbl">다국어 전환</div>
-            <img src="../img/yeongshin/04_yeongshin_lang.jpg" alt="언어 전환">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 구현 포인트 + 스크린샷 -->
-  <div class="p-sec">
-    <div class="p-sec-row">
-      <div class="p-lbl">구현 포인트</div>
-      <div style="display:flex;flex-direction:column;gap:20px">
-
-        <!-- Products & Buyers -->
-        <div>
-          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">Products &amp; Buyers</div>
-          <div class="g2" style="align-items:start">
-            <div class="card"><ul>
-              <li>취급 품목·거래 대상 정보를 동일한 구조로 정리</li>
-              <li>바이어가 필요한 정보만 빠르게 탐색 가능하도록 설계</li>
-            </ul></div>
-            <div class="ys-img-grid">
-              <img src="../img/yeongshin/04_yeongshin_buyers_1.jpg" alt="고객사 1">
-              <img src="../img/yeongshin/04_yeongshin_buyers_2.jpg" alt="고객사 2">
-            </div>
-          </div>
-        </div>
-
-        <!-- Inquiry -->
-        <div>
-          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">Inquiry (Formspree)</div>
-          <div class="g2" style="align-items:start">
-            <div class="card"><ul>
-              <li>Formspree 연동을 통한 간단한 문의 플로우 구축</li>
-              <li>별도 계정·로그인 없이 즉시 문의 가능</li>
-              <li>필수 정보 중심 최소 입력 구조</li>
-            </ul></div>
-            <div class="ys-img-grid">
-              <img src="../img/yeongshin/04_yeongshin_formspree_1.jpg" alt="Formspree 1">
-              <img src="../img/yeongshin/04_yeongshin_inquiry_1.jpg" alt="문의 1">
-            </div>
-          </div>
-        </div>
-
-        <!-- Multi-language -->
-        <div>
-          <div style="font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">Multi-language &amp; Deploy</div>
           <div class="card"><ul>
             <li>한국어·영어·중국어 언어 전환 기능 구현</li>
             <li>해외 바이어 접근성 고려한 기본 구조 마련</li>
             <li>GitHub Pages 기반 정적 사이트 배포</li>
           </ul></div>
         </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Products & Buyers -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">Products &amp; Buyers</div>
+      <div>
+        <div class="ys-img2">
+          <img src="../img/yeongshin/04_yeongshin_buyers_1.jpg" alt="고객사 1">
+          <img src="../img/yeongshin/04_yeongshin_buyers_2.jpg" alt="고객사 2">
+        </div>
+        <div class="card"><ul>
+          <li>취급 품목·거래 대상 정보를 동일한 구조로 정리</li>
+          <li>바이어가 필요한 정보만 빠르게 탐색 가능하도록 설계</li>
+          <li>제품 카테고리 중심 정보 구성</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inquiry -->
+  <div class="p-sec">
+    <div class="p-sec-row">
+      <div class="p-lbl">Inquiry</div>
+      <div>
+        <div class="ys-img2">
+          <img src="../img/yeongshin/04_yeongshin_formspree_1.jpg" alt="Formspree">
+          <img src="../img/yeongshin/04_yeongshin_inquiry_1.jpg" alt="문의 페이지">
+        </div>
+        <div class="card"><ul>
+          <li>Formspree 연동을 통한 간단한 문의 플로우 구축</li>
+          <li>별도 계정·로그인 없이 즉시 문의 가능</li>
+          <li>필수 정보 중심 최소 입력 구조</li>
+        </ul></div>
       </div>
     </div>
   </div>
